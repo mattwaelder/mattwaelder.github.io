@@ -60,10 +60,11 @@ body {
 
 .site_title {
   position: relative;
-  transform: translateY(-450px) rotateZ(-15deg);
+  /* should do distances in pixels, esp for placing things bc on my desktop it looks totally different, this could be a mess and likely needs a rework */
+  transform: translateY(-35vw) rotateZ(-15deg);
   margin-left: 30px;
   color: rgba(100, 150, 200, 1);
-  font-size: 5em;
+  font-size: 15em;
   font-weight: 700;
   -webkit-text-stroke: 2px white;
   /* could potentially do something with the title later, there are some cool options for making fancy looking borders */
