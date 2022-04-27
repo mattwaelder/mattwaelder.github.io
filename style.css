@@ -9,6 +9,7 @@ body {
 }
 
 .nav_bar {
+  /* at some point maybe add hamburger menu ? */
   background-color: rgba(255, 255, 255, 1);
   display: flex;
   height: 70px;
