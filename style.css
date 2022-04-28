@@ -1,11 +1,14 @@
 * {
-  font-family: Comic Sans MS;
+  font-family: "League Spartan", sans-serif;
 }
 
 body {
   background-color: rgb(180, 180, 180);
   font-size: 1em;
-  font-family: Comic Sans MS;
+  font-family: "League Spartan", sans-serif;
+  margin: 0px;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .nav_bar {
@@ -13,7 +16,7 @@ body {
   background-color: rgba(255, 255, 255, 1);
   display: flex;
   height: 70px;
-  width: 100%;
+  width: 100vw;
   margin-top: 0px;
   margin-left: 0px;
   flex-direction: row;
@@ -45,35 +48,80 @@ body {
   color: black;
   font-size: 1.5em;
   border: none;
-  font-family: Comic Sans MS;
-}
-
-#banner_img {
-  width: 100%;
-  height: 50%;
 }
 
 .header {
-  justify-content: center;
-  width: 100%;
-  top: 0;
+  width: 100vw;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#banner_img {
+  width: 100vw;
+  height: 85%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 .site_title {
-  position: relative;
   /* should do distances in pixels, esp for placing things bc on my desktop it looks totally different, this could be a mess and likely needs a rework */
-  transform: translateY(-35vw) rotateZ(-15deg);
-  margin-left: 30px;
+  margin-top: 15px;
   color: rgba(100, 150, 200, 1);
-  font-size: 15em;
-  font-weight: 700;
-  -webkit-text-stroke: 2px white;
+  font-size: 6rem;
+
+  /* font-weight: 700; */
+  /* -webkit-text-stroke: 2px white; */
   /* could potentially do something with the title later, there are some cool options for making fancy looking borders */
 }
 
 .intro {
   height: 500px;
-  width: 100vw;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-self: center;
+  padding: 25px;
+  margin: auto;
+  border: 3px solid rgba(100, 150, 200, 1);
+  border-radius: 30px;
+  background: rgb(110, 110, 110);
+  color: white;
+  justify-content: space-evenly;
+}
+
+.intro_image {
+  object-fit: cover;
+  width: 200px;
+  height: 200px;
+  outline: 3px solid rgba(100, 150, 200, 1);
+  outline-offset: 5px;
+  /* border: 30px solid rgba(100, 150, 200, 1); */
+  border-radius: 100%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.pig_intro_para {
+  width: 70%;
+  font-size: 2rem;
+  text-align: center;
+  padding: 10px 20px 10px 20px;
+}
+
+#cowpig_into_para {
+  border-bottom: 4px solid rgba(100, 150, 200, 1);
+}
+
+#cowpig_intro_container {
+  display: flex;
+  flex-direction: row;
+  /* padding-bottom: 30px; */
+}
+
+#bagel_intro_container {
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 .slider {
