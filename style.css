@@ -50,31 +50,40 @@ body {
 
 .header {
   width: 100vw;
-  height: 1000px;
-  background: url("./media/longbois.jpg") no-repeat scroll center top
-    transparent;
-  background-size: 100%, 100%;
+  height: 450px;
+  background: url("./media/longbois.jpg");
+  background-repeat: no-repeat;
+  background-size: 100vw 450px;
   filter: blur(8px);
   border-top: 8px solid white;
   border-bottom: 8px solid white;
+  z-index: 1;
+}
+
+#site_title_container {
+  width: 100vw;
+  height: 450px;
+  text-align: center;
+  text-justify: center;
+  position: absolute;
+  top: 73px;
+  left: 0;
+  z-index: 2;
 }
 
 .site_title {
   font-family: "Ms Madi", cursive;
+  width: 50%;
+  height: 150px;
   /* color: rgb(100, 150, 200); */
   color: rgb(125, 190, 255);
-  width: 50vw;
-  height: auto;
-  padding: 0.6em;
-  margin: 0;
-  font-size: 10em;
-  position: absolute;
-  text-align: center;
-  top: 20%;
-  left: 20%;
-  align-content: center;
   background-color: rgba(0, 0, 0, 0.5);
   border: 3px solid white;
+  margin: 100px 25vw 100px auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 8em;
+  z-index: 2;
 }
 
 .intro {
