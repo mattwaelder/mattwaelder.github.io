@@ -183,7 +183,8 @@ a {
   text-align: center;
   padding: 20px;
 }
-S #cowpig_intro_container {
+
+#cowpig_intro_container {
   display: flex;
   flex-direction: row;
   border: 3px solid rgba(100, 150, 200, 1);
