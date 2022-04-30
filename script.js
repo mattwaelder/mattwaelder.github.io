@@ -10,5 +10,5 @@ document
   .querySelector(".drop_down_button")
   .addEventListener("click", function (e) {
     console.log("click");
-    document.querySelector("#what_are_pigs_para").classList.toggle("hidden");
+    document.querySelector(".toggle_content").classList.toggle("hidden");
   });

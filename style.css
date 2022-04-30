@@ -1,6 +1,7 @@
 body {
   /* background-color: rgb(180, 180, 180); */
-  background: linear-gradient(white, rgba(100, 150, 200, 1));
+  /* background: linear-gradient(white, rgba(100, 150, 200, 1)); */
+  background: linear-gradient(#ffffff, #6dc6fa, #1d5b85);
   font-size: 1em;
   font-family: "League Spartan", sans-serif;
   margin: 0px;
@@ -10,10 +11,6 @@ body {
 
 a {
   text-decoration: none;
-}
-
-.hidden {
-  display: none;
 }
 
 .nav_bar {
@@ -40,7 +37,7 @@ a {
   width: 60px;
   margin-left: 10px;
   justify-content: left;
-  transition: transform 0.7s ease-in-out;
+  transition: transform 1s ease-in-out;
 }
 
 .site_icon_img:hover {
@@ -106,24 +103,29 @@ a {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: 70%;
+  width: 60%;
   height: auto;
   color: black;
-  padding: 30px;
+  padding: 10px;
   margin: 100px auto 30px auto;
 }
 
 /* event listener for (probably) scroll where pig para fades into existance on the side either pushing the h2 to the side or replacing it */
 
 .what_are_pigs_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-width: 30%;
   text-align: center;
 }
 
 #what_are_pigs_title {
   text-align: center;
-  font-size: 3em;
+  font-size: 4em;
   font-family: "League Spartan", sans-serif;
+  padding-bottom: 10px;
+  border-bottom: 2px solid black;
   /* text-shadow: 5px 5px 2px black; */
 }
 
@@ -134,36 +136,48 @@ a {
   border: 2px solid black;
 }
 
+#anatomy_pig {
+  width: 400px;
+  height: auto;
+  margin-right: 30px;
+  border: 3px solid rgba(100, 150, 200, 1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  float: left;
+}
+
 #what_are_pigs_para {
-  font-size: 1.5em;
+  width: 100%;
+  display: block;
   font-family: Arial, Helvetica, sans-serif;
   background: rgba(255, 255, 255, 0.5);
   border: 3px solid rgba(100, 150, 200, 1);
   padding: 30px;
   border-radius: 20px;
+  font-size: 2em;
+  line-height: 1.5em;
 }
 
 .intro {
   height: 700px;
-  width: 70%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   align-self: center;
   justify-self: center;
   padding: 25px;
   margin: auto;
-  margin-top: 10vh;
+  margin-top: 25vh;
   /* border: 3px solid rgba(100, 150, 200, 1);
   border-radius: 30px; */
   /* background: rgba(110, 110, 110, 0.5); */
-  color: rgb(40, 70, 130);
+  color: rgb(0, 0, 0);
   justify-content: space-evenly;
 }
 
 .intro_image {
   object-fit: cover;
-  width: 200px;
-  height: 200px;
+  height: 350px;
+  width: auto;
   outline: 3px solid rgba(100, 150, 200, 1);
   outline-offset: 5px;
   /* border: 30px solid rgba(100, 150, 200, 1); */
@@ -173,18 +187,25 @@ a {
 
 .pig_name {
   font-family: "Ms Madi", sans-serif;
-  font-size: 2em;
+  font-size: 4em;
   margin: 5px;
+  color: rgb(125, 190, 255);
 }
 
 .pig_intro_para {
+  display: flex;
   width: 70%;
-  font-size: 2rem;
+  font-size: 2em;
+  align-items: center;
   text-align: center;
+  justify-content: center;
   padding: 20px;
+  line-height: 1.5em;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #cowpig_intro_container {
+  max-height: 400px;
   display: flex;
   flex-direction: row;
   border: 3px solid rgba(100, 150, 200, 1);
@@ -194,13 +215,14 @@ a {
   background: white;
   background: linear-gradient(
     90deg,
-    white 0%,
-    white 25%,
+    rgb(245, 245, 245) 0%,
+    rgb(245, 245, 245) 25%,
     rgba(255, 255, 255, 0.5) 40%,
     rgba(255, 255, 255, 0) 100%
   );
   border-radius: 20px;
   box-shadow: rgba(30, 50, 70, 0.8) 0px 20px 20px -10px;
+  margin-bottom: 2em;
 }
 
 #bagel_intro_container {
@@ -215,8 +237,8 @@ a {
     90deg,
     rgba(255, 255, 255, 0) 0%,
     rgba(255, 255, 255, 0.5) 60%,
-    white 75%,
-    white 100%
+    rgb(245, 245, 245) 75%,
+    rgb(245, 245, 245) 100%
   );
   border-radius: 20px;
   box-shadow: rgba(30, 50, 70, 0.8) 0px 20px 20px -10px;
@@ -235,4 +257,8 @@ a {
 .footer {
   height: 500px;
   width: 100vw;
+}
+
+.hidden {
+  display: none;
 }
