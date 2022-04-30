@@ -53,17 +53,17 @@ a {
 
 .nav_btn {
   background-color: rgba(100, 150, 200, 0);
-  color: black;
-  font-size: 1.5em;
+  color: rgb(125, 190, 255);
+  font-size: 2em;
   border: none;
 }
 
 .header {
   width: 100vw;
-  height: 600px;
+  height: 40vw;
   background: url("./media/look at those bw.jpg");
   background-repeat: no-repeat;
-  background-size: 100vw 600px;
+  background-size: 100vw 40vw;
   filter: blur(8px);
   border-top: 8px solid white;
   border-bottom: 8px solid white;
@@ -72,7 +72,7 @@ a {
 
 #site_title_container {
   width: 100vw;
-  height: 600px;
+  height: 40vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -85,16 +85,17 @@ a {
 }
 
 .site_title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: "Ms Madi", cursive;
   width: 50%;
-  height: auto;
+  height: 2.5em;
   /* color: rgb(100, 150, 200); */
   color: rgb(125, 190, 255);
   background-color: rgba(0, 0, 0, 0.5);
   border: 3px solid white;
   margin: 100px 25vw 100px auto;
-  padding-top: 20px;
-  padding-bottom: 20px;
   font-size: 8em;
   z-index: 2;
 }
@@ -173,7 +174,7 @@ a {
   justify-self: center;
   padding: 25px;
   margin: auto;
-  margin-top: 25vh;
+  margin-top: 50px;
   /* border: 3px solid rgba(100, 150, 200, 1);
   border-radius: 30px; */
   /* background: rgba(110, 110, 110, 0.5); */
