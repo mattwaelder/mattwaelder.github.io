@@ -8,6 +8,14 @@ body {
   overflow-x: hidden;
 }
 
+a {
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
+}
+
 .nav_bar {
   /* at some point maybe add hamburger menu ? */
   background-color: rgba(255, 255, 255, 1);
@@ -63,6 +71,9 @@ body {
 #site_title_container {
   width: 100vw;
   height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   text-justify: center;
   position: absolute;
@@ -74,7 +85,7 @@ body {
 .site_title {
   font-family: "Ms Madi", cursive;
   width: 50%;
-  height: 150px;
+  height: auto;
   /* color: rgb(100, 150, 200); */
   color: rgb(125, 190, 255);
   background-color: rgba(0, 0, 0, 0.5);
@@ -86,9 +97,40 @@ body {
   z-index: 2;
 }
 
+.what_are_pigs_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 70%;
+  height: 300px;
+  color: black;
+  padding: 30px;
+  margin: 100px auto 30px auto;
+}
+
+/* event listener for (probably) scroll where pig para fades into existance on the side either pushing the h2 to the side or replacing it */
+
+.what_are_pigs_item {
+  min-width: 30%;
+  text-align: center;
+}
+
+#what_are_pigs_title {
+  text-align: center;
+  font-size: 3em;
+  font-family: "League Spartan", sans-serif;
+  /* text-shadow: 5px 5px 2px black; */
+}
+
+#what_are_pigs_para {
+  font-size: 1.5em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .intro {
-  height: 500px;
-  width: 50%;
+  height: 700px;
+  width: 70%;
   display: flex;
   flex-direction: column;
   align-self: center;
@@ -98,15 +140,15 @@ body {
   margin-top: 40vh;
   border: 3px solid rgba(100, 150, 200, 1);
   border-radius: 30px;
-  background: rgb(110, 110, 110);
+  background: rgba(110, 110, 110, 0.5);
   color: white;
   justify-content: space-evenly;
 }
 
 .intro_image {
   object-fit: cover;
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   outline: 3px solid rgba(100, 150, 200, 1);
   outline-offset: 5px;
   /* border: 30px solid rgba(100, 150, 200, 1); */
@@ -114,11 +156,15 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
+.pig_name {
+  font-family: "Ms Madi", sans-serif;
+}
+
 .pig_intro_para {
   width: 70%;
   font-size: 2rem;
   text-align: center;
-  padding: 10px 20px 10px 20px;
+  padding: 20px;
 }
 
 #cowpig_into_para {
