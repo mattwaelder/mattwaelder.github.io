@@ -36,11 +36,15 @@ a {
 }
 
 .site_icon_img {
-  height: 60px;
+  height: 40px;
   width: 60px;
   margin-left: 10px;
   justify-content: left;
-  transform: rotateY(180deg);
+  transition: transform 0.7s ease-in-out;
+}
+
+.site_icon_img:hover {
+  transform: rotate(360deg);
 }
 
 .nav_buttons {
@@ -99,11 +103,11 @@ a {
 
 .what_are_pigs_container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   width: 70%;
-  height: 300px;
+  height: auto;
   color: black;
   padding: 30px;
   margin: 100px auto 30px auto;
@@ -123,9 +127,20 @@ a {
   /* text-shadow: 5px 5px 2px black; */
 }
 
+.drop_down_button {
+  width: 60px;
+  height: 20px;
+  background-color: gray;
+  border: 2px solid black;
+}
+
 #what_are_pigs_para {
   font-size: 1.5em;
   font-family: Arial, Helvetica, sans-serif;
+  background: rgba(255, 255, 255, 0.5);
+  border: 3px solid rgba(100, 150, 200, 1);
+  padding: 30px;
+  border-radius: 20px;
 }
 
 .intro {
@@ -137,18 +152,18 @@ a {
   justify-self: center;
   padding: 25px;
   margin: auto;
-  margin-top: 40vh;
-  border: 3px solid rgba(100, 150, 200, 1);
-  border-radius: 30px;
-  background: rgba(110, 110, 110, 0.5);
-  color: white;
+  margin-top: 10vh;
+  /* border: 3px solid rgba(100, 150, 200, 1);
+  border-radius: 30px; */
+  /* background: rgba(110, 110, 110, 0.5); */
+  color: rgb(40, 70, 130);
   justify-content: space-evenly;
 }
 
 .intro_image {
   object-fit: cover;
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   outline: 3px solid rgba(100, 150, 200, 1);
   outline-offset: 5px;
   /* border: 30px solid rgba(100, 150, 200, 1); */
@@ -158,6 +173,8 @@ a {
 
 .pig_name {
   font-family: "Ms Madi", sans-serif;
+  font-size: 2em;
+  margin: 5px;
 }
 
 .pig_intro_para {
@@ -166,20 +183,42 @@ a {
   text-align: center;
   padding: 20px;
 }
-
-#cowpig_into_para {
-  border-bottom: 4px solid rgba(100, 150, 200, 1);
-}
-
-#cowpig_intro_container {
+S #cowpig_intro_container {
   display: flex;
   flex-direction: row;
-  /* padding-bottom: 30px; */
+  border: 3px solid rgba(100, 150, 200, 1);
+  padding: 1em;
+  text-align: center;
+  text-justify: center;
+  background: white;
+  background: linear-gradient(
+    90deg,
+    white 0%,
+    white 25%,
+    rgba(255, 255, 255, 0.5) 40%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  border-radius: 20px;
+  box-shadow: rgba(30, 50, 70, 0.8) 0px 20px 20px -10px;
 }
 
 #bagel_intro_container {
   display: flex;
   flex-direction: row-reverse;
+  border: 3px solid rgba(100, 150, 200, 1);
+  padding: 1em;
+  text-align: center;
+  text-justify: center;
+  background: white;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5) 60%,
+    white 75%,
+    white 100%
+  );
+  border-radius: 20px;
+  box-shadow: rgba(30, 50, 70, 0.8) 0px 20px 20px -10px;
 }
 
 .slider {

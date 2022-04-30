@@ -6,3 +6,9 @@ console.log("hello mattspigs");
 //   e.preventDefault();
 //   console.log("scroll");
 // });
+document
+  .querySelector(".drop_down_button")
+  .addEventListener("click", function (e) {
+    console.log("click");
+    document.querySelector("#what_are_pigs_para").classList.toggle("hidden");
+  });
