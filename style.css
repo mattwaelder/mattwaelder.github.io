@@ -30,10 +30,11 @@ a {
   width: 50%;
   display: flex;
   justify-content: left;
+  margin-left: 10px;
 }
 
 .site_icon_img {
-  height: 40px;
+  height: 35px;
   width: 60px;
   margin-left: 10px;
   justify-content: left;
@@ -59,10 +60,10 @@ a {
 
 .header {
   width: 100vw;
-  height: 450px;
-  background: url("./media/longbois.jpg");
+  height: 600px;
+  background: url("./media/look at those bw.jpg");
   background-repeat: no-repeat;
-  background-size: 100vw 450px;
+  background-size: 100vw 600px;
   filter: blur(8px);
   border-top: 8px solid white;
   border-bottom: 8px solid white;
@@ -71,7 +72,7 @@ a {
 
 #site_title_container {
   width: 100vw;
-  height: 450px;
+  height: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -103,13 +104,16 @@ a {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: 60%;
+  width: 70%;
   height: auto;
   color: black;
   padding: 10px;
   margin: 100px auto 30px auto;
 }
 
+.toggle_content {
+  padding-bottom: 40px;
+}
 /* event listener for (probably) scroll where pig para fades into existance on the side either pushing the h2 to the side or replacing it */
 
 .what_are_pigs_item {
@@ -132,8 +136,11 @@ a {
 .drop_down_button {
   width: 60px;
   height: 20px;
-  background-color: gray;
+  background-color: white;
   border: 2px solid black;
+  text-align: center;
+  padding-top: 5px;
+  cursor: help;
 }
 
 #anatomy_pig {
@@ -153,13 +160,13 @@ a {
   border: 3px solid rgba(100, 150, 200, 1);
   padding: 30px;
   border-radius: 20px;
-  font-size: 2em;
+  font-size: 1em;
   line-height: 1.5em;
 }
 
 .intro {
   height: 700px;
-  width: 60%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   align-self: center;
@@ -176,7 +183,7 @@ a {
 
 .intro_image {
   object-fit: cover;
-  height: 350px;
+  height: 300px;
   width: auto;
   outline: 3px solid rgba(100, 150, 200, 1);
   outline-offset: 5px;
@@ -187,7 +194,7 @@ a {
 
 .pig_name {
   font-family: "Ms Madi", sans-serif;
-  font-size: 4em;
+  font-size: 3em;
   margin: 5px;
   color: rgb(125, 190, 255);
 }
@@ -195,7 +202,7 @@ a {
 .pig_intro_para {
   display: flex;
   width: 70%;
-  font-size: 2em;
+  font-size: 1.5em;
   align-items: center;
   text-align: center;
   justify-content: center;
@@ -257,6 +264,10 @@ a {
 .footer {
   height: 500px;
   width: 100vw;
+}
+
+.border_bottom {
+  border-bottom: 2px solid black;
 }
 
 .hidden {

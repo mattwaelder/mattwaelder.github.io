@@ -11,4 +11,5 @@ document
   .addEventListener("click", function (e) {
     console.log("click");
     document.querySelector(".toggle_content").classList.toggle("hidden");
+    document.querySelector(".toggle_content").classList.toggle("border_bottom");
   });
