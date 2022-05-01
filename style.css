@@ -1,7 +1,18 @@
+:root {
+  --color-primary: rgb(125, 190, 255);
+  --color-secondary: gray;
+  --color-tertiary: black;
+  --color-accent: rgb(125, 190, 255);
+  --color-primary-darker: lightgray;
+  --gradient-primary: red;
+  --gradient-secondary: blue;
+}
+
 body {
   /* background-color: rgb(180, 180, 180); */
   /* background: linear-gradient(white, rgba(100, 150, 200, 1)); */
-  background: linear-gradient(#ffffff, #6dc6fa, #1d5b85);
+  /* background: linear-gradient(#ffffff, #6dc6fa, #1d5b85); */
+  background-color: white;
   font-size: 1em;
   font-family: "League Spartan", sans-serif;
   margin: 0px;
@@ -9,13 +20,70 @@ body {
   overflow-x: hidden;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+ul.no-bullets {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+}
+/* 
+////////////////////////////////////////////////////////////////////////////////////
+                        potential to add ????
+////////////////////////////////////////////////////////////////////////////////////
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+.section--hidden {
+  opacity: 0;
+  transform: translateY(8rem);
+} 
+
+modal overlay blur thing:
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  transition: all 0.5s;
+}
+
+.hidden{
+  visibility: hidden;
+  opacity: 0;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////
+*/
+
 a {
   text-decoration: none;
+}
+a:visited {
+  color: var(--color-accent);
+}
+
+.section {
+  border-bottom: 1px solid gray;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .nav_bar {
   /* at some point maybe add hamburger menu ? */
-  background-color: rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, 0);
   display: flex;
   height: 70px;
   width: 100vw;
@@ -23,20 +91,19 @@ a {
   margin-left: 0px;
   flex-direction: row;
   align-items: center;
-  border-bottom: 3px solid black;
+  /* border-bottom: 2px solid black; */
 }
 
 #site_icon_img_container {
   width: 50%;
   display: flex;
   justify-content: left;
-  margin-left: 10px;
+  margin-left: 8px;
 }
 
 .site_icon_img {
   height: 35px;
   width: 60px;
-  margin-left: 10px;
   justify-content: left;
   transition: transform 1s ease-in-out;
 }
@@ -54,25 +121,30 @@ a {
 .nav_btn {
   background-color: rgba(100, 150, 200, 0);
   color: rgb(125, 190, 255);
-  font-size: 2em;
+  font-size: 1.4em;
   border: none;
+}
+
+.nam_btn:last-child {
+  margin-right: 0;
 }
 
 .header {
   width: 100vw;
-  height: 40vw;
+  height: 45vw;
   background: url("./media/look at those bw.jpg");
   background-repeat: no-repeat;
-  background-size: 100vw 40vw;
-  filter: blur(8px);
-  border-top: 8px solid white;
-  border-bottom: 8px solid white;
+  background-size: 100vw 45vw;
+  filter: blur(10px);
+  /* border-top: 8px solid white; */
+  /* border-bottom: 8px solid white; */
   z-index: 1;
+  transform: translateX(-10px);
 }
 
 #site_title_container {
   width: 100vw;
-  height: 40vw;
+  height: 45vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -90,7 +162,7 @@ a {
   justify-content: center;
   font-family: "Ms Madi", cursive;
   width: 50%;
-  height: 2.5em;
+  height: 2em;
   /* color: rgb(100, 150, 200); */
   color: rgb(125, 190, 255);
   background-color: rgba(0, 0, 0, 0.5);
@@ -130,18 +202,22 @@ a {
   font-size: 4em;
   font-family: "League Spartan", sans-serif;
   padding-bottom: 10px;
+  /* this should be something i change to be more fancy later, not just an underline */
   border-bottom: 2px solid black;
   /* text-shadow: 5px 5px 2px black; */
 }
 
 .drop_down_button {
-  width: 60px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   background-color: white;
   border: 2px solid black;
   text-align: center;
-  padding-top: 5px;
+  line-height: 1.8;
   cursor: help;
+  margin: 50px;
+  border-radius: 100%;
+  color: var(--color-primary);
 }
 
 #anatomy_pig {
@@ -174,7 +250,6 @@ a {
   justify-self: center;
   padding: 25px;
   margin: auto;
-  margin-top: 50px;
   /* border: 3px solid rgba(100, 150, 200, 1);
   border-radius: 30px; */
   /* background: rgba(110, 110, 110, 0.5); */
@@ -212,8 +287,12 @@ a {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.intro_card {
+  min-height: 20vw;
+}
+
 #cowpig_intro_container {
-  max-height: 400px;
+  max-height: 500px;
   display: flex;
   flex-direction: row;
   border: 3px solid rgba(100, 150, 200, 1);
@@ -253,6 +332,11 @@ a {
 }
 
 .slider {
+  height: 500px;
+  width: 100vw;
+}
+
+.care_guide {
   height: 500px;
   width: 100vw;
 }
