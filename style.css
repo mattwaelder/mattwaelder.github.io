@@ -1,18 +1,21 @@
 :root {
   --color-primary: rgb(125, 190, 255);
-  --color-secondary: gray;
+  --color-secondary: rgb(200, 200, 200);
   --color-tertiary: black;
   --color-accent: rgb(125, 190, 255);
-  --color-primary-darker: lightgray;
-  --gradient-primary: red;
-  --gradient-secondary: blue;
+  --color-primary-darker: rgb(90, 140, 190);
+  --gradient-primary: linear-gradient(white, var(--color-primary-darker));
+  --gradient-secondary: linear-gradient(
+    var(--color-primary),
+    var(--color-secondary)
+  );
 }
 
 body {
   /* background-color: rgb(180, 180, 180); */
   /* background: linear-gradient(white, rgba(100, 150, 200, 1)); */
   /* background: linear-gradient(#ffffff, #6dc6fa, #1d5b85); */
-  background-color: white;
+  background: var(--gradient-primary);
   font-size: 1em;
   font-family: "League Spartan", sans-serif;
   margin: 0px;
@@ -70,6 +73,7 @@ modal overlay blur thing:
 
 a {
   text-decoration: none;
+  color: var(--color-accent);
 }
 a:visited {
   color: var(--color-accent);
@@ -79,8 +83,28 @@ a:visited {
   border-bottom: 1px solid gray;
   padding-top: 50px;
   padding-bottom: 50px;
+  /*when js reveals the section apply this transition*/
+  transition: transform 1s, opacity 1s;
 }
 
+.section--hidden {
+  opacity: 0;
+  transform: translateY(8rem);
+}
+
+.section_title {
+  display: flex;
+  font-size: 3em;
+  justify-content: center;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  transform: translateY(2em);
+}
+/* 
+////////////////////////////////////////////////////////////////////////////////////
+                                   NAV BAR
+//////////////////////////////////////////////////////////////////////////////////// 
+*/
 .nav_bar {
   /* at some point maybe add hamburger menu ? */
   background-color: rgba(255, 255, 255, 0);
@@ -125,9 +149,15 @@ a:visited {
   border: none;
 }
 
-.nam_btn:last-child {
+.nav_btn:last-child {
   margin-right: 0;
 }
+
+/* 
+////////////////////////////////////////////////////////////////////////////////////
+                                   HEADER
+//////////////////////////////////////////////////////////////////////////////////// 
+*/
 
 .header {
   width: 100vw;
@@ -172,6 +202,12 @@ a:visited {
   z-index: 2;
 }
 
+/* 
+////////////////////////////////////////////////////////////////////////////////////
+                                   SECTION 1 WHAT ARE PIGS
+//////////////////////////////////////////////////////////////////////////////////// 
+*/
+
 .what_are_pigs_container {
   display: flex;
   flex-direction: column;
@@ -181,11 +217,13 @@ a:visited {
   height: auto;
   color: black;
   padding: 10px;
-  margin: 100px auto 30px auto;
+  margin: 100px auto auto auto;
 }
 
 .toggle_content {
   padding-bottom: 40px;
+  opacity: 1;
+  transition: all ease-out 0.5s;
 }
 /* event listener for (probably) scroll where pig para fades into existance on the side either pushing the h2 to the side or replacing it */
 
@@ -241,18 +279,19 @@ a:visited {
   line-height: 1.5em;
 }
 
+/* 
+////////////////////////////////////////////////////////////////////////////////////
+                                   SECTION 2 INTRO
+//////////////////////////////////////////////////////////////////////////////////// 
+*/
+
 .intro {
-  height: 700px;
-  width: 70%;
+  height: 1200px;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-self: center;
-  justify-self: center;
-  padding: 25px;
-  margin: auto;
-  /* border: 3px solid rgba(100, 150, 200, 1);
-  border-radius: 30px; */
-  /* background: rgba(110, 110, 110, 0.5); */
+  align-items: center;
+  border-radius: 30px;
   color: rgb(0, 0, 0);
   justify-content: space-evenly;
 }
@@ -262,7 +301,7 @@ a:visited {
   height: 300px;
   width: auto;
   outline: 3px solid rgba(100, 150, 200, 1);
-  outline-offset: 5px;
+  outline-offset: 1em;
   /* border: 30px solid rgba(100, 150, 200, 1); */
   border-radius: 100%;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
@@ -270,9 +309,11 @@ a:visited {
 
 .pig_name {
   font-family: "Ms Madi", sans-serif;
-  font-size: 3em;
+  font-size: 4em;
   margin: 5px;
   color: rgb(125, 190, 255);
+  transform: translateY(-1.3em);
+  text-shadow: 5px 5px 2px var(--color-secondary);
 }
 
 .pig_intro_para {
@@ -288,18 +329,23 @@ a:visited {
 }
 
 .intro_card {
-  min-height: 20vw;
+  height: 20em;
+  width: 60%;
+  min-height: 20em;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid rgba(100, 150, 200, 1);
+  padding: 2em;
+  text-align: center;
+  text-justify: center;
+  border-radius: 20px;
+  box-shadow: rgba(30, 50, 70, 0.8) 0px 20px 20px -10px;
 }
 
 #cowpig_intro_container {
-  max-height: 500px;
-  display: flex;
-  flex-direction: row;
-  border: 3px solid rgba(100, 150, 200, 1);
-  padding: 1em;
-  text-align: center;
-  text-justify: center;
-  background: white;
   background: linear-gradient(
     90deg,
     rgb(245, 245, 245) 0%,
@@ -307,19 +353,11 @@ a:visited {
     rgba(255, 255, 255, 0.5) 40%,
     rgba(255, 255, 255, 0) 100%
   );
-  border-radius: 20px;
-  box-shadow: rgba(30, 50, 70, 0.8) 0px 20px 20px -10px;
-  margin-bottom: 2em;
+  margin-bottom: 0px;
 }
 
 #bagel_intro_container {
-  display: flex;
   flex-direction: row-reverse;
-  border: 3px solid rgba(100, 150, 200, 1);
-  padding: 1em;
-  text-align: center;
-  text-justify: center;
-  background: white;
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0) 0%,
@@ -327,12 +365,16 @@ a:visited {
     rgb(245, 245, 245) 75%,
     rgb(245, 245, 245) 100%
   );
-  border-radius: 20px;
-  box-shadow: rgba(30, 50, 70, 0.8) 0px 20px 20px -10px;
 }
 
+/* 
+////////////////////////////////////////////////////////////////////////////////////
+                                   SECTION 3 SLIDER
+//////////////////////////////////////////////////////////////////////////////////// 
+*/
+
 .slider {
-  height: 20em;
+  height: 800px;
   width: 100vw;
   display: flex;
   align-items: center;
@@ -341,17 +383,28 @@ a:visited {
 
 .slide {
   position: absolute;
-  width: 50vw;
-  height: 300px;
+  width: 60vw;
+  height: 500px;
+  font-size: 1.5em;
+  line-height: 1.5em;
 
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  padding: 1em;
+  border: 3px solid rgba(100, 150, 200, 1);
+  border-radius: 20px;
 
   /* THIS creates the animation! */
   transition: transform 1s;
   display: none;
-  background-color: var(--color-primary);
+  background: linear-gradient(
+    120deg,
+    var(--color-secondary),
+    rgba(255, 255, 255, 0)
+  );
+  box-shadow: rgba(30, 50, 70, 0.8) 0px 20px 20px -10px;
 }
 
 .slide--active {
@@ -359,14 +412,17 @@ a:visited {
 }
 
 .slide_image {
-  height: 200px;
-  width: auto;
+  height: 250px;
+  width: 250px;
+  margin-right: 2em;
+  border: 2px solid black;
+  border-radius: 10px;
 }
 
 .slider_btn {
   width: 2em;
   height: 2em;
-  background-color: var(--color-primary);
+  background-color: white;
   color: var(--color-tertiary);
   border: 1px solid black;
   border-radius: 100%;
@@ -374,22 +430,40 @@ a:visited {
 }
 
 .slider_btn_left {
-  transform: translate(20vw, -200px);
+  transform: translate(15vw, -500px);
 }
 
 .slider_btn_right {
-  transform: translate(80vw, -200px);
+  transform: translate(80vw, -500px);
 }
+
+/* 
+////////////////////////////////////////////////////////////////////////////////////
+                                  SECTION 4 TABBED CARE GUIDE
+//////////////////////////////////////////////////////////////////////////////////// 
+*/
 
 .care_guide {
   height: 500px;
   width: 100vw;
 }
 
+/* 
+////////////////////////////////////////////////////////////////////////////////////
+                                   SECTION 5 SOCIALS
+//////////////////////////////////////////////////////////////////////////////////// 
+*/
+
 .socials {
   height: 500px;
   width: 100vw;
 }
+
+/* 
+////////////////////////////////////////////////////////////////////////////////////
+                                   FOOTER
+//////////////////////////////////////////////////////////////////////////////////// 
+*/
 
 .footer {
   height: 500px;
@@ -398,6 +472,13 @@ a:visited {
 
 .border_bottom {
   border-bottom: 2px solid black;
+}
+
+.hidden_toggle {
+  height: 100px;
+  transform: translateY(-300px);
+  visibility: hidden;
+  opacity: 0;
 }
 
 .hidden {
