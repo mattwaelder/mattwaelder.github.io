@@ -332,8 +332,53 @@ a:visited {
 }
 
 .slider {
-  height: 500px;
+  height: 20em;
   width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide {
+  position: absolute;
+  width: 50vw;
+  height: 300px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* THIS creates the animation! */
+  transition: transform 1s;
+  display: none;
+  background-color: var(--color-primary);
+}
+
+.slide--active {
+  display: flex;
+}
+
+.slide_image {
+  height: 200px;
+  width: auto;
+}
+
+.slider_btn {
+  width: 2em;
+  height: 2em;
+  background-color: var(--color-primary);
+  color: var(--color-tertiary);
+  border: 1px solid black;
+  border-radius: 100%;
+  cursor: default;
+}
+
+.slider_btn_left {
+  transform: translate(20vw, -200px);
+}
+
+.slider_btn_right {
+  transform: translate(80vw, -200px);
 }
 
 .care_guide {
