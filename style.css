@@ -72,11 +72,13 @@ modal overlay blur thing:
 */
 
 a {
+  color: var(--color-primary);
   text-decoration: none;
   color: var(--color-accent);
 }
 a:visited {
-  color: var(--color-accent);
+  color: var(--color-primary);
+  text-decoration: none;
 }
 
 .section {
@@ -147,6 +149,7 @@ a:visited {
   color: rgb(125, 190, 255);
   font-size: 1.4em;
   border: none;
+  font-family: "Poppins", sans-serif;
 }
 
 .nav_btn:last-child {
@@ -213,7 +216,7 @@ a:visited {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: 70%;
+  width: 60%;
   height: auto;
   color: black;
   padding: 10px;
@@ -246,12 +249,12 @@ a:visited {
 }
 
 .drop_down_button {
-  width: 30px;
-  height: 30px;
+  width: 3em;
+  height: 3em;
   background-color: white;
-  border: 2px solid black;
+  border: 2px solid white;
   text-align: center;
-  line-height: 1.8;
+  line-height: 3em;
   cursor: help;
   margin: 50px;
   border-radius: 100%;
@@ -269,13 +272,12 @@ a:visited {
 
 #what_are_pigs_para {
   width: 100%;
-  display: block;
   font-family: Arial, Helvetica, sans-serif;
   background: rgba(255, 255, 255, 0.5);
   border: 3px solid rgba(100, 150, 200, 1);
   padding: 30px;
   border-radius: 20px;
-  font-size: 1em;
+  font-size: 1.2em;
   line-height: 1.5em;
 }
 
@@ -384,7 +386,7 @@ a:visited {
 .slide {
   position: absolute;
   width: 60vw;
-  height: 500px;
+  height: 400px;
   font-size: 1.5em;
   line-height: 1.5em;
 
@@ -420,21 +422,23 @@ a:visited {
 }
 
 .slider_btn {
-  width: 2em;
-  height: 2em;
+  width: 3em;
+  height: 3em;
   background-color: white;
   color: var(--color-tertiary);
-  border: 1px solid black;
+  border: 2px solid white;
   border-radius: 100%;
   cursor: default;
 }
 
+/*setting slider y value is F'd bc using vw, thanks to the scroll bar slider should go from 25 - 75 vw*/
+/* may be able to fix this with % of parent element somehow ??*/
 .slider_btn_left {
-  transform: translate(15vw, -500px);
+  transform: translate(12vw, -400px);
 }
 
 .slider_btn_right {
-  transform: translate(80vw, -500px);
+  transform: translate(80vw, -400px);
 }
 
 /* 
