@@ -1,18 +1,18 @@
 :root {
   --color-primary: rgb(125, 190, 255);
-  --color-secondary: gray;
+  --color-secondary: rgb(200, 200, 200);
   --color-tertiary: black;
   --color-accent: rgb(125, 190, 255);
-  --color-primary-darker: lightgray;
-  --gradient-primary: red;
-  --gradient-secondary: blue;
+  --color-primary-darker: rgb(90, 140, 190);
+  --gradient-primary: linear-gradient(white, var(--color-primary-darker));
+  --gradient-secondary: black;
 }
 
 body {
   /* background-color: rgb(180, 180, 180); */
   /* background: linear-gradient(white, rgba(100, 150, 200, 1)); */
   /* background: linear-gradient(#ffffff, #6dc6fa, #1d5b85); */
-  background-color: white;
+  background: var(--gradient-primary);
   font-size: 1em;
   font-family: "League Spartan", sans-serif;
   margin: 0px;
@@ -69,10 +69,12 @@ modal overlay blur thing:
 */
 
 a {
+  color: var(--color-primary);
   text-decoration: none;
 }
 a:visited {
-  color: var(--color-accent);
+  color: var(--color-primary);
+  text-decoration: none;
 }
 
 .section {
@@ -80,6 +82,21 @@ a:visited {
   padding-top: 50px;
   padding-bottom: 50px;
 }
+
+.section_title {
+  display: flex;
+  font-size: 3em;
+  justify-content: center;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  transform: translateY(150px);
+}
+
+/*
+/////////////////////////////////////////////////////////////////////////////////
+                            NAV BAR
+////////////////////////////////////////////////////////////////////////////////
+*/
 
 .nav_bar {
   /* at some point maybe add hamburger menu ? */
@@ -125,9 +142,15 @@ a:visited {
   border: none;
 }
 
-.nam_btn:last-child {
-  margin-right: 0;
+.nav_buttons:last-child {
+  margin-right: 0px;
 }
+
+/*
+/////////////////////////////////////////////////////////////////////////////////
+                           HEADER
+////////////////////////////////////////////////////////////////////////////////
+*/
 
 .header {
   width: 100vw;
@@ -172,12 +195,18 @@ a:visited {
   z-index: 2;
 }
 
+/*
+/////////////////////////////////////////////////////////////////////////////////
+                            WHAT ARE PIGS 
+////////////////////////////////////////////////////////////////////////////////
+*/
+
 .what_are_pigs_container {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: 70%;
+  width: 60%;
   height: auto;
   color: black;
   padding: 10px;
@@ -231,27 +260,28 @@ a:visited {
 
 #what_are_pigs_para {
   width: 100%;
-  display: block;
   font-family: Arial, Helvetica, sans-serif;
   background: rgba(255, 255, 255, 0.5);
   border: 3px solid rgba(100, 150, 200, 1);
   padding: 30px;
   border-radius: 20px;
-  font-size: 1em;
+  font-size: 1.2em;
   line-height: 1.5em;
 }
 
+/*
+/////////////////////////////////////////////////////////////////////////////////
+                            INTRO
+////////////////////////////////////////////////////////////////////////////////
+*/
+
 .intro {
-  height: 700px;
-  width: 70%;
+  height: 1500px;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-self: center;
-  justify-self: center;
-  padding: 25px;
-  margin: auto;
-  /* border: 3px solid rgba(100, 150, 200, 1);
-  border-radius: 30px; */
+  align-items: center;
+  border-radius: 30px;
   /* background: rgba(110, 110, 110, 0.5); */
   color: rgb(0, 0, 0);
   justify-content: space-evenly;
@@ -262,7 +292,7 @@ a:visited {
   height: 300px;
   width: auto;
   outline: 3px solid rgba(100, 150, 200, 1);
-  outline-offset: 5px;
+  outline-offset: 1em;
   /* border: 30px solid rgba(100, 150, 200, 1); */
   border-radius: 100%;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
@@ -270,7 +300,7 @@ a:visited {
 
 .pig_name {
   font-family: "Ms Madi", sans-serif;
-  font-size: 3em;
+  font-size: 4em;
   margin: 5px;
   color: rgb(125, 190, 255);
 }
@@ -288,35 +318,16 @@ a:visited {
 }
 
 .intro_card {
-  min-height: 20vw;
-}
+  height: 25em;
+  width: 60%;
+  min-height: 25em;
 
-#cowpig_intro_container {
-  max-height: 500px;
   display: flex;
   flex-direction: row;
   border: 3px solid rgba(100, 150, 200, 1);
-  padding: 1em;
-  text-align: center;
-  text-justify: center;
-  background: white;
-  background: linear-gradient(
-    90deg,
-    rgb(245, 245, 245) 0%,
-    rgb(245, 245, 245) 25%,
-    rgba(255, 255, 255, 0.5) 40%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  border-radius: 20px;
-  box-shadow: rgba(30, 50, 70, 0.8) 0px 20px 20px -10px;
-  margin-bottom: 2em;
-}
-
-#bagel_intro_container {
-  display: flex;
-  flex-direction: row-reverse;
-  border: 3px solid rgba(100, 150, 200, 1);
-  padding: 1em;
+  padding: 2em;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   text-justify: center;
   background: white;
@@ -331,8 +342,28 @@ a:visited {
   box-shadow: rgba(30, 50, 70, 0.8) 0px 20px 20px -10px;
 }
 
+#cowpig_intro_container {
+  background: linear-gradient(
+    90deg,
+    rgb(245, 245, 245) 0%,
+    rgb(245, 245, 245) 25%,
+    rgba(255, 255, 255, 0.5) 40%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+#bagel_intro_container {
+  flex-direction: row-reverse;
+}
+
+/*
+/////////////////////////////////////////////////////////////////////////////////
+                           SLIDER
+////////////////////////////////////////////////////////////////////////////////
+*/
+
 .slider {
-  height: 20em;
+  height: 1000px;
   width: 100vw;
   display: flex;
   align-items: center;
@@ -342,16 +373,20 @@ a:visited {
 .slide {
   position: absolute;
   width: 50vw;
-  height: 300px;
+  height: 500px;
+  font-size: 2em;
+  line-height: 1.5em;
 
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  padding: 2em;
 
   /* THIS creates the animation! */
   transition: transform 1s;
   display: none;
-  background-color: var(--color-primary);
+  background-color: white;
 }
 
 .slide--active {
@@ -359,37 +394,57 @@ a:visited {
 }
 
 .slide_image {
-  height: 200px;
+  height: 300px;
   width: auto;
+  padding-right: 3em;
 }
 
 .slider_btn {
-  width: 2em;
-  height: 2em;
-  background-color: var(--color-primary);
+  width: 3em;
+  height: 3em;
+  background-color: white;
   color: var(--color-tertiary);
   border: 1px solid black;
   border-radius: 100%;
   cursor: default;
 }
 
+/*setting slider y value is F'd bc using vw, thanks to the scroll bar slider should go from 25 - 75 vw*/
 .slider_btn_left {
-  transform: translate(20vw, -200px);
+  transform: translate(20vw, -500px);
 }
 
 .slider_btn_right {
-  transform: translate(80vw, -200px);
+  transform: translate(77vw, -500px);
 }
+
+/*
+/////////////////////////////////////////////////////////////////////////////////
+                            TAB CARE GUIDE
+////////////////////////////////////////////////////////////////////////////////
+*/
 
 .care_guide {
   height: 500px;
   width: 100vw;
 }
 
+/*
+/////////////////////////////////////////////////////////////////////////////////
+                            SOCIALS
+////////////////////////////////////////////////////////////////////////////////
+*/
+
 .socials {
   height: 500px;
   width: 100vw;
 }
+
+/*
+/////////////////////////////////////////////////////////////////////////////////
+                            FOOTER
+////////////////////////////////////////////////////////////////////////////////
+*/
 
 .footer {
   height: 500px;
