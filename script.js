@@ -64,7 +64,7 @@ allSections.forEach(function (section) {
 const slider = function () {
   let curSlide = 0;
 
-  //function that goes through slideList and sets css offset
+  //function that goes through slideList and sets css offset based off the index of the slide and curslide (curslide is what's passed into the fn). if i=0 and curslide=0 translateX=0.
   const goToSlide = function (slide) {
     slideList.forEach(
       (s, i) => (s.style.transform = `translateX(${150 * (i - slide)}%`)
@@ -78,7 +78,6 @@ const slider = function () {
       curSlide++;
     }
     goToSlide(curSlide);
-    console.log(curSlide);
   };
 
   const prevSlide = function () {
@@ -88,9 +87,9 @@ const slider = function () {
       curSlide--;
     }
     goToSlide(curSlide);
-    console.log(curSlide);
   };
 
+  //init here in case i decide to add slide dots
   const init = function () {
     goToSlide(0);
   };
@@ -98,7 +97,6 @@ const slider = function () {
   init();
 
   slideBtnLeft.addEventListener("click", prevSlide);
-
   slideBtnRight.addEventListener("click", nextSlide);
 };
 
