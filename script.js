@@ -10,8 +10,9 @@ const slideBtnLeft = document.querySelector(".slider_btn_left");
 const slideBtnRight = document.querySelector(".slider_btn_right");
 
 //////////////////////////////////////////////////////////////////////////////
-
 /* smooth scrolling */
+//////////////////////////////////////////////////////////////////////////////
+
 navButtons.addEventListener("click", function (e) {
   e.preventDefault();
   if (e.target.classList.contains("nav_link")) {
@@ -21,8 +22,9 @@ navButtons.addEventListener("click", function (e) {
 });
 
 //////////////////////////////////////////////////////////////////////////////
-
 /*  toggling the "what are pigs" section */
+//////////////////////////////////////////////////////////////////////////////
+
 dropDownButton.addEventListener("click", function (e) {
   console.log("click");
   document.querySelector(".toggle_content").classList.toggle("hidden_toggle");
@@ -30,8 +32,9 @@ dropDownButton.addEventListener("click", function (e) {
 });
 
 //////////////////////////////////////////////////////////////////////////////
+/*  revealing sections using observer API */
+//////////////////////////////////////////////////////////////////////////////
 
-/*  section reaving js using observer API */
 const allSections = document.querySelectorAll(".section");
 
 //a callback fn which removes hidden class then stops observing
@@ -55,22 +58,52 @@ allSections.forEach(function (section) {
 });
 
 //////////////////////////////////////////////////////////////////////////////
-
 /* slider functionality */
+//////////////////////////////////////////////////////////////////////////////
 
-let curSlide = 0;
+const slider = function () {
+  let curSlide = 0;
 
-slideBtnLeft.addEventListener("click", function (e) {
-  e.preventDefault();
-  console.log("click left");
-  console.log(slideList);
-});
+  //function that goes through slideList and sets css offset
+  const goToSlide = function (slide) {
+    slideList.forEach(
+      (s, i) => (s.style.transform = `translateX(${150 * (i - slide)}%`)
+    );
+  };
 
-slideBtnRight.addEventListener("click", function (e) {
-  e.preventDefault();
-  console.log("click right");
-  // if (curSlide < slideList.length) {
-  // }
-});
+  const nextSlide = function () {
+    if (curSlide === slideList.length - 1) {
+      curSlide = 0;
+    } else {
+      curSlide++;
+    }
+    goToSlide(curSlide);
+    console.log(curSlide);
+  };
 
+  const prevSlide = function () {
+    if (curSlide === 0) {
+      curSlide = slideList.length - 1;
+    } else {
+      curSlide--;
+    }
+    goToSlide(curSlide);
+    console.log(curSlide);
+  };
+
+  const init = function () {
+    goToSlide(0);
+  };
+
+  init();
+
+  slideBtnLeft.addEventListener("click", prevSlide);
+
+  slideBtnRight.addEventListener("click", nextSlide);
+};
+
+slider();
+
+//////////////////////////////////////////////////////////////////////////////
+/* TABBED SELECTION */
 //////////////////////////////////////////////////////////////////////////////
