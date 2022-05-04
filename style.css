@@ -95,12 +95,9 @@ a:visited {
 }
 
 .section_title {
-  display: flex;
-  font-size: 3em;
-  justify-content: center;
-  padding-bottom: 0px;
-  margin-bottom: 0px;
-  transform: translateY(3em);
+  font-size: 4.5em;
+  margin-top: 2em;
+  margin-left: 10vw;
 }
 /* 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -386,7 +383,7 @@ a:visited {
 
 .slider {
   max-width: 40rem;
-  height: 40rem;
+  height: 30rem;
   margin: 0 auto;
   position: relative;
 
@@ -399,7 +396,7 @@ a:visited {
   top: 0;
   width: 100%;
   max-width: 50rem;
-  height: 50rem;
+  height: 30rem;
 
   display: flex;
   align-items: center;
@@ -445,11 +442,11 @@ a:visited {
 } */
 
 .slide_image {
-  height: 250px;
-  width: 250px;
-  margin-right: 2em;
+  height: 200px;
+  width: 200px;
+  margin-right: 1em;
   border: 2px solid black;
-  border-radius: 10px;
+  border-radius: 100%;
 }
 
 /* really need to set up so that the buttons become transparent carrots in mobile mode */
@@ -460,7 +457,7 @@ a:visited {
   color: var(--color-tertiary);
   border: 2px solid white;
   border-radius: 100%;
-  cursor: default;
+  cursor: pointer;
 }
 
 /*setting slider y value is F'd bc using vw, thanks to the scroll bar slider should go from 25 - 75 vw*/
@@ -480,10 +477,80 @@ a:visited {
 */
 
 .care_guide {
-  height: 500px;
+  height: 700px;
   width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
+.tabs_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.tab {
+  width: 150px;
+  height: 40px;
+  font-size: 1.2em;
+  background: var(--color-primary-darker);
+  color: black;
+  border: 1px solid black;
+  border-radius: 10px;
+  transition: 200ms;
+  box-shadow: rgba(30, 50, 70, 0.8) 0px 20px 20px -10px;
+  cursor: pointer;
+}
+
+/*this is kind of pog*/
+.tab:not(:last-child) {
+  margin-right: 4em;
+}
+
+.tab.tab--active {
+  background: var(--color-primary);
+  transform: translateY(-0.5em);
+}
+
+.tab_content_container {
+  display: flex;
+  width: 80%;
+  height: 500px;
+  background: rgba(255, 255, 255, 0.7);
+  justify-content: center;
+  align-items: space-between;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: rgba(30, 50, 70, 0.8) 0px 20px 20px -10px;
+}
+
+.tab_content {
+  display: none;
+  margin: 2em;
+}
+
+.tab_content h2 {
+  font-size: 3em;
+  font-family: "Poppins", sans-serif;
+  color: var(--color-primary-darker);
+  /* text-shadow: 5px 5px 2px white; */
+  /* text-decoration: underline; */
+}
+
+.tab_content p {
+  margin-top: 1em;
+  line-height: 1.5em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.tab_content.content--active {
+  display: flex;
+  flex-direction: column;
+}
 /* 
 ////////////////////////////////////////////////////////////////////////////////////
                                    SECTION 5 SOCIALS

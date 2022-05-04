@@ -105,3 +105,30 @@ slider();
 //////////////////////////////////////////////////////////////////////////////
 /* TABBED SELECTION */
 //////////////////////////////////////////////////////////////////////////////
+const tabs = document.querySelectorAll(".tab");
+const tabsContainer = document.querySelector(".tabs_container");
+const tabContent = document.querySelectorAll(".tab_content");
+
+//adding event listener on parent elemtn of tabs to avoid multiple listeners (event delegation)
+tabsContainer.addEventListener("click", function (e) {
+  //using closest to make sure we hit buttons and not sub-elements in the buttons
+  let clicked = e.target.closest(".tab");
+  if (!clicked) return;
+
+  //removing active classes from all tabs and all content cards
+  tabs.forEach((x) => x.classList.remove("tab--active"));
+  tabContent.forEach((x) => x.classList.remove("content--active"));
+
+  //adding active class to the clicked tab
+  clicked.classList.add("tab--active");
+
+  //adding active class to content card associated to tab
+  //this is done with datasets built into the html to link the tab with certain cards
+  document
+    .querySelector(`.tab_content--${clicked.dataset.tabId}`)
+    .classList.add("content--active");
+});
+
+//////////////////////////////////////////////////////////////////////////////
+/* XXXXXXX? */
+//////////////////////////////////////////////////////////////////////////////
