@@ -1,7 +1,7 @@
 :root {
   --color-primary: rgb(125, 190, 255);
-  --color-secondary: rgb(200, 200, 200);
-  --color-tertiary: black;
+  --color-secondary: rgb(251, 194, 235);
+  --color-tertiary: rgb(200, 200, 200);
   --color-accent: rgb(125, 190, 255);
   --color-primary-darker: rgb(90, 140, 190);
   --gradient-primary: linear-gradient(white, var(--color-primary-darker));
@@ -46,16 +46,6 @@ ul.no-bullets {
 ////////////////////////////////////////////////////////////////////////////////////
                         potential to add ????
 ////////////////////////////////////////////////////////////////////////////////////
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-}
-
-.section--hidden {
-  opacity: 0;
-  transform: translateY(8rem);
-} 
 
 modal overlay blur thing:
 .overlay {
@@ -70,22 +60,18 @@ modal overlay blur thing:
   transition: all 0.5s;
 }
 
-.hidden{
-  visibility: hidden;
-  opacity: 0;
-}
-
-
 ////////////////////////////////////////////////////////////////////////////////////
 */
 
 a {
   text-decoration: none;
-  color: var(--color-primary-darker);
+  color: black;
+  border-radius: 5px;
 }
 a:visited {
   text-decoration: none;
-  color: var(--color-primary-darker);
+  color: black;
+  border-radius: 5px;
 }
 
 .section {
@@ -205,7 +191,7 @@ a:visited {
   /* color:rgb(251, 194, 235) */
   color: rgb(125, 190, 255);
   background-color: rgba(0, 0, 0, 0.5);
-  border: 3px solid white;
+  border: 3px solid var(--color-primary-darker);
   margin: 100px 25vw 100px auto;
   font-size: 8em;
   z-index: 2;
@@ -268,6 +254,13 @@ a:visited {
   color: var(--color-tertiary);
 }
 
+.drop_down_button:active {
+  transform: scale(0.8);
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid white;
+  transition: 200ms;
+}
+
 #anatomy_pig {
   width: 400px;
   height: auto;
@@ -323,7 +316,7 @@ a:visited {
   /* margin-bottom: 0.5em; */
   color: rgb(125, 190, 255);
   /* transform: translateY(-1.3em); */
-  text-shadow: 5px 5px 2px var(--color-secondary);
+  text-shadow: 5px 5px 2px var(--color-tertiary);
 }
 
 .pig_intro_para {
@@ -478,6 +471,20 @@ a:visited {
   transform: translate(80vw, -15rem);
 }
 
+.slider_btn_left:active {
+  transform: translate(12vw, -15rem) scale(0.8);
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid white;
+  transition: 200ms;
+}
+
+.slider_btn_right:active {
+  transform: translate(80vw, -15rem) scale(0.8);
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid white;
+  transition: 200ms;
+}
+
 /* 
 ////////////////////////////////////////////////////////////////////////////////////
                                   SECTION 4 TABBED CARE GUIDE
@@ -485,12 +492,13 @@ a:visited {
 */
 
 .care_guide {
-  height: 700px;
+  height: 600px;
   width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  margin-top: 5em;
 }
 
 .tabs_container {
@@ -525,10 +533,11 @@ a:visited {
 }
 
 .tab_content_container {
+  position: relative;
   display: flex;
   width: 80%;
-  height: 500px;
-  background: rgba(255, 255, 255, 0.7);
+  height: auto;
+  background: rgba(255, 255, 255, 0.3);
   justify-content: center;
   align-items: space-between;
   text-align: center;
@@ -536,16 +545,20 @@ a:visited {
   box-shadow: rgba(30, 50, 70, 0.8) 0px 20px 20px -10px;
 }
 
-/* 
-trying to implement background image to tabbed selector
-
-.tab_content.content--active::before {
+.tab_content_container:before {
   content: "";
-  background-image: url("./media/backgroundpig.png");
-  object-fit: fill;
+  /* background-image: url("/media/backgroundpig3.png"); */
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
   opacity: 0.5;
-  z-index: 2;
-} */
+  z-index: -1;
+  transform: scale(1);
+}
 
 .tab_content {
   display: none;
@@ -570,9 +583,10 @@ trying to implement background image to tabbed selector
   display: flex;
   flex-direction: column;
 }
+
 /* 
 ////////////////////////////////////////////////////////////////////////////////////
-                                   SECTION 5 SOCIALS
+SECTION 5 SOCIALS
 //////////////////////////////////////////////////////////////////////////////////// 
 */
 
