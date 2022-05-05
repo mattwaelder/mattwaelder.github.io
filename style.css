@@ -6,16 +6,24 @@
   --color-primary-darker: rgb(90, 140, 190);
   --gradient-primary: linear-gradient(white, var(--color-primary-darker));
   --gradient-secondary: linear-gradient(
-    var(--color-primary),
-    var(--color-secondary)
+    to top,
+    rgb(251, 194, 235) 0%,
+    rgb(166, 193, 238) 100%
   );
 }
+
+/*  kick ass gradient
+linear-gradient(
+    to top,
+    rgb(251, 194, 235) 0%,
+    rgb(166, 193, 238) 100%
+*/
 
 body {
   /* background-color: rgb(180, 180, 180); */
   /* background: linear-gradient(white, rgba(100, 150, 200, 1)); */
   /* background: linear-gradient(#ffffff, #6dc6fa, #1d5b85); */
-  background: var(--gradient-primary);
+  background: var(--gradient-secondary);
   font-size: 1em;
   font-family: "League Spartan", sans-serif;
   margin: 0px;
@@ -72,13 +80,12 @@ modal overlay blur thing:
 */
 
 a {
-  color: var(--color-primary);
   text-decoration: none;
-  color: var(--color-accent);
+  color: var(--color-primary-darker);
 }
 a:visited {
-  color: var(--color-primary);
   text-decoration: none;
+  color: var(--color-primary-darker);
 }
 
 .section {
@@ -195,13 +202,14 @@ a:visited {
   font-family: "Ms Madi", cursive;
   width: 50%;
   height: 2em;
-  /* color: rgb(100, 150, 200); */
+  /* color:rgb(251, 194, 235) */
   color: rgb(125, 190, 255);
   background-color: rgba(0, 0, 0, 0.5);
   border: 3px solid white;
   margin: 100px 25vw 100px auto;
   font-size: 8em;
   z-index: 2;
+  text-shadow: 3px 3px 1px rgb(251, 194, 235);
 }
 
 /* 
@@ -527,6 +535,17 @@ a:visited {
   border-radius: 10px;
   box-shadow: rgba(30, 50, 70, 0.8) 0px 20px 20px -10px;
 }
+
+/* 
+trying to implement background image to tabbed selector
+
+.tab_content.content--active::before {
+  content: "";
+  background-image: url("./media/backgroundpig.png");
+  object-fit: fill;
+  opacity: 0.5;
+  z-index: 2;
+} */
 
 .tab_content {
   display: none;

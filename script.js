@@ -21,6 +21,12 @@ navButtons.addEventListener("click", function (e) {
   }
 });
 
+//code to force scroll to top when page refreshed used event listener rather than onUnload for funzies
+window.addEventListener("unload", function (e) {
+  e.preventDefault();
+  this.scrollTo(0, 0);
+});
+
 //////////////////////////////////////////////////////////////////////////////
 /*  toggling the "what are pigs" section */
 //////////////////////////////////////////////////////////////////////////////
