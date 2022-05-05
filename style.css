@@ -4,6 +4,7 @@
   --color-tertiary: rgb(200, 200, 200);
   --color-accent: rgb(125, 190, 255);
   --color-primary-darker: rgb(90, 140, 190);
+  --color-secondary-darker: rgb(167, 102, 102);
   --gradient-primary: linear-gradient(white, var(--color-primary-darker));
   --gradient-secondary: linear-gradient(
     to top,
@@ -42,26 +43,6 @@ ul.no-bullets {
   padding: 0; /* Remove padding */
   margin: 0; /* Remove margins */
 }
-/* 
-////////////////////////////////////////////////////////////////////////////////////
-                        potential to add ????
-////////////////////////////////////////////////////////////////////////////////////
-
-modal overlay blur thing:
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(4px);
-  z-index: 100;
-  transition: all 0.5s;
-}
-
-////////////////////////////////////////////////////////////////////////////////////
-*/
 
 a {
   text-decoration: none;
@@ -91,6 +72,18 @@ a:visited {
   font-size: 4.5em;
   margin-top: 2em;
   margin-left: 10vw;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  transition: all 0.5s;
 }
 /* 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -191,7 +184,7 @@ a:visited {
   /* color:rgb(251, 194, 235) */
   color: rgb(125, 190, 255);
   background-color: rgba(0, 0, 0, 0.5);
-  border: 3px solid var(--color-primary-darker);
+  border: 3px solid var(--color-secondary);
   margin: 100px 25vw 100px auto;
   font-size: 8em;
   z-index: 2;
@@ -248,26 +241,28 @@ a:visited {
   border: 2px solid white;
   text-align: center;
   line-height: 3em;
-  cursor: help;
+  cursor: pointer;
   margin: 50px;
   border-radius: 100%;
-  color: var(--color-tertiary);
+  color: var(--color-secondary-darker);
 }
 
 .drop_down_button:active {
   transform: scale(0.8);
   background-color: rgba(255, 255, 255, 0.5);
   border: 2px solid white;
+  cursor: pointer;
   transition: 200ms;
 }
 
 #anatomy_pig {
-  width: 400px;
+  width: 300px;
   height: auto;
   margin-right: 30px;
   border: 3px solid rgba(100, 150, 200, 1);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   float: left;
+  cursor: pointer;
 }
 
 #what_are_pigs_para {
@@ -279,6 +274,48 @@ a:visited {
   border-radius: 20px;
   font-size: 1.2em;
   line-height: 1.5em;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: 80%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  z-index: 101;
+  transition: 1s;
+  border: 2px solid black;
+}
+
+#modal_close {
+  width: 30px;
+  height: 30px;
+  background: white;
+  color: red;
+  position: fixed;
+  top: 14%;
+  left: 68%;
+  transform: translate(-50%, -50%);
+  z-index: 110;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 3px;
+  cursor: pointer;
+}
+
+#modal_close:hover {
+  background: rgba(200, 200, 200);
+  transition: 200ms;
+  cursor: pointer;
+}
+
+#modal_close:active {
+  background-color: rgb(200, 200, 200);
+  border: 2px solid black;
+  cursor: pointer;
+  transition: 200ms;
 }
 
 /* 
@@ -410,38 +447,6 @@ a:visited {
   transition: transform 1s;
 }
 
-/* 
-.slide {
-  position: absolute;
-  width: 60vw;
-  height: 400px;
-  font-size: 1.5em;
-  line-height: 1.5em;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 1em;
-  border: 3px solid rgba(100, 150, 200, 1);
-  border-radius: 20px;
-
-  /* THIS creates the animation! 
-  transition: transform 1s;
-  display: none;
-  background: linear-gradient(
-    120deg,
-    var(--color-secondary),
-    rgba(255, 255, 255, 0)
-  );
-  box-shadow: rgba(30, 50, 70, 0.8) 0px 20px 20px -10px;
-}
-*/
-/* 
-.slide--active {
-  display: flex;
-} */
-
 .slide_image {
   height: 200px;
   width: 200px;
@@ -455,7 +460,7 @@ a:visited {
   width: 3em;
   height: 3em;
   background-color: white;
-  color: var(--color-tertiary);
+  color: var(--color-secondary-darker);
   border: 2px solid white;
   border-radius: 100%;
   cursor: pointer;

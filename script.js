@@ -38,6 +38,32 @@ dropDownButton.addEventListener("click", function (e) {
 });
 
 //////////////////////////////////////////////////////////////////////////////
+/*  toggle modal window for anatomy pig */
+//////////////////////////////////////////////////////////////////////////////
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+const anatomyPig = document.querySelector("#anatomy_pig");
+const btnCloseModal = document.querySelector("#modal_close");
+
+//call back functions for toggling hidden/modal classes. probably good idea to make a helper fn for add/remove hidden class if we do much more of this...
+const openModal = function () {
+  modal.classList.toggle("hidden");
+  overlay.classList.toggle("hidden");
+  btnCloseModal.classList.toggle("hidden");
+};
+
+const closeModal = function () {
+  modal.classList.toggle("hidden");
+  overlay.classList.toggle("hidden");
+  btnCloseModal.classList.toggle("hidden");
+};
+
+//event listeners
+anatomyPig.addEventListener("click", openModal);
+overlay.addEventListener("click", closeModal);
+btnCloseModal.addEventListener("click", closeModal);
+
+//////////////////////////////////////////////////////////////////////////////
 /*  revealing sections using observer API */
 //////////////////////////////////////////////////////////////////////////////
 
