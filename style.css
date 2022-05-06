@@ -9,7 +9,8 @@
   --gradient-secondary: linear-gradient(
     to top,
     rgb(251, 194, 235) 0%,
-    rgb(166, 193, 238) 100%
+    rgb(166, 193, 238) 90%,
+    rgb(251, 194, 235) 100%
   );
 }
 
@@ -100,6 +101,7 @@ a:visited {
   margin-left: 0px;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   /* border-bottom: 2px solid black; */
 }
 
@@ -184,7 +186,7 @@ a:visited {
   /* color:rgb(251, 194, 235) */
   color: rgb(125, 190, 255);
   background-color: rgba(0, 0, 0, 0.5);
-  border: 3px solid var(--color-secondary);
+  border: 3px solid white;
   margin: 100px 25vw 100px auto;
   font-size: 8em;
   z-index: 2;
@@ -281,8 +283,8 @@ a:visited {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 40%;
-  height: 80%;
+  width: 500px;
+  height: auto;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   z-index: 101;
   transition: 1s;
@@ -295,8 +297,8 @@ a:visited {
   background: white;
   color: red;
   position: fixed;
-  top: 14%;
-  left: 68%;
+  top: 40px;
+  left: 95%;
   transform: translate(-50%, -50%);
   z-index: 110;
   border: 2px solid black;
@@ -596,8 +598,26 @@ SECTION 5 SOCIALS
 */
 
 .socials {
+  display: flex;
   height: 500px;
   width: 100vw;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.socials_list_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 5em;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
 }
 
 /* 
@@ -624,4 +644,10 @@ SECTION 5 SOCIALS
 
 .hidden {
   display: none;
+}
+
+@media (max-width: 800px) {
+  body {
+    background: red;
+  }
 }
