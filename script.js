@@ -3,11 +3,17 @@
 console.log("hello mattspigs");
 
 const navButtons = document.querySelector(".nav_buttons");
+const dropDownButtonContainer = document.querySelector(
+  ".drop_down_button_container"
+);
 const dropDownButton = document.querySelector(".drop_down_button");
 const slideList = document.querySelectorAll(".slide");
 const slideBtn = document.querySelector(".slider_btn");
 const slideBtnLeft = document.querySelector(".slider_btn_left");
 const slideBtnRight = document.querySelector(".slider_btn_right");
+
+//whatever i click logs that element to console (bug testing resons)
+window.addEventListener("click", (e) => console.log(e.target));
 
 //////////////////////////////////////////////////////////////////////////////
 /* smooth scrolling */
@@ -39,11 +45,24 @@ hamburger.addEventListener("click", () => console.log("burger click"));
 /*  toggling the "what are pigs" section */
 //////////////////////////////////////////////////////////////////////////////
 
-dropDownButton.addEventListener("click", function (e) {
-  console.log("click");
-  document.querySelector(".toggle_content").classList.toggle("hidden_toggle");
-  // document.querySelector(".toggle_content").classList.toggle("border_bottom");
-});
+const toggleChevronUpDown = function () {
+  if (dropDownButton.classList.contains("fa-chevron-down")) {
+    //flip chevron up
+    dropDownButton.classList.remove("fa-chevron-down");
+    dropDownButton.classList.add("fa-chevron-up");
+    //display hidden content
+    document.querySelector(".toggle_content").classList.toggle("hidden_toggle");
+  } else {
+    //flip chevron down
+    dropDownButton.classList.add("fa-chevron-down");
+    dropDownButton.classList.remove("fa-chevron-up");
+    //remove content
+    document.querySelector(".toggle_content").classList.toggle("hidden_toggle");
+  }
+};
+
+//event listener, on click: flip chevron, toggle content
+dropDownButtonContainer.addEventListener("click", toggleChevronUpDown);
 
 //////////////////////////////////////////////////////////////////////////////
 /*  toggle modal window for anatomy pig */
@@ -70,6 +89,7 @@ const closeModal = function () {
 anatomyPig.addEventListener("click", openModal);
 overlay.addEventListener("click", closeModal);
 btnCloseModal.addEventListener("click", closeModal);
+btnCloseModal.classList.add("hidden");
 
 //////////////////////////////////////////////////////////////////////////////
 /*  revealing sections using observer API */
@@ -93,13 +113,39 @@ const sectionObserver = new IntersectionObserver(revealSection, {
 //hide all sections at start
 allSections.forEach(function (section) {
   section.classList.add("section--hidden");
-  //telling observer api to observe each section as we add hidden class
+  //telling observer api to observe each section and add hidden class
   sectionObserver.observe(section);
 });
 
 //////////////////////////////////////////////////////////////////////////////
+/*  revealing intro cards using observer API */
+//////////////////////////////////////////////////////////////////////////////
+const cowpigCard = document.getElementById("cowpig_intro_container");
+const bagelCard = document.getElementById("bagel_intro_container");
+
+const revealIntroPara = function (entries, observer) {
+  const [entry] = entries;
+  if (!entry.isIntersecting) return;
+  entry.target.classList.remove("card--hidden");
+  observer.unobserve(entry.target);
+};
+
+const cardObserver = new IntersectionObserver(revealIntroPara, {
+  root: null,
+  threshold: 0.1,
+});
+
+//cowpigs card isnt really necessary at this moment, since it is revealed nicely by the section reveal.
+
+// cowpigCard.classList.add("card--hidden");
+// cardObserver.observe(cowpigCard);
+bagelCard.classList.add("card--hidden");
+cardObserver.observe(bagelCard);
+
+//////////////////////////////////////////////////////////////////////////////
 /* slider functionality */
 //////////////////////////////////////////////////////////////////////////////
+const sliderBtnContainer = document.querySelector(".slider_btn_container");
 
 const slider = function () {
   let curSlide = 0;
@@ -136,8 +182,14 @@ const slider = function () {
 
   init();
 
-  slideBtnLeft.addEventListener("click", prevSlide);
-  slideBtnRight.addEventListener("click", nextSlide);
+  sliderBtnContainer.addEventListener("click", function (e) {
+    let pressed = e.target.closest(".slider_btn");
+    if (!pressed) return;
+    //sometimes 2 lines of code are better than 1 line of code, ya know?
+    // pressed === slideBtnLeft ? prevSlide() : nextSlide();
+    if (pressed === slideBtnLeft) prevSlide();
+    if (pressed === slideBtnRight) nextSlide();
+  });
 };
 
 slider();

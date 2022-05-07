@@ -6,13 +6,13 @@
   --color-primary-darker: rgb(90, 140, 190);
   --color-secondary-darker: rgb(167, 102, 102);
   --color-primary-lighter: rgb(188, 217, 247);
+  --color-secondary-lighter: rgb(253, 223, 244);
   --color-glass-transparancy: rgba(255, 255, 255, 0.5);
   --gradient-primary: linear-gradient(white, var(--color-primary-darker));
   --gradient-secondary: linear-gradient(
     to top,
-    rgb(251, 194, 235) 0%,
-    rgb(166, 193, 238) 90%,
-    rgb(251, 194, 235) 100%
+    var(--color-secondary) 0%,
+    rgb(166, 193, 238) 100%
   );
 }
 
@@ -249,7 +249,7 @@ a:visited {
 
 #what_are_pigs_title {
   text-align: center;
-  font-size: 4em;
+  font-size: 2em;
   font-family: "League Spartan", sans-serif;
   padding-bottom: 10px;
   /* this should be something i change to be more fancy later, not just an underline */
@@ -257,23 +257,27 @@ a:visited {
   /* text-shadow: 5px 5px 2px black; */
 }
 
-.drop_down_button {
+.drop_down_button_container {
   width: 3em;
   height: 3em;
-  background-color: white;
-  border: 2px solid white;
+  background-color: var(--color-glass-transparancy);
+  border: none;
   text-align: center;
-  line-height: 3em;
   cursor: pointer;
-  margin: 50px;
+  margin: 2em;
   border-radius: 100%;
   color: var(--color-secondary-darker);
 }
 
-.drop_down_button:active {
+.drop_down_button {
+  margin-top: 30%;
+  font-size: 1.2em;
+}
+
+.drop_down_button_container:active {
   transform: scale(0.8);
   background-color: var(--color-glass-transparancy);
-  border: 2px solid white;
+  border: none;
   cursor: pointer;
   transition: 200ms;
 }
@@ -291,21 +295,25 @@ a:visited {
 #what_are_pigs_para {
   width: 100%;
   font-family: Arial, Helvetica, sans-serif;
-  background: var(--color-glass-transparancy);
-  border: 3px solid rgba(100, 150, 200, 1);
+  background: linear-gradient(
+    280deg,
+    var(--color-primary-lighter),
+    var(--color-glass-transparancy)
+  );
+  border: none;
   padding: 30px;
   border-radius: 20px;
   font-size: 1.2em;
   line-height: 1.5em;
 }
 
-.modal {
+.modal_img {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 500px;
-  height: auto;
+  width: auto;
+  height: 90vh;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   z-index: 101;
   transition: 1s;
@@ -313,32 +321,29 @@ a:visited {
 }
 
 #modal_close {
-  width: 30px;
-  height: 30px;
-  background: white;
-  color: red;
+  /* background: var(--color-glass-transparancy); */
+  color: var(--color-secondary-darker);
+  font-size: 2em;
   position: fixed;
   top: 40px;
   left: 95%;
   transform: translate(-50%, -50%);
   z-index: 110;
-  border: 2px solid black;
-  border-radius: 5px;
-  padding: 3px;
   cursor: pointer;
+  transition: 200ms;
 }
 
 #modal_close:hover {
-  background: rgba(200, 200, 200);
   transition: 200ms;
   cursor: pointer;
+  color: darkred;
 }
 
 #modal_close:active {
-  background-color: rgb(200, 200, 200);
-  border: 2px solid black;
+  border-radius: 100%;
   cursor: pointer;
-  transition: 200ms;
+  color: red;
+  transition: 50ms;
 }
 
 /* 
@@ -362,7 +367,7 @@ a:visited {
   object-fit: cover;
   height: 300px;
   width: auto;
-  outline: 3px solid rgba(100, 150, 200, 1);
+  outline: 3px solid var(--color-primary-darker);
   outline-offset: 1em;
   /* border: 30px solid rgba(100, 150, 200, 1); */
   border-radius: 100%;
@@ -376,7 +381,8 @@ a:visited {
   /* margin-bottom: 0.5em; */
   color: var(--color-primary);
   /* transform: translateY(-1.3em); */
-  text-shadow: 5px 5px 2px var(--color-tertiary);
+  /* text-shadow: 5px 5px 2px var(--color-tertiary); */
+  text-shadow: 5px 5px 2px gray;
 }
 
 .pig_intro_para {
@@ -386,9 +392,10 @@ a:visited {
   align-items: center;
   text-align: center;
   justify-content: center;
-  padding: 2em;
+  padding: 0 2em;
   line-height: 1.5em;
   font-family: "Poppins", sans-serif;
+  color: var(--color-primary-darker);
 }
 
 .intro_card {
@@ -400,7 +407,7 @@ a:visited {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  border: 3px solid rgba(100, 150, 200, 1);
+  /* border: 3px solid rgba(100, 150, 200, 1); */
   padding: 2em;
   text-align: center;
   text-justify: center;
@@ -415,25 +422,49 @@ a:visited {
 }
 
 #cowpig_intro_container {
-  background: linear-gradient(
+  /* background: linear-gradient(
     90deg,
     rgb(245, 245, 245) 0%,
     rgb(245, 245, 245) 25%,
     rgba(255, 255, 255, 0.5) 40%,
     rgba(255, 255, 255, 0) 100%
+  ); */
+
+  background: linear-gradient(
+    to right,
+    var(--color-secondary-lighter),
+    var(--color-glass-transparancy)
   );
+  transition: all 1s;
   margin-bottom: 0px;
 }
 
 #bagel_intro_container {
   flex-direction: row-reverse;
-  background: linear-gradient(
+  /* background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0) 0%,
     rgba(255, 255, 255, 0.5) 60%,
     rgb(245, 245, 245) 75%,
     rgb(245, 245, 245) 100%
+  ); */
+
+  background: linear-gradient(
+    to left,
+    var(--color-secondary-lighter),
+    var(--color-glass-transparancy)
   );
+  transition: all 1s;
+}
+
+.card--hidden {
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+.para--hidden {
+  opacity: 0;
+  transform: scale(0);
 }
 
 /* 
@@ -456,7 +487,7 @@ a:visited {
   position: absolute;
   top: 0;
   width: 100%;
-  max-width: 50rem;
+  max-width: 70vw;
   height: 30rem;
 
   display: flex;
@@ -480,37 +511,60 @@ a:visited {
 
 /* really need to set up so that the buttons become transparent carrots in mobile mode */
 .slider_btn {
+  /* width: 3em;
+  height: 3em;
+  background-color: var(--color-glass-transparancy);
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 100%;
+  color: var(--color-secondary-darker);
+  font-size: 1.2em; */
   width: 3em;
   height: 3em;
-  background-color: white;
-  color: var(--color-secondary-darker);
-  border: 2px solid white;
-  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-glass-transparancy);
+  border: none;
   cursor: pointer;
+  border-radius: 100%;
+  color: var(--color-secondary-darker);
+  font-size: 1.2em;
 }
 
 /*setting slider y value is F'd bc using vw, thanks to the scroll bar slider should go from 25 - 75 vw*/
 /* may be able to fix this with % of parent element somehow ??*/
+
+.slider_btn_container {
+  height: 100px;
+  width: 100vw;
+  position: absolute;
+  margin-top: -20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .slider_btn_left {
-  transform: translate(12vw, -15rem);
+  margin-left: 15%;
 }
 
 .slider_btn_right {
-  transform: translate(80vw, -15rem);
+  margin-right: 15%;
 }
 
 .slider_btn_left:active {
-  transform: translate(12vw, -15rem) scale(0.8);
   background-color: var(--color-glass-transparancy);
-  border: 2px solid white;
+  transform: scale(0.8);
   transition: 200ms;
+  cursor: pointer;
 }
 
 .slider_btn_right:active {
-  transform: translate(80vw, -15rem) scale(0.8);
   background-color: var(--color-glass-transparancy);
-  border: 2px solid white;
+  transform: scale(0.8);
   transition: 200ms;
+  cursor: pointer;
 }
 
 /* 

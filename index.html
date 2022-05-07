@@ -70,9 +70,11 @@
     <section class="section" id="section--1">
       <div class="what_are_pigs_container">
         <div class="what_are_pigs_item">
-          <h2 id="what_are_pigs_title">Guinea Pigs?</h2>
+          <h2 id="what_are_pigs_title">What ARE Guinea Pigs?</h2>
         </div>
-        <div class="drop_down_button">&darr;</div>
+        <div class="drop_down_button_container">
+          <i class="drop_down_button fa-solid fa-chevron-down"></i>
+        </div>
         <div class="what_are_pigs_item toggle_content hidden_toggle">
           <p id="what_are_pigs_para">
             <img src="./media/anatomy-of-a-pig.jpg" id="anatomy_pig" />
@@ -89,9 +91,9 @@
             they like even though they are kind of expensive.
           </p>
         </div>
-        <div>
-          <img src="/media/anatomy-of-a-pig.jpg" class="modal hidden" />
-          <button id="modal_close" class="btn hidden">&#10006;</button>
+        <div class="modal hidden">
+          <img class="modal_img" src="/media/anatomy-of-a-pig.jpg" />
+          <i id="modal_close" class="btn hidden fa-regular fa-circle-xmark"></i>
         </div>
         <div class="overlay hidden"></div>
       </div>
@@ -117,11 +119,12 @@
               alt="cowpig"
             />
           </div>
-          <p1 id="cowpig_intro_para" class="pig_intro_para">
+          <p id="cowpig_intro_para" class="pig_intro_para">
             This is Cowpig, the Brave. Cowpig is the long arm of the law, and
             has a dewlap to boot. She's top pig and likes to have her butt
-            scratched on occasion.
-          </p1>
+            scratched on occasion. Cowpig enjoys taking big-sideways naps
+            competing in glorious combat. She is both a barber and a scholar.
+          </p>
         </div>
 
         <!-- BAGEL INTRO CARD -->
@@ -136,11 +139,13 @@
               alt="bagel"
             />
           </div>
-          <p1 id="bagel_intro_para" class="pig_intro_para">
+          <p id="bagel_intro_para" class="pig_intro_para">
             This is Bagel, or Bagel Hime, which is Japanese for bagel princess.
-            Bagel IS a princess as far as you know. Her whiskers are legendary
-            and she is very well connected.
-          </p1>
+            Bagel IS a princess as far as you know. Bagels vet may have said
+            that bagel is special needs, but thats just because all of bagels
+            needs are met for her and any needs that remain are special. Bagels
+            whiskers are legendary and she is very well connected.
+          </p>
         </div>
       </div>
     </section>
@@ -200,8 +205,12 @@
 
       <!-- SLIDER NAVIGATION BUTTONS -->
 
-      <button class="slider_btn slider_btn_left">&larr;</button>
-      <button class="slider_btn slider_btn_right">&rarr;</button>
+      <!-- <button class="slider_btn slider_btn_left">&larr;</button>
+      <button class="slider_btn slider_btn_right">&rarr;</button> -->
+      <div class="slider_btn_container">
+        <i class="slider_btn slider_btn_left fa-solid fa-chevron-left"></i>
+        <i class="slider_btn slider_btn_right fa-solid fa-chevron-right"></i>
+      </div>
     </section>
 
     <!--
