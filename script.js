@@ -7,10 +7,6 @@ const dropDownButtonContainer = document.querySelector(
   ".drop_down_button_container"
 );
 const dropDownButton = document.querySelector(".drop_down_button");
-const slideList = document.querySelectorAll(".slide");
-const slideBtn = document.querySelector(".slider_btn");
-const slideBtnLeft = document.querySelector(".slider_btn_left");
-const slideBtnRight = document.querySelector(".slider_btn_right");
 
 //whatever i click logs that element to console (bug testing resons)
 window.addEventListener("click", (e) => console.log(e.target));
@@ -145,7 +141,11 @@ cardObserver.observe(bagelCard);
 //////////////////////////////////////////////////////////////////////////////
 /* slider functionality */
 //////////////////////////////////////////////////////////////////////////////
-const sliderBtnContainer = document.querySelector(".slider_btn_container");
+const sliderBtnContainer = document.querySelector(".slider_btns_container");
+const slideList = document.querySelectorAll(".slide");
+const slideBtn = document.querySelector(".slider_btn");
+const slideBtnLeft = document.querySelector(".slider_btn_left");
+const slideBtnRight = document.querySelector(".slider_btn_right");
 
 const slider = function () {
   let curSlide = 0;
@@ -183,7 +183,7 @@ const slider = function () {
   init();
 
   sliderBtnContainer.addEventListener("click", function (e) {
-    let pressed = e.target.closest(".slider_btn");
+    let pressed = e.target.closest(".slider_btn_container");
     if (!pressed) return;
     //sometimes 2 lines of code are better than 1 line of code, ya know?
     // pressed === slideBtnLeft ? prevSlide() : nextSlide();

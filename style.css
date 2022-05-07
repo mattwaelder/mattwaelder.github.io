@@ -512,51 +512,44 @@ a:visited {
 
 /* really need to set up so that the buttons become transparent carrots in mobile mode */
 .slider_btn {
-  /* width: 3em;
-  height: 3em;
-  background-color: var(--color-glass-transparancy);
-  border: none;
-  text-align: center;
-  cursor: pointer;
-  border-radius: 100%;
-  color: var(--color-secondary-darker);
-  font-size: 1.2em; */
-  width: 3em;
-  height: 3em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--color-glass-transparancy);
-  border: none;
-  cursor: pointer;
-  border-radius: 100%;
-  color: var(--color-secondary-darker);
   font-size: 1.2em;
 }
 
 /*setting slider y value is F'd bc using vw, thanks to the scroll bar slider should go from 25 - 75 vw*/
 /* may be able to fix this with % of parent element somehow ??*/
 
-.slider_btn_container {
+.slider_btns_container {
   height: 100px;
   width: 100vw;
   position: absolute;
   margin-top: -20%;
-  /* display: flex;
+  display: flex;
   flex-direction: row;
-  justify-content: space-between; */
-  display: grid;
-  grid-template-columns: 80vw 1fr;
+  justify-content: space-between;
+  align-items: center;
 }
-.slider_btn_left {
-  display: grid;
+
+.slider_btn_container {
+  display: flex;
+  width: 3em;
+  height: 3em;
+  background-color: var(--color-glass-transparancy);
+  border: none;
   margin-left: 15%;
+  margin-right: 15%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 100%;
+  color: var(--color-secondary-darker);
+}
+
+/* .slider_btn_left {
 }
 
 .slider_btn_right {
-  display: grid;
-  margin-right: 15%;
-}
+} */
 
 .slider_btn_left:active {
   background-color: var(--color-glass-transparancy-lighter);
