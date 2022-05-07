@@ -2,18 +2,14 @@
 
 console.log("hello mattspigs");
 
-const navButtons = document.querySelector(".nav_buttons");
-const dropDownButtonContainer = document.querySelector(
-  ".drop_down_button_container"
-);
-const dropDownButton = document.querySelector(".drop_down_button");
-
 //whatever i click logs that element to console (bug testing resons)
 window.addEventListener("click", (e) => console.log(e.target));
 
 //////////////////////////////////////////////////////////////////////////////
 /* smooth scrolling */
 //////////////////////////////////////////////////////////////////////////////
+
+const navButtons = document.querySelector(".nav_buttons");
 
 navButtons.addEventListener("click", function (e) {
   e.preventDefault();
@@ -32,6 +28,7 @@ window.addEventListener("unload", function (e) {
 //////////////////////////////////////////////////////////////////////////////
 /* hamber menu functionality */
 //////////////////////////////////////////////////////////////////////////////
+
 const hamburger = document.querySelector(".hamburger");
 
 //here's where we add functionality to open the nav menu
@@ -40,6 +37,11 @@ hamburger.addEventListener("click", () => console.log("burger click"));
 //////////////////////////////////////////////////////////////////////////////
 /*  toggling the "what are pigs" section */
 //////////////////////////////////////////////////////////////////////////////
+
+const dropDownButtonContainer = document.querySelector(
+  ".drop_down_button_container"
+);
+const dropDownButton = document.querySelector(".drop_down_button");
 
 const toggleChevronUpDown = function () {
   if (dropDownButton.classList.contains("fa-chevron-down")) {
@@ -63,6 +65,7 @@ dropDownButtonContainer.addEventListener("click", toggleChevronUpDown);
 //////////////////////////////////////////////////////////////////////////////
 /*  toggle modal window for anatomy pig */
 //////////////////////////////////////////////////////////////////////////////
+
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const anatomyPig = document.querySelector("#anatomy_pig");
@@ -116,6 +119,7 @@ allSections.forEach(function (section) {
 //////////////////////////////////////////////////////////////////////////////
 /*  revealing intro cards using observer API */
 //////////////////////////////////////////////////////////////////////////////
+
 const cowpigCard = document.getElementById("cowpig_intro_container");
 const bagelCard = document.getElementById("bagel_intro_container");
 
@@ -128,7 +132,7 @@ const revealIntroPara = function (entries, observer) {
 
 const cardObserver = new IntersectionObserver(revealIntroPara, {
   root: null,
-  threshold: 0.1,
+  threshold: 0.3,
 });
 
 //cowpigs card isnt really necessary at this moment, since it is revealed nicely by the section reveal.
@@ -141,6 +145,7 @@ cardObserver.observe(bagelCard);
 //////////////////////////////////////////////////////////////////////////////
 /* slider functionality */
 //////////////////////////////////////////////////////////////////////////////
+
 const sliderBtnContainer = document.querySelector(".slider_btns_container");
 const slideList = document.querySelectorAll(".slide");
 const slideBtn = document.querySelector(".slider_btn");
@@ -197,6 +202,7 @@ slider();
 //////////////////////////////////////////////////////////////////////////////
 /* TABBED SELECTION */
 //////////////////////////////////////////////////////////////////////////////
+
 const tabs = document.querySelectorAll(".tab");
 const tabsContainer = document.querySelector(".tabs_container");
 const tabContent = document.querySelectorAll(".tab_content");

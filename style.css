@@ -253,9 +253,13 @@ a:visited {
   font-size: 2em;
   font-family: "League Spartan", sans-serif;
   padding-bottom: 10px;
-  /* this should be something i change to be more fancy later, not just an underline */
-  border-bottom: 2px solid black;
-  /* text-shadow: 5px 5px 2px black; */
+  border-bottom: 3px solid;
+  border-image: linear-gradient(
+      120deg,
+      var(--color-primary-darker) 30%,
+      var(--color-secondary) 70%
+    )
+    30;
 }
 
 .drop_down_button_container {
