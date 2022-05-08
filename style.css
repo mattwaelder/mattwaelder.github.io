@@ -17,12 +17,12 @@
   );
 }
 
-body {
+html body {
   /* background-color: rgb(180, 180, 180); */
   /* background: linear-gradient(white, rgba(100, 150, 200, 1)); */
   /* background: linear-gradient(#ffffff, #6dc6fa, #1d5b85); */
   background: var(--gradient-secondary);
-  font-size: 1em;
+  font-size: 16px;
   font-family: "League Spartan", sans-serif;
   margin: 0px;
   width: 100%;
@@ -54,8 +54,8 @@ a:visited {
 
 .section {
   border-bottom: 1px solid gray;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 3em;
+  padding-bottom: 3em;
   /*when js reveals the section apply this transition*/
   transition: transform 1s, opacity 1s;
 }
@@ -123,7 +123,7 @@ a:visited {
   width: 50%;
   display: flex;
   justify-content: left;
-  margin-left: 8px;
+  padding-left: 8px;
 
   /*return these values when hamburger done
   width 50%;
@@ -185,7 +185,7 @@ a:visited {
 } */
 
 .nav_buttons:last-child {
-  margin-right: 3em;
+  padding-right: 3em;
 }
 
 .hamburger {
@@ -201,20 +201,19 @@ a:visited {
 
 .header {
   width: 100vw;
-  height: 45vw;
+  height: 85vh;
   background: url("./media/look at those bw.jpg");
   background-repeat: no-repeat;
   background-size: 100vw 45vw;
   filter: blur(10px);
-  /* border-top: 8px solid white; */
-  /* border-bottom: 8px solid white; */
+
   z-index: 1;
   transform: translateX(-10px);
 }
 
 #site_title_container {
   width: 100vw;
-  height: 45vw;
+  height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -245,7 +244,7 @@ a:visited {
     )
     30;
   margin: 100px 25vw 100px auto;
-  font-size: 8em;
+  font-size: 10vw;
   z-index: 2;
   text-shadow: 3px 3px 1px var(--color-secondary);
 }
@@ -264,12 +263,12 @@ a:visited {
   width: 60%;
   height: auto;
   color: black;
-  padding: 10px;
+  padding: 1em;
   margin: 100px auto auto auto;
 }
 
 .toggle_content {
-  padding-bottom: 40px;
+  padding-bottom: 1em;
   opacity: 1;
   transition: all ease-out 0.5s;
 }
@@ -326,10 +325,10 @@ a:visited {
 }
 
 #anatomy_pig {
-  width: 250px;
+  width: 20vw;
   height: auto;
-  margin-right: 20px;
-  margin-bottom: 20px;
+  margin-right: 1em;
+  margin-bottom: 1em;
   border: 3px solid rgba(100, 150, 200, 1);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   float: left;
@@ -355,7 +354,7 @@ a:visited {
     var(--color-glass-transparancy)
   );
   border: none;
-  padding: 30px;
+  padding: 2em;
   border-radius: 20px;
   font-size: 1.2em;
   line-height: 1.5em;
@@ -379,8 +378,8 @@ a:visited {
   color: var(--color-secondary-darker);
   font-size: 2em;
   position: fixed;
-  top: 40px;
-  left: 95%;
+  top: 1.5em;
+  left: 95vw;
   transform: translate(-50%, -50%);
   z-index: 110;
   cursor: pointer;
@@ -407,7 +406,7 @@ a:visited {
 */
 
 .intro {
-  height: 1200px;
+  height: 200vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -419,8 +418,8 @@ a:visited {
 
 .intro_image {
   object-fit: cover;
-  height: 300px;
-  width: auto;
+  height: auto;
+  width: 20vw;
   outline: 3px solid var(--color-primary-darker);
   outline-offset: 1em;
   /* border: 30px solid rgba(100, 150, 200, 1); */
@@ -440,7 +439,7 @@ a:visited {
 
 .pig_name {
   font-family: "Ms Madi", sans-serif;
-  font-size: 5em;
+  font-size: 7vw;
   /* margin-bottom: 0.5em; */
   color: var(--color-primary);
   /* transform: translateY(-1.3em); */
@@ -463,9 +462,9 @@ a:visited {
 }
 
 .intro_card {
-  height: 25rem;
+  height: 60vh;
   width: 70%;
-  min-height: 20em;
+  min-height: 60vh;
 
   display: flex;
   flex-direction: row;
@@ -538,7 +537,7 @@ a:visited {
 */
 
 .slider {
-  max-width: 40rem;
+  max-width: 70vw;
   height: 30rem;
   margin: 0 auto;
   position: relative;
@@ -567,8 +566,8 @@ a:visited {
 }
 
 .slide_image {
-  height: 200px;
-  width: 200px;
+  height: auto;
+  width: 10vw;
   margin-right: 1em;
   border: 2px solid black;
   border-radius: 100%;
@@ -645,7 +644,7 @@ a:visited {
 */
 
 .care_guide {
-  height: 500px;
+  height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -663,8 +662,8 @@ a:visited {
 }
 
 .tab {
-  width: 120px;
-  height: 40px;
+  width: 7em;
+  height: 2em;
   font-size: 1.2em;
   background: var(--color-glass-transparancy);
   color: black;
@@ -683,7 +682,7 @@ a:visited {
 .tab.tab--active {
   background: var(--color-primary-lighter);
   transform: translateY(-0.5em);
-  width: 140px;
+  width: 7.5em;
   color: var(--color-secondary-darker);
 }
 
@@ -761,7 +760,7 @@ SECTION 5 ????
 */
 
 .footer {
-  height: 300px;
+  height: 50vh;
   width: 100vw;
   background: var(--color-glass-transparancy);
 }
@@ -783,7 +782,7 @@ SECTION 5 ????
 }
 
 .fa-brands {
-  padding: 20px;
+  padding: 1rem;
   font-size: 3em;
   text-align: center;
   text-decoration: none;
@@ -802,6 +801,7 @@ SECTION 5 ????
   border-bottom: 2px solid black;
 }
 
+/* the toggle content form the first section, px is fine here its just to keep the section jitter from being too bad */
 .hidden_toggle {
   height: 100px;
   transform: translateY(-300px);
@@ -812,9 +812,3 @@ SECTION 5 ????
 .hidden {
   display: none;
 }
-
-/* @media (max-width: 800px) {
-  body {
-    background: red;
-  }
-} */
