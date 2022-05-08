@@ -123,7 +123,7 @@ a:visited {
   width: 50%;
   display: flex;
   justify-content: left;
-  padding-left: 8px;
+  padding-left: 1em;
 
   /*return these values when hamburger done
   width 50%;
@@ -134,7 +134,7 @@ a:visited {
   height: 35px;
   width: 60px;
   justify-content: left;
-  transition: transform 1s ease-in-out;
+  transition: 1s ease-in-out;
 }
 
 .site_icon_img:hover {
@@ -191,7 +191,7 @@ a:visited {
 .hamburger {
   font-size: 1.8em;
   color: black;
-  /* text-shadow: 3px 3px 1px black; */
+  padding-right: 8vw;
 }
 /* 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -200,15 +200,20 @@ a:visited {
 */
 
 .header {
+  display: flex;
+  flex-shrink: 0;
   width: 100vw;
   height: 85vh;
   background: url("./media/look at those bw.jpg");
   background-repeat: no-repeat;
-  background-size: 100vw 45vw;
+  background-position: center;
+  /* background-size: 100vw 45vw; */
   filter: blur(10px);
+  background-size: cover;
+  overflow-x: hidden;
 
   z-index: 1;
-  transform: translateX(-10px);
+  /* transform: translateX(-10px); */
 }
 
 #site_title_container {
@@ -243,7 +248,7 @@ a:visited {
       var(--color-secondary) 70%
     )
     30;
-  margin: 100px 25vw 100px auto;
+  /* margin: 100px 25vw 100px auto; */
   font-size: 10vw;
   z-index: 2;
   text-shadow: 3px 3px 1px var(--color-secondary);
@@ -284,6 +289,7 @@ a:visited {
 }
 
 #what_are_pigs_title {
+  text-align: center;
   border-bottom: 3px solid;
   border-image: linear-gradient(
       120deg,
@@ -413,7 +419,7 @@ a:visited {
   align-items: center;
   border-radius: 30px;
   color: rgb(0, 0, 0);
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 .intro_image {
@@ -654,6 +660,7 @@ a:visited {
 }
 
 .tabs_container {
+  width: 100vw;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -689,7 +696,7 @@ a:visited {
 .tab_content_container {
   position: relative;
   display: flex;
-  width: 80%;
+  width: 60vw;
   height: auto;
   background: linear-gradient(
     140deg,
@@ -703,9 +710,10 @@ a:visited {
   box-shadow: rgba(30, 50, 70, 0.8) 0px 20px 20px -10px;
 }
 
+/* 
 .tab_content_container:before {
   content: "";
-  /* background-image: url("/media/backgroundpig3.png"); */
+  background-image: url("/media/backgroundpig3.png");
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
@@ -716,7 +724,8 @@ a:visited {
   opacity: 0.5;
   z-index: -1;
   transform: scale(1);
-}
+} 
+*/
 
 .tab_content {
   display: none;
@@ -819,8 +828,136 @@ git checkout 1
 when we are happy with changes to branch 1 merge with master by going to master and saying git merge 1, i think;
 */
 
-@media (max-width: 800px) {
-  block {
-    color: red;
+@media (max-width: 820px) {
+  html body {
+    background: white;
+  }
+  .section_title {
+    font-size: 10vw;
+    justify-content: center;
+  }
+
+  .nav_bar {
+    justify-content: space-between;
+  }
+
+  .site_icon_container {
+    padding-left: 5vw;
+  }
+
+  .nav_buttons {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .header {
+    width: 100vw;
+    background-size: cover;
+    background-position-x: 70%;
+    overflow-x: hidden;
+    filter: blur(6px);
+  }
+
+  .site_title_container {
+    width: auto;
+  }
+
+  .site_title {
+    height: 30vh;
+    width: 70vw;
+    margin-top: 0px;
+    font-size: 15vh;
+  }
+
+  .what_are_pigs_container {
+    width: 80vw;
+  }
+
+  #anatomy_pig {
+    width: 100%;
+  }
+
+  #what_are_pigs_para {
+    text-align: center;
+    font-size: 1.2em;
+  }
+
+  .modal_img {
+    position: fixed;
+    width: 90vw;
+    height: auto;
+  }
+
+  #modal_close {
+    font-size: 10vw;
+    position: fixed;
+    top: 15vw;
+    left: 50%;
+  }
+
+  #section--2 {
+    height: auto;
+  }
+
+  .intro {
+    justify-content: space-around;
+  }
+
+  .intro_card {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: space-around;
+    /* display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr); */
+  }
+
+  #cowpig_intro_container {
+    flex-grow: 1.5;
+    background: linear-gradient(
+      150deg,
+      var(--color-secondary-lighter),
+      var(--color-glass-transparancy)
+    );
+    margin-top: 10vw;
+    margin-bottom: 10vh;
+  }
+
+  #bagel_intro_container {
+    flex-grow: 1.5;
+    flex-direction: column;
+    background: linear-gradient(
+      150deg,
+      var(--color-secondary-lighter),
+      var(--color-glass-transparancy)
+    );
+  }
+
+  .intro_image {
+    width: 25vh;
+    height: auto;
+  }
+
+  .pig_name {
+    font-size: 10vh;
+  }
+
+  .pic_and_title {
+    height: 15vh;
+    transform: translateY(-10vh);
+  }
+
+  .pig_intro_para {
+    position: relative;
+    margin-top: 15vh;
+    font-size: 3vh;
+    line-height: 4vh;
+    /* display: grid;
+    grid-template-columns: 3 / 6;
+    grid-template-rows: 3 / 6; */
   }
 }
