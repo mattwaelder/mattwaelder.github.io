@@ -60,18 +60,26 @@ a:visited {
   transition: transform 1s, opacity 1s;
 }
 
+/*getting rid of a section border bc it animated over the footer (looked bad)*/
+.section:nth-last-child(3) {
+  border-bottom: none;
+}
+
 .section--hidden {
   opacity: 0;
   transform: translateY(15rem);
 }
 
 .section_title {
-  font-size: 4.5em;
-  margin-top: 2em;
-  margin-left: 10vw;
+  display: flex;
+  justify-content: center;
+  font-size: 4em;
+  font-weight: 300;
+  /* margin-top: 2em; */
+  font-family: "Poppins", sans-serif;
   /* font-family: "Ms Madi", cursive; */
-  color: black;
-  text-shadow: 3px 3px 1px var(--color-accent);
+  color: rgba(240, 240, 240);
+  text-shadow: 3px 3px 1px var(--color-primary-darker);
 }
 
 .overlay {
@@ -151,14 +159,32 @@ a:visited {
   padding: 5px 10px;
 }
 
-.nav_btn:hover {
+.nav_btn::after {
+  content: "";
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(
+    to right,
+    var(--color-primary-lighter) 0%,
+    var(--color-secondary) 100%
+  );
+  display: block;
+  margin: auto;
+  transition: 300ms;
+}
+
+.nav_btn:hover::after {
+  width: 100%;
+}
+
+/* .nav_btn:hover {
   background: var(--color-glass-transparancy-lighter);
   border-radius: 20px;
   transition: all 200ms;
-}
+} */
 
 .nav_buttons:last-child {
-  margin-right: 2em;
+  margin-right: 3em;
 }
 
 .hamburger {
@@ -258,10 +284,6 @@ a:visited {
 }
 
 #what_are_pigs_title {
-  text-align: center;
-  font-size: 2em;
-  font-family: "League Spartan", sans-serif;
-  padding-bottom: 10px;
   border-bottom: 3px solid;
   border-image: linear-gradient(
       120deg,
@@ -560,14 +582,16 @@ a:visited {
 /* may be able to fix this with % of parent element somehow ??*/
 
 .slider_btns_container {
-  height: 100px;
+  height: 30rem;
   width: 100vw;
   position: absolute;
-  margin-top: -20%;
+  margin-top: 0px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  /*moving to overlap the slider*/
+  transform: translateY(-30rem);
 }
 
 .slider_btn_container {
