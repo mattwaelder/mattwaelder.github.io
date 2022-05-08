@@ -812,3 +812,9 @@ SECTION 5 ????
 .hidden {
   display: none;
 }
+
+@media (max-width: 800px) {
+  block {
+    color: red;
+  }
+}
