@@ -813,6 +813,12 @@ SECTION 5 ????
   display: none;
 }
 
+/* 
+branch name for media is "1"
+git checkout 1
+when we are happy with changes to branch 1 merge with master by going to master and saying git merge 1, i think;
+*/
+
 @media (max-width: 800px) {
   block {
     color: red;
