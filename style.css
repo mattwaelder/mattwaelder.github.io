@@ -547,6 +547,8 @@ a:visited {
   height: 30rem;
   margin: 0 auto;
   position: relative;
+  display: flex;
+  justify-content: center;
 
   /* IN THE END */
   overflow: hidden;
@@ -569,6 +571,15 @@ a:visited {
 
   /* THIS creates the animation! */
   transition: transform 1s;
+}
+
+.slide h1 {
+  text-align: center;
+}
+
+.author {
+  padding-left: 50%;
+  color: var(--color-primary-darker);
 }
 
 .slide_image {
@@ -650,7 +661,7 @@ a:visited {
 */
 
 .care_guide {
-  height: 100vh;
+  height: auto;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -669,7 +680,7 @@ a:visited {
 }
 
 .tab {
-  width: 7em;
+  width: 15vw;
   height: 2em;
   font-size: 1.2em;
   background: var(--color-glass-transparancy);
@@ -683,13 +694,13 @@ a:visited {
 
 /*this is kind of pog*/
 .tab:not(:last-child) {
-  margin-right: 4em;
+  margin-right: 15vw;
 }
 
 .tab.tab--active {
   background: var(--color-primary-lighter);
   transform: translateY(-0.5em);
-  width: 7.5em;
+  width: 18vw;
   color: var(--color-secondary-darker);
 }
 
@@ -733,7 +744,7 @@ a:visited {
 }
 
 .tab_content h2 {
-  font-size: 3em;
+  font-size: 8vh;
   font-family: "Poppins", sans-serif;
   color: var(--color-primary-darker);
   text-align: left;
@@ -829,12 +840,10 @@ when we are happy with changes to branch 1 merge with master by going to master 
 */
 
 @media (max-width: 820px) {
-  html body {
-    background: white;
-  }
   .section_title {
     font-size: 10vw;
     justify-content: center;
+    text-align: center;
   }
 
   .nav_bar {
@@ -959,5 +968,46 @@ when we are happy with changes to branch 1 merge with master by going to master 
     /* display: grid;
     grid-template-columns: 3 / 6;
     grid-template-rows: 3 / 6; */
+  }
+
+  .slider {
+    width: 100vw;
+  }
+
+  .slide {
+    width: 100vw;
+    font-size: 2.5vh;
+    text-justify: center;
+  }
+
+  .slider_btn_container {
+    width: 10vh;
+    margin-left: 0px;
+    margin-right: 0px;
+    color: rgba(0, 0, 0, 0.2);
+    background-color: transparent;
+    font-size: 8vh;
+  }
+
+  slider_btn_container:hover {
+    color: rgba(0, 0, 0, 0.2);
+  }
+
+  .slider_btn_container:active {
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  .tab_content_container {
+    width: 90vw;
+  }
+
+  .tab_content h2 {
+    font-size: 5vh;
+    text-align: center;
+    padding: 0px;
+  }
+
+  .footer {
+    height: 30vh;
   }
 }
