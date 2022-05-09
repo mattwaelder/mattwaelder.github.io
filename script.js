@@ -26,13 +26,60 @@ window.addEventListener("unload", function (e) {
 });
 
 //////////////////////////////////////////////////////////////////////////////
-/* hamber menu functionality */
+/* HAMBURGER MENU FUNCTIONALITY */
 //////////////////////////////////////////////////////////////////////////////
 
 const hamburger = document.querySelector(".hamburger");
+const mobileMenu = document.querySelector(".mobile_menu");
+const mobileMenuContainer = document.querySelector(".mobile_menu_container");
+const mobileMenuBtns = document.querySelectorAll(".mobile_nav_btn");
 
-//here's where we add functionality to open the nav menu
-hamburger.addEventListener("click", () => console.log("burger click"));
+//callback fn to open mobile menu
+const mobileMenuOpen = function (e) {
+  const clicked = e.target.closest(".fa-bars");
+  if (!clicked) return;
+  mobileMenuContainer.style["animation-name:"] = "mobileMenuDrop";
+  mobileMenuContainer.classList.toggle("hidden");
+};
+
+//listen for hamburger click
+hamburger.addEventListener("click", mobileMenuOpen);
+
+//tried for hours to get a reverse animation, its 1:30am and i have work tomorrow so im good on this.
+// hamburger.addEventListener("click", mobileMenuClose);
+
+//clicking menu items
+//listening to the entire mobile window
+mobileMenu.addEventListener("click", function (e) {
+  e.preventDefault();
+  //getting what was clicked
+  const clicked = e.target;
+  if (!clicked) return;
+
+  //getting the nav link from the parent (whole button)
+  const clickedChild = clicked.querySelector(".mobile_nav_link");
+
+  //if clicked the nav link directly
+  if (clicked.classList.contains("mobile_nav_link")) {
+    const id = clicked.getAttribute("href");
+    mobileMenuContainer.classList.toggle("hidden");
+    document.querySelector(id).scrollIntoView({
+      behavior: "smooth",
+    });
+    return;
+  }
+
+  //if you clicked parent of nav link (whole button)
+  if (clickedChild.classList.contains("mobile_nav_link")) {
+    const id = clickedChild.getAttribute("href");
+    mobileMenuContainer.classList.toggle("hidden");
+    document.querySelector(id).scrollIntoView({
+      behavior: "smooth",
+    });
+    return;
+  }
+  //no, im not proud of it, but it works OK?
+});
 
 //////////////////////////////////////////////////////////////////////////////
 /*  toggling the "what are pigs" section */
