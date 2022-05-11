@@ -267,6 +267,9 @@ a:visited {
   background: var(--color-glass-transparancy);
 }
 
+/* .mobile_nav_btn:hover {
+} */
+
 .mobile_nav_btn:not(:last-child) {
   border-bottom: 2px solid;
   border-image: linear-gradient(
