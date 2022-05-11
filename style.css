@@ -105,17 +105,21 @@ a:visited {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .old_site_btn_container p {
+  width: 70%;
   font-size: 0.8em;
+  padding-right: 2em;
 }
 
 #old_site_btn {
   font-family: sans-serif;
-  height: 30px;
-  width: 150px;
+  font-size: 1.2em;
+  height: auto;
+  width: auto;
+  padding: 2px;
   color: white;
   background: rgb(120, 120, 255);
   border: 2px solid black;
