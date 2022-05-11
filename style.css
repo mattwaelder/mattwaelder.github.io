@@ -926,13 +926,12 @@ SECTION 5 ????
   background: var(--color-glass-transparancy);
   box-shadow: rgba(30, 50, 70, 0.8) 0px 20px 20px -10px;
   border-radius: 10px;
-  padding: 10vh;
 }
 
 iframe {
   width: 50%;
   max-height: 100%;
-  margin-right: 1em;
+  margin: 2em;
   border: 5px solid;
   border-image: linear-gradient(
       120deg,
@@ -1241,25 +1240,26 @@ when we are happy with changes to branch 1 merge with master by going to master 
 
   .video_container {
     flex-direction: column;
-    width: 80vw;
+    width: 90vw;
     height: auto;
   }
   iframe {
-    width: 60%;
+    width: 60vw;
     height: auto;
+    margin-top: 2em;
   }
 
   .video_description {
-    width: 70%;
+    width: 70vw;
   }
 
   .video_description h2 {
-    font-size: 8vh;
+    font-size: 10vw;
     margin-bottom: 10px;
   }
 
   .video_description p {
-    font-size: 5vh;
+    font-size: 5vw;
   }
 
   /* #old_site_btn {
