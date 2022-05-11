@@ -9,6 +9,7 @@
   --color-secondary-lighter: rgb(253, 223, 244);
   --color-glass-transparancy: rgba(255, 255, 255, 0.5);
   --color-glass-transparancy-lighter: rgba(255, 255, 255, 0.2);
+  --color-glass-transparancy-less: rgba(255, 255, 255, 0.75);
   --gradient-primary: linear-gradient(white, var(--color-primary-darker));
   --gradient-secondary: linear-gradient(
     to top,
@@ -265,10 +266,18 @@ a:visited {
   height: 100%;
   font-size: 1em;
   background: var(--color-glass-transparancy);
+  cursor: pointer;
+  transition: ease-in-out 500ms;
 }
 
-/* .mobile_nav_btn:hover {
-} */
+.mobile_nav_btn:hover {
+  background: var(--color-glass-transparancy-less);
+}
+
+.mobile_nav_btn:active {
+  font-size: 0.8em;
+  background: var(--color-glass-transparancy-less);
+}
 
 .mobile_nav_btn:not(:last-child) {
   border-bottom: 2px solid;
