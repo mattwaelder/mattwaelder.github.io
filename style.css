@@ -984,7 +984,7 @@ iframe {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 5px;
+  padding-bottom: 1em;
   text-align: center;
   /* position: absolute;
   bottom: 20px; */
@@ -1000,8 +1000,8 @@ iframe {
   width: 100vw;
   justify-content: center;
   align-items: flex-end;
-  padding-top: 10vh;
-  /* margin-bottom: 1em; */
+  padding-top: 8vh;
+  padding-bottom: 2vh;
 }
 
 .socials_list_container {
