@@ -94,6 +94,44 @@ a:visited {
   z-index: 100;
   transition: all 0.5s;
 }
+
+/* ////////////////////  CSS FOR LINKING TO V1.0 OF SITE    //////////////////// */
+
+.old_site_btn_container {
+  width: 70vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 1em;
+}
+
+.old_site_btn_container p {
+  font-size: 0.8em;
+}
+
+#old_site_btn {
+  font-family: sans-serif;
+  height: 30px;
+  width: 150px;
+  color: white;
+  background: rgb(120, 120, 255);
+  border: 2px solid black;
+  text-align: center;
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0px;
+}
+
+#old_site_btn:hover {
+  color: rgb(120, 120, 255);
+  background: white;
+}
+
 /* 
 ////////////////////////////////////////////////////////////////////////////////////
                                    NAV BAR
@@ -918,7 +956,7 @@ iframe {
 }
 
 .video_description p {
-  font-size: 3vh;
+  font-size: 5vh;
 }
 /* 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -930,6 +968,10 @@ iframe {
   height: auto;
   width: 100vw;
   background: var(--color-glass-transparancy);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 #footNote {
@@ -1193,8 +1235,39 @@ when we are happy with changes to branch 1 merge with master by going to master 
     padding: 0px;
   }
 
+  .video_container {
+    flex-direction: column;
+    width: 80vw;
+    height: auto;
+  }
+  iframe {
+    width: 60%;
+    height: auto;
+  }
+
+  .video_description {
+    width: 70%;
+  }
+
+  .video_description h2 {
+    font-size: 8vh;
+    margin-bottom: 10px;
+  }
+
+  .video_description p {
+    font-size: 5vh;
+  }
+
+  /* #old_site_btn {
+    height: 2em;
+    width: 10vh;
+    background: var(--color-glass-transparancy);
+    font-size: 5vh;
+  } */
+
   .footer {
-    height: 30vh;
+    height: auto;
+    padding-bottom: 15px;
   }
 }
 
