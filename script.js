@@ -62,8 +62,9 @@ mobileMenu.addEventListener("click", function (e) {
   //if clicked the nav link directly
   if (clicked.classList.contains("mobile_nav_link")) {
     menuVisible = false;
+    menuRise();
     const id = clicked.getAttribute("href");
-    mobileMenuContainer.classList.toggle("hidden");
+    // mobileMenuContainer.classList.toggle("hidden");
     document.querySelector(id).scrollIntoView({
       behavior: "smooth",
     });
@@ -73,8 +74,9 @@ mobileMenu.addEventListener("click", function (e) {
   //if you clicked parent of nav link (whole button)
   if (clickedChild.classList.contains("mobile_nav_link")) {
     menuVisible = false;
+    menuRise();
     const id = clickedChild.getAttribute("href");
-    mobileMenuContainer.classList.toggle("hidden");
+    // mobileMenuContainer.classList.toggle("hidden");
     document.querySelector(id).scrollIntoView({
       behavior: "smooth",
     });
