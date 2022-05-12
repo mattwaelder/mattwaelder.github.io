@@ -1041,9 +1041,9 @@ iframe {
   opacity: 0;
 }
 
-.hidden_toggle_mobile_menu {
+/* .hidden_toggle_mobile_menu {
   visibility: hidden;
-}
+} */
 
 .hidden {
   display: none;

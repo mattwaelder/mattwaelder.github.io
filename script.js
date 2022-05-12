@@ -97,7 +97,7 @@ const menuRise = function () {
 };
 
 hamburger.addEventListener("click", function (e) {
-  mobileMenuContainer.classList.toggle("hidden_toggle_mobile_menu");
+  // mobileMenuContainer.classList.toggle("hidden_toggle_mobile_menu");
   !menuVisible ? menuDrop() : menuRise();
 });
 
