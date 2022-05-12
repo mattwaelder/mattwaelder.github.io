@@ -34,16 +34,16 @@ const mobileMenu = document.querySelector(".mobile_menu");
 const mobileMenuContainer = document.querySelector(".mobile_menu_container");
 const mobileMenuBtns = document.querySelectorAll(".mobile_nav_btn");
 
-//callback fn to open mobile menu
-const mobileMenuOpen = function (e) {
-  const clicked = e.target.closest(".fa-bars");
-  if (!clicked) return;
-  mobileMenuContainer.style["animation-name:"] = "mobileMenuDrop";
-  mobileMenuContainer.classList.toggle("hidden");
-};
+// //callback fn to open mobile menu
+// const mobileMenuOpen = function (e) {
+//   const clicked = e.target.closest(".fa-bars");
+//   if (!clicked) return;
+//   mobileMenuContainer.style["animation-name:"] = "mobileMenuDrop";
+//   mobileMenuContainer.classList.toggle("hidden");
+// };
 
-//listen for hamburger click
-hamburger.addEventListener("click", mobileMenuOpen);
+// //listen for hamburger click
+// hamburger.addEventListener("click", mobileMenuOpen);
 
 //tried for hours to get a reverse animation, its 1:30am and i have work tomorrow so im good on this.
 // hamburger.addEventListener("click", mobileMenuClose);
@@ -61,6 +61,7 @@ mobileMenu.addEventListener("click", function (e) {
 
   //if clicked the nav link directly
   if (clicked.classList.contains("mobile_nav_link")) {
+    menuVisible = false;
     const id = clicked.getAttribute("href");
     mobileMenuContainer.classList.toggle("hidden");
     document.querySelector(id).scrollIntoView({
@@ -71,6 +72,7 @@ mobileMenu.addEventListener("click", function (e) {
 
   //if you clicked parent of nav link (whole button)
   if (clickedChild.classList.contains("mobile_nav_link")) {
+    menuVisible = false;
     const id = clickedChild.getAttribute("href");
     mobileMenuContainer.classList.toggle("hidden");
     document.querySelector(id).scrollIntoView({
@@ -79,6 +81,24 @@ mobileMenu.addEventListener("click", function (e) {
     return;
   }
   //no, im not proud of it, but it works OK?
+});
+
+///////////////////////////MOBILE MENU MOTION///////////////////////////
+let menuVisible = false;
+const menuDrop = function () {
+  mobileMenuContainer.style.transform = `translateY(33vh)`;
+  menuVisible = true;
+  console.log("drop");
+};
+const menuRise = function () {
+  mobileMenuContainer.style.transform = `translateY(-33vh)`;
+  menuVisible = false;
+  console.log("rise");
+};
+
+hamburger.addEventListener("click", function (e) {
+  mobileMenuContainer.classList.toggle("hidden_toggle_mobile_menu");
+  !menuVisible ? menuDrop() : menuRise();
 });
 
 //////////////////////////////////////////////////////////////////////////////
