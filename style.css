@@ -273,7 +273,7 @@ a:visited {
   display: flex;
   position: absolute;
   left: 25vw;
-  top: -33vh;
+  top: -33.5vh;
   width: 55vw;
   height: 33vh;
   align-items: center;
@@ -283,7 +283,7 @@ a:visited {
 
   /*how on earth do you get this to work both ways -_- */
   /* animation-name: mobileMenuDrop; */
-  transition: transform ease-in-out 1s;
+  transition: transform ease-out 1s;
 }
 
 .mobile_menu {
@@ -307,7 +307,7 @@ a:visited {
   align-items: center;
   width: 100%;
   height: 100%;
-  font-size: 1em;
+  font-size: 1.3em;
   background: var(--color-glass-transparancy);
   cursor: pointer;
   transition: ease-in-out 500ms;
@@ -704,7 +704,7 @@ a:visited {
   align-items: center;
   justify-content: center;
 
-  font-size: 2em;
+  font-size: 3vw;
   line-height: 2em;
 
   /* THIS creates the animation! */
@@ -918,7 +918,7 @@ SECTION 5 ????
 
 .video_container {
   width: 70vw;
-  height: 30vw;
+  height: auto;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -927,13 +927,12 @@ SECTION 5 ????
   background: var(--color-glass-transparancy);
   box-shadow: rgba(30, 50, 70, 0.8) 0px 20px 20px -10px;
   border-radius: 10px;
-  padding: 10vh;
 }
 
 iframe {
   width: 40%;
   max-height: 100%;
-  margin-right: 1em;
+  margin: 2em;
   border: 5px solid;
   border-image: linear-gradient(
       120deg,
@@ -959,6 +958,14 @@ iframe {
   line-height: 1em;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
+  padding-bottom: 10px;
+  border-bottom: 5px solid;
+  border-image: linear-gradient(
+      120deg,
+      var(--color-primary) 30%,
+      var(--color-secondary) 70%
+    )
+    30;
 }
 
 .video_description p {
@@ -987,7 +994,7 @@ iframe {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 5px;
+  padding-bottom: 1em;
   text-align: center;
   /* position: absolute;
   bottom: 20px; */
@@ -1003,8 +1010,8 @@ iframe {
   width: 100vw;
   justify-content: center;
   align-items: flex-end;
-  padding-top: 10vh;
-  /* margin-bottom: 1em; */
+  padding-top: 8vh;
+  padding-bottom: 2vh;
 }
 
 .socials_list_container {
@@ -1042,9 +1049,9 @@ iframe {
   opacity: 0;
 }
 
-.hidden_toggle_mobile_menu {
+/* .hidden_toggle_mobile_menu {
   visibility: hidden;
-}
+} */
 
 .hidden {
   display: none;
@@ -1054,6 +1061,18 @@ iframe {
 branch name for media is "1"
 git checkout 1
 when we are happy with changes to branch 1 merge with master by going to master and saying git merge 1, i think;
+*/
+
+/* 
+////////////////////////////////////////////////////////////////////////////////////
+                                   GALLERY
+//////////////////////////////////////////////////////////////////////////////////// 
+*/
+
+/* 
+////////////////////////////////////////////////////////////////////////////////////
+                                   MEDIA QUERY
+//////////////////////////////////////////////////////////////////////////////////// 
 */
 
 @media (max-width: 900px) {
@@ -1248,18 +1267,18 @@ when we are happy with changes to branch 1 merge with master by going to master 
 
   .video_container {
     flex-direction: column;
-    width: 80vw;
+    width: 90vw;
     height: auto;
     padding: 0px;
   }
   iframe {
-    width: 60%;
+    width: 60vw;
     height: auto;
     margin-top: 1em;
   }
 
   .video_description {
-    width: 70%;
+    width: 70vw;
   }
 
   .video_description h2 {
@@ -1284,32 +1303,5 @@ when we are happy with changes to branch 1 merge with master by going to master 
   .footer {
     height: auto;
     padding-bottom: 15px;
-  }
-}
-
-@keyframes mobileMenuDrop {
-  0% {
-    transform: translateY(-30vh);
-  }
-  /* 25% {
-    transform: translateY(-22.5vh);
-  }
-  50% {
-    transform: translateY(-15vh);
-  }
-  75% {
-    transform: translateY(-7.5vh);
-  } */
-  100% {
-    transform: translateY(0vh);
-  }
-}
-
-@keyframes mobileMenuRise {
-  0% {
-    transform: translateY(0vh);
-  }
-  100% {
-    transform: translateY(-30vh);
   }
 }

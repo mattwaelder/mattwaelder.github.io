@@ -62,8 +62,9 @@ mobileMenu.addEventListener("click", function (e) {
   //if clicked the nav link directly
   if (clicked.classList.contains("mobile_nav_link")) {
     menuVisible = false;
+    menuRise();
     const id = clicked.getAttribute("href");
-    mobileMenuContainer.classList.toggle("hidden");
+    // mobileMenuContainer.classList.toggle("hidden");
     document.querySelector(id).scrollIntoView({
       behavior: "smooth",
     });
@@ -73,8 +74,9 @@ mobileMenu.addEventListener("click", function (e) {
   //if you clicked parent of nav link (whole button)
   if (clickedChild.classList.contains("mobile_nav_link")) {
     menuVisible = false;
+    menuRise();
     const id = clickedChild.getAttribute("href");
-    mobileMenuContainer.classList.toggle("hidden");
+    // mobileMenuContainer.classList.toggle("hidden");
     document.querySelector(id).scrollIntoView({
       behavior: "smooth",
     });
@@ -97,7 +99,7 @@ const menuRise = function () {
 };
 
 hamburger.addEventListener("click", function (e) {
-  mobileMenuContainer.classList.toggle("hidden_toggle_mobile_menu");
+  // mobileMenuContainer.classList.toggle("hidden_toggle_mobile_menu");
   !menuVisible ? menuDrop() : menuRise();
 });
 
@@ -295,5 +297,12 @@ tabsContainer.addEventListener("click", function (e) {
 });
 
 //////////////////////////////////////////////////////////////////////////////
-/* XXXXXXX? */
+/* gallery */
 //////////////////////////////////////////////////////////////////////////////
+
+pigBtn = document.querySelector(".site_icon_img_container");
+
+// pigBtn.addEventListener("click", function (e) {
+//   const clicked = e.target;
+//   if (!clicked) return;
+// });
