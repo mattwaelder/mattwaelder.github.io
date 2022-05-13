@@ -297,5 +297,12 @@ tabsContainer.addEventListener("click", function (e) {
 });
 
 //////////////////////////////////////////////////////////////////////////////
-/* XXXXXXX? */
+/* gallery */
 //////////////////////////////////////////////////////////////////////////////
+
+pigBtn = document.querySelector(".site_icon_img_container");
+
+// pigBtn.addEventListener("click", function (e) {
+//   const clicked = e.target;
+//   if (!clicked) return;
+// });
