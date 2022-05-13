@@ -482,6 +482,14 @@ a:visited {
 
 #anatomy_pig:hover {
   border: 3px solid;
+
+  -webkit-border-image: linear-gradient(
+      120deg,
+      var(--color-primary) 30%,
+      var(--color-secondary) 70%
+    )
+    30;
+
   border-image: linear-gradient(
       120deg,
       var(--color-primary) 30%,
@@ -565,7 +573,9 @@ a:visited {
   object-fit: cover;
   height: auto;
   width: 20vw;
+  -webkit-outline: 3px solid var(--color-primary-darker);
   outline: 3px solid var(--color-primary-darker);
+  -webkit-outline-offset: 1em;
   outline-offset: 1em;
   /* border: 30px solid rgba(100, 150, 200, 1); */
   border-radius: 100%;
@@ -575,7 +585,9 @@ a:visited {
 }
 
 .intro_image:hover {
+  -webkit-outline: 3px solid var(--color-primary);
   outline: 3px solid var(--color-primary);
+  -webkit-outline-offset: 0em;
   outline-offset: 0em;
   transform: scale(1.2);
   /* margin-top: 1em; */
@@ -589,7 +601,9 @@ a:visited {
   color: var(--color-primary);
   /* transform: translateY(-1.3em); */
   /* text-shadow: 5px 5px 2px var(--color-tertiary); */
+  -webkit-text-shadow: 5px 5px 2px gray;
   text-shadow: 5px 5px 2px gray;
+
   z-index: 2;
 }
 
