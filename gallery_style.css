@@ -1,3 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
 body {
-  background: black;
+  background: linear-gradient(to top, gray 0%, rgb(166, 193, 238) 100%);
+}
+
+.gallery_container {
+  width: 100vw;
+  height: auto;
+}
+
+.gallery {
+  height: 200vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(-1, 1fr);
+  row-gap: 20px;
+}
+
+.gal_img {
+  height: auto;
+  width: 200px;
 }
