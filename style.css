@@ -571,6 +571,8 @@ a:visited {
 
 .intro_image {
   object-fit: cover;
+  /* testing a fix for safari */
+  transform: translateZ(0);
   height: auto;
   width: 20vw;
   -webkit-outline: 3px solid var(--color-primary-darker);
