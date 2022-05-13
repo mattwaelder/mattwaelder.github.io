@@ -27,7 +27,7 @@ const galleryContainer = document.querySelector(".gallery");
 
 const populateGal = function () {
   let galleryCount = 1;
-  while (galleryCount < 76) {
+  while (galleryCount < 46) {
     let curImg = document.createElement("img");
     curImg.src = `../media/gallery_imgs/gal_img (${galleryCount}).jpg`;
     galleryContainer.appendChild(curImg);
