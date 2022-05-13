@@ -446,7 +446,7 @@ a:visited {
   text-align: center;
   cursor: pointer;
   margin: 2em;
-  border-radius: 100%;
+  border-radius: 50%;
   color: var(--color-secondary-darker);
   transition: all 200ms;
 }
@@ -546,7 +546,7 @@ a:visited {
 }
 
 #modal_close:active {
-  border-radius: 100%;
+  border-radius: 50%;
   cursor: pointer;
   color: red;
   transition: 50ms;
@@ -578,7 +578,7 @@ a:visited {
   -webkit-outline-offset: 1em;
   outline-offset: 1em;
   /* border: 30px solid rgba(100, 150, 200, 1); */
-  border-radius: 100%;
+  border-radius: 50%;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   margin-bottom: 1em;
   transition: all 1s;
@@ -739,7 +739,7 @@ a:visited {
   width: 10vw;
   margin-right: 1em;
   border: 2px solid black;
-  border-radius: 100%;
+  border-radius: 50%;
 }
 
 /* really need to set up so that the buttons become transparent carrots in mobile mode */
@@ -775,7 +775,7 @@ a:visited {
   align-items: center;
   text-align: center;
   cursor: pointer;
-  border-radius: 100%;
+  border-radius: 50%;
   color: var(--color-secondary-darker);
 }
 
