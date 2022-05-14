@@ -24,7 +24,9 @@ const selectedImg = document.getElementById("selected_img");
 
 const populateGal = function () {
   let selectedIndex = null;
-  const countArr = new Array(45);
+
+  ///////////////////////////////////GALLERY HARD CODE AMOUNT/////////////////////////////////////
+  const countArr = new Array(46);
 
   //this would be better done by using datasets, adding a dataset value and pulling that from a click event
 
