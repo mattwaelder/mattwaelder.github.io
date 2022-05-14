@@ -1235,6 +1235,7 @@ when we are happy with changes to branch 1 merge with master by going to master 
   .intro_image {
     width: 25vh;
     height: auto;
+    margin-bottom: 1em;
   }
 
   .pig_name {
