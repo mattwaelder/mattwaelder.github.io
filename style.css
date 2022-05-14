@@ -322,7 +322,7 @@ a:visited {
   background: var(--color-glass-transparancy-less);
 }
 
-/* .mobile_nav_btn:not(:last-child) {
+.mobile_nav_btn:not(:last-child) {
   border-bottom: 2px solid;
   border-image: linear-gradient(
       120deg,
@@ -330,7 +330,7 @@ a:visited {
       var(--color-secondary) 70%
     )
     30;
-} */
+}
 
 /* 
 ////////////////////////////////////////////////////////////////////////////////////
