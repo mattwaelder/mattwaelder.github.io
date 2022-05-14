@@ -446,11 +446,6 @@ a:visited {
       var(--color-secondary) 70%
     )
     30;
-
-  /*adding for potential fix on ios safari */
-  border-top: none;
-  border-left: none;
-  border-right: none;
 }
 
 .drop_down_button_container {
@@ -1006,8 +1001,6 @@ iframe {
       var(--color-secondary) 70%
     )
     30;
-  /*adding for potential fix on ios safari*/
-  border-top: none;
 }
 
 .video_description p {
@@ -1171,6 +1164,13 @@ when we are happy with changes to branch 1 merge with master by going to master 
     width: 80vw;
   }
 
+  /*adding for potential fix on ios safari */
+  #what_are_pigs_title {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+
   #anatomy_pig {
     width: 100%;
   }
@@ -1235,7 +1235,6 @@ when we are happy with changes to branch 1 merge with master by going to master 
   .intro_image {
     width: 25vh;
     height: auto;
-    margin-bottom: 1em;
   }
 
   .pig_name {
@@ -1249,7 +1248,7 @@ when we are happy with changes to branch 1 merge with master by going to master 
 
   .pig_intro_para {
     position: relative;
-    margin-top: 15vh;
+    margin-top: 20vh;
     font-size: 3vh;
     line-height: 4vh;
     /* display: grid;
@@ -1328,6 +1327,10 @@ when we are happy with changes to branch 1 merge with master by going to master 
     width: 90%;
     font-size: 4vh;
     margin-bottom: 10px;
+    /*adding for potential fix on ios safari */
+    border-top: none;
+    border-left: none;
+    border-right: none;
   }
 
   .video_description p {
