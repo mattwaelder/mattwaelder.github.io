@@ -19,21 +19,32 @@ const galleryContainer = document.querySelector(".gallery");
 // getNumFiles(dir);
 
 ////////////////////////////////////////////////
-/* gal_img (1).jpg */
-
-// const galleryCountArr = new Array(75);
-
-// console.log(galleryCountArr.length);
+const selectedImgContainer = document.getElementById("selected_img_container");
+const selectedImg = document.getElementById("selected_img");
 
 const populateGal = function () {
-  let galleryCount = 1;
-  while (galleryCount < 46) {
+  let selectedIndex = null;
+  const countArr = new Array(45);
+
+  //this would be better done by using datasets, adding a dataset value and pulling that from a click event
+
+  for (let i = 1; i < countArr.length + 1; i++) {
     let curImg = document.createElement("img");
-    curImg.src = `../media/gallery_imgs/gal_img (${galleryCount}).jpg`;
-    galleryContainer.appendChild(curImg);
+    curImg.src = `../media/gallery_imgs/gal_img (${i}).jpg`;
     curImg.classList.add("gal_img");
-    galleryCount++;
+
+    curImg.addEventListener("click", () => {
+      selectedImgContainer.style.transform = `translateY(0)`;
+      selectedImg.src = `../media/gallery_imgs/gal_img (${i}).jpg`;
+    });
+
+    galleryContainer.appendChild(curImg);
   }
 };
 
 populateGal();
+
+selectedImgContainer.addEventListener("click", function () {
+  selectedImgContainer.style.transform = `translateY(-100%)`;
+  // selectedImgContainer.src = "";
+});
