@@ -26,6 +26,7 @@ const populateGal = function () {
   let selectedIndex = null;
 
   ///////////////////////////////////GALLERY HARD CODE AMOUNT/////////////////////////////////////
+  //make new array with length equal to amount of pics in gallery
   const countArr = new Array(46);
 
   //this would be better done by using datasets, adding a dataset value and pulling that from a click event
@@ -33,8 +34,10 @@ const populateGal = function () {
   for (let i = 1; i < countArr.length + 1; i++) {
     let curImg = document.createElement("img");
     curImg.src = `../media/gallery_imgs/gal_img (${i}).jpg`;
+    curImg.loading = "lazy";
     curImg.classList.add("gal_img");
 
+    //event listener for modal functionality
     curImg.addEventListener("click", () => {
       selectedImgContainer.style.transform = `translateY(0)`;
       selectedImg.src = `../media/gallery_imgs/gal_img (${i}).jpg`;
@@ -46,6 +49,7 @@ const populateGal = function () {
 
 populateGal();
 
+//modal selected image moved above view
 selectedImgContainer.addEventListener("click", function () {
   selectedImgContainer.style.transform = `translateY(-100%)`;
   // selectedImgContainer.src = "";
