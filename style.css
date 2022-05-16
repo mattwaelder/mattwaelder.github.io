@@ -439,13 +439,28 @@ a:visited {
 
 #what_are_pigs_title {
   text-align: center;
-  border-bottom: 3px solid;
+  position: relative;
+  /* border-bottom: 3px solid;
   border-image: linear-gradient(
       120deg,
       var(--color-primary-darker) 30%,
       var(--color-secondary) 70%
     )
-    30;
+    30; */
+}
+
+#what_are_pigs_title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    120deg,
+    var(--color-primary-darker) 30%,
+    var(--color-secondary) 70%
+  );
 }
 
 .drop_down_button_container {
@@ -988,19 +1003,34 @@ iframe {
 }
 
 .video_description h2 {
-  font-size: 7vh;
+  position: relative;
+  font-size: 10vh;
   margin-bottom: 1rem;
   line-height: 1em;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
   padding-bottom: 10px;
-  border-bottom: 5px solid;
+  /* border-bottom: 5px solid;
   border-image: linear-gradient(
       120deg,
       var(--color-primary) 30%,
       var(--color-secondary) 70%
     )
-    30;
+    30; */
+}
+
+.video_description h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    120deg,
+    var(--color-primary-darker) 30%,
+    var(--color-secondary) 70%
+  );
 }
 
 .video_description p {
