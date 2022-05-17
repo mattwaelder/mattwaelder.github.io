@@ -22,11 +22,15 @@ const populateGal = function () {
   //create new images with data-src;
   for (let i = 1; i < countArr.length + 1; i++) {
     let curImg = document.createElement("img");
-    // curImg.src = `../media/gallery_imgs/gal_img (${i}).jpg`;
-    curImg.dataset.src = `../media/gallery_imgs/gal_img (${i}).jpg`;
-    // curImg.loading = "lazy";
-    // curImg.classList.add("gal_img");
-    curImg.classList.add("gal_img_lazy");
+    curImg.src = `../media/gallery_imgs/gal_img (${i}).jpg`;
+
+    //toggle for int. obs. lazy loading;
+    // curImg.dataset.src = `../media/gallery_imgs/gal_img (${i}).jpg`;
+    curImg.loading = "lazy";
+
+    //toggle for int. obs. lazy loading;
+    curImg.classList.add("gal_img");
+    // curImg.classList.add("gal_img_lazy");
 
     //event listener for modal functionality
     curImg.addEventListener("click", () => {
@@ -46,25 +50,33 @@ selectedImgContainer.addEventListener("click", function () {
   // selectedImgContainer.src = "";
 });
 
-const lazyImgs = document.querySelectorAll("img[data-src]");
+//////////////////////////////////////////////////////////////////////////////
+/* Int Obs API lazy loading seems to suck with grid */
+//////////////////////////////////////////////////////////////////////////////
 
-const imgLoader = function (entries, observer) {
-  const [entry] = entries;
-  if (!entry.isIntersecting) return;
-  console.log(entry.target);
+// const lazyImgs = document.querySelectorAll("[data-src]");
 
-  entry.target.src = entry.target.dataset.src;
-  entry.target.classList.remove("gal_img_lazy");
-  entry.target.classList.add("gal_img");
-  observer.unobserve(entry.target);
-};
+// const imgLoader = function (entries, observer) {
+//   const [entry] = entries;
+//   if (!entry.isIntersecting) return;
+//   console.log(entry.target);
 
-const settingsObj = {
-  root: null,
-  threshold: 0,
-  reootMargin: "200px",
-};
+//   entry.target.src = entry.target.dataset.src;
+//   entry.target.classList.remove("gal_img_lazy");
+//   entry.target.classList.add("gal_img");
+//   observer.unobserve(entry.target);
+// };
 
-const imgObserver = new IntersectionObserver(imgLoader, settingsObj);
+// const settingsObj = {
+//   root: null,
+//   threshold: 0,
+//   rootMargin: "100%",
+// };
 
-lazyImgs.forEach((img) => imgObserver.observe(img));
+// const imgObserver = new IntersectionObserver(imgLoader, settingsObj);
+
+// lazyImgs.forEach((img) => imgObserver.observe(img));
+
+//////////////////////////////////////////////////////////////////////////////
+/* xxxx */
+//////////////////////////////////////////////////////////////////////////////

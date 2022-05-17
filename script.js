@@ -297,12 +297,14 @@ tabsContainer.addEventListener("click", function (e) {
 });
 
 //////////////////////////////////////////////////////////////////////////////
-/* gallery */
+/* gallery button */
 //////////////////////////////////////////////////////////////////////////////
 
-pigBtn = document.querySelector(".site_icon_img_container");
+const galleryBtn = document.querySelector(".gallery_btn");
 
-// pigBtn.addEventListener("click", function (e) {
-//   const clicked = e.target;
-//   if (!clicked) return;
-// });
+galleryBtn.addEventListener("click", function (e) {
+  const clicked = e.target.closest(".gallery_btn");
+  if (!clicked) return;
+  //this is neat
+  window.open("./html/gallery.html", "_blank");
+});
