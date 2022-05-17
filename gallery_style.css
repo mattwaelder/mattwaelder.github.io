@@ -132,7 +132,7 @@ html body {
 }
 
 #selected_img {
-  height: 90%;
+  max-height: 85%;
   max-width: 100%;
 }
 
