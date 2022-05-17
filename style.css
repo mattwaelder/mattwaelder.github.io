@@ -609,9 +609,9 @@ a:visited {
   padding: 1em;
   border: 3px solid rgba(100, 150, 200, 1);
   border-radius: 50%;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); */
   /* margin-left: 1em; */
-  transition: all 1s;
+  transition: all 500ms ease-in-out;
 }
 
 .intro_image:hover {
@@ -624,10 +624,10 @@ a:visited {
   /* -webkit-outline: 3px solid var(--color-primary);
   outline: 3px solid var(--color-primary);
   -webkit-outline-offset: 0em;
-  outline-offset: 0em; */
-  /* margin-top: 1em; */
+  outline-offset: 0em;
+  margin-top: 1em; */
   /*/////////////////////////////////////////////////////*/
-  transition: all 1s;
+  transition: all 500ms ease-in-out;
 }
 
 .pig_name {
@@ -645,7 +645,7 @@ a:visited {
 
 .pig_intro_para {
   display: flex;
-  width: 100%;
+  width: 60%;
   font-size: 2vw;
   align-items: center;
   text-align: center;
