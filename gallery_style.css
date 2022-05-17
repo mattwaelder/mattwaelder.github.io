@@ -85,6 +85,13 @@ html body {
   justify-self: center;
 }
 
+.gal_img_lazy {
+  height: 20px;
+  width: 20px;
+  align-self: center;
+  justify-self: center;
+}
+
 .gal_img:hover {
   transform: translateY(-5px);
   /* maybe play around with other box shadows for these */
