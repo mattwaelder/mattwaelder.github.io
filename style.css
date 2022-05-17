@@ -399,7 +399,8 @@ a:visited {
     30;
   /* margin: 100px 25vw 100px auto; */
   font-size: 10vw;
-  z-index: 2;
+  z-index: 3;
+  -webkit-text-shadow: 3px 3px 1px var(--color-secondary);
   text-shadow: 3px 3px 1px var(--color-secondary);
 }
 
@@ -1278,6 +1279,7 @@ when we are happy with changes to branch 1 merge with master by going to master 
 
   .pig_intro_para {
     position: relative;
+    width: 90%;
     margin-top: 20vh;
     font-size: 3vh;
     line-height: 4vh;
@@ -1344,7 +1346,7 @@ when we are happy with changes to branch 1 merge with master by going to master 
     padding: 0px;
   }
   iframe {
-    width: 60vw;
+    max-width: 80%;
     height: auto;
     margin-top: 1em;
   }
