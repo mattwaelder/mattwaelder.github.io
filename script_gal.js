@@ -96,8 +96,12 @@ document.addEventListener("keydown", function (e) {
 //////////////////////////////////////////////////////////////////////////////
 /* mobile touch navigation */
 //////////////////////////////////////////////////////////////////////////////
+
+//the endtouch will need access to these
 let startX;
 let endX;
+
+//start of swipe on image (mainly to get starting X value)
 selectedImg.addEventListener("touchstart", function (e) {
   e.preventDefault();
   startX = e.touches[0].screenX;
@@ -109,8 +113,8 @@ selectedImg.addEventListener("touchend", function (e) {
   endX = e.changedTouches[0].screenX;
 
   let swipeLen = Math.abs(endX - startX);
-  console.log(swipeLen);
 
+  //arbitrary length value to prevent accidental swipes
   if (swipeLen >= 50) {
     if (startX < endX) prevImg();
     if (startX > endX) nextImg();
