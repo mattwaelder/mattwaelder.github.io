@@ -85,6 +85,7 @@ html body {
   height: auto;
   width: 300px;
   cursor: pointer;
+  /* border: 3px solid black; */
   border-radius: 10px;
   transition: transform 200ms;
   align-self: center;

@@ -2,12 +2,19 @@
 
 console.log("hello mattspigs gallery");
 
-const galleryContainer = document.querySelector(".gallery");
+//////////////////////////////////////////////////////////////////////////////
+/* refresh = top of page (something better served in its own js file but oh well) */
+//////////////////////////////////////////////////////////////////////////////
+window.addEventListener("unload", function (e) {
+  e.preventDefault();
+  this.scrollTo(0, 0);
+});
 
 //////////////////////////////////////////////////////////////////////////////
 /* populating gallery with (lazy) images */
 //////////////////////////////////////////////////////////////////////////////
 
+const galleryContainer = document.querySelector(".gallery");
 const selectedImgContainer = document.getElementById("selected_img_container");
 const selectedImg = document.getElementById("selected_img");
 
