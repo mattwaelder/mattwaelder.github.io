@@ -43,14 +43,15 @@ html body {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 #gal_title {
   margin: 1em;
   height: auto;
-  width: 33%;
+  width: 33vw;
   color: black;
-  font-size: 4em;
+  font-size: 10vh;
   font-family: "Ms Madi", cursive;
   border: 5px solid;
   border-image: linear-gradient(
@@ -76,14 +77,13 @@ html body {
   width: 80%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  /* grid-template-rows: repeat(-1, 1fr); */
-  grid-gap: 20px;
+  grid-gap: 2rem;
   justify-content: center;
 }
 
 .gal_img {
   height: auto;
-  width: 200px;
+  width: 300px;
   cursor: pointer;
   border-radius: 10px;
   transition: transform 200ms;
@@ -148,3 +148,13 @@ html body {
   z-index: 100;
   transition: all 0.5s;
 } */
+
+@media (max-width: 900px) {
+  #gal_title {
+    width: 90vw;
+  }
+  .gallery {
+    width: 95%;
+    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+  }
+}
