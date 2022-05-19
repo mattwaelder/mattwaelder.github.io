@@ -134,6 +134,7 @@ html body {
 #selected_img {
   max-height: 85%;
   max-width: 100%;
+  transition: ease-in-out 200ms;
 }
 
 /* .overlay {

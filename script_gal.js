@@ -58,28 +58,90 @@ selectedImgContainer.addEventListener("click", function () {
 //////////////////////////////////////////////////////////////////////////////
 /* gallery image navigation */
 //////////////////////////////////////////////////////////////////////////////
-const prevImg = function () {
-  //if on first image
-  if (selectedIndex === 1) {
-    selectedImg.src = `../media/gallery_imgs/gal_img (${HARDCODEIMAGEVALUE}).jpg`;
-    selectedIndex = HARDCODEIMAGEVALUE;
-    return;
-  }
+//transform functions for gallery navigation/////////////////////////////////
+//these are based mainly on timings, which is wonky but was the only way i could think of to get it to work with translateX.
 
-  selectedImg.src = `../media/gallery_imgs/gal_img (${selectedIndex - 1}).jpg`;
-  selectedIndex--;
+const slideOutLeft = function () {
+  selectedImg.style.transitionDuration = `300ms`;
+  selectedImg.style.transform = `translateX(-50vw)`;
+  selectedImg.style.opacity = `0`;
+};
+
+const slideOutRight = function () {
+  selectedImg.style.transitionDuration = `300ms`;
+  selectedImg.style.transform = `translateX(50vw)`;
+  selectedImg.style.opacity = `0`;
+};
+
+//for the slide in effect, just restoring the position had the card slide in from the direction. next slide = card moves out left, card moves in left as well. this was disorienting and felt bad. to fix this i used EVEN MORE timeout functions since i couldnt get transition origin to work for some reason. i make a 0 duration translation to the other side of the screen, then make a normal slow duration slide back to center. i made it on my own, and it works, but its easily broken and probably not how most people do it... lol
+
+const slideInRight = function () {
+  selectedImg.style.transitionDuration = `0ms`;
+  //scoot img to other side of page for consistent effect
+  selectedImg.style.transform = `translateX(50vw)`;
+
+  //timed fn that can now pull img into place from expected position
+  setTimeout(function () {
+    selectedImg.style.transitionDuration = `300ms`;
+    selectedImg.style.transform = `translateX(0)`;
+    selectedImg.style.opacity = `1`;
+  }, 300);
+};
+
+const slideInLeft = function () {
+  selectedImg.style.transitionDuration = `0ms`;
+  //scoot img to other side of page for consistent effect
+  selectedImg.style.transform = `translateX(-50vw)`;
+
+  //timed fn that can now pull img into place from expected position
+  setTimeout(function () {
+    selectedImg.style.transitionDuration = `300ms`;
+    selectedImg.style.transform = `translateX(0)`;
+    selectedImg.style.opacity = `1`;
+  }, 300);
+};
+
+///////////////////////////////////////////////////////////
+
+const prevImg = function () {
+  slideOutRight();
+
+  setTimeout(function () {
+    //if on first image
+    if (selectedIndex === 1) {
+      selectedImg.src = `../media/gallery_imgs/gal_img (${HARDCODEIMAGEVALUE}).jpg`;
+      slideInLeft();
+      selectedIndex = HARDCODEIMAGEVALUE;
+      return;
+    }
+
+    selectedImg.src = `../media/gallery_imgs/gal_img (${
+      selectedIndex - 1
+    }).jpg`;
+    slideInLeft();
+    selectedIndex--;
+  }, 300);
 };
 
 const nextImg = function () {
-  //if on last image
-  if (selectedIndex === HARDCODEIMAGEVALUE) {
-    selectedImg.src = `../media/gallery_imgs/gal_img (${1}).jpg`;
-    selectedIndex = 1;
-    return;
-  }
+  slideOutLeft();
 
-  selectedImg.src = `../media/gallery_imgs/gal_img (${selectedIndex + 1}).jpg`;
-  selectedIndex++;
+  setTimeout(function () {
+    //if on last image
+    if (selectedIndex === HARDCODEIMAGEVALUE) {
+      selectedImg.src = `../media/gallery_imgs/gal_img (${1}).jpg`;
+      slideInRight();
+      selectedIndex = 1;
+      return;
+    }
+
+    selectedImg.src = `../media/gallery_imgs/gal_img (${
+      selectedIndex + 1
+    }).jpg`;
+
+    slideInRight();
+    selectedIndex++;
+  }, 300);
 };
 
 document.addEventListener("keydown", function (e) {
