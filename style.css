@@ -7,9 +7,10 @@
   --color-secondary-darker: rgb(167, 102, 102);
   --color-primary-lighter: rgb(188, 217, 247);
   --color-secondary-lighter: rgb(253, 223, 244);
-  --color-glass-transparancy: rgba(255, 255, 255, 0.5);
-  --color-glass-transparancy-lighter: rgba(255, 255, 255, 0.2);
-  --color-glass-transparancy-less: rgba(255, 255, 255, 0.75);
+  --color-glass-transparency: rgba(255, 255, 255, 0.5);
+  --color-glass-transparency-lighter: rgba(255, 255, 255, 0.2);
+  --color-glass-transparency-less: rgba(255, 255, 255, 0.75);
+  --color-glass-transparency-dark: rgba(0, 0, 0, 0.1);
   --gradient-primary: linear-gradient(white, var(--color-primary-darker));
   --gradient-secondary: linear-gradient(
     to top,
@@ -222,7 +223,7 @@ a:visited {
 }
 
 /* .nav_btn:hover {
-  background: var(--color-glass-transparancy-lighter);
+  background: var(--color-glass-transparency-lighter);
   border-radius: 20px;
   transition: all 200ms;
 } */
@@ -309,7 +310,7 @@ a:visited {
   width: 100%;
   height: 100%;
   font-size: 1.3em;
-  background: var(--color-glass-transparancy);
+  background: var(--color-glass-transparency);
   cursor: pointer;
   transition: ease-in-out 500ms;
   border-bottom: 2px solid;
@@ -322,12 +323,12 @@ a:visited {
 }
 
 .mobile_nav_btn:hover {
-  background: var(--color-glass-transparancy-less);
+  background: var(--color-glass-transparency-less);
 }
 
 .mobile_nav_btn:active {
   font-size: 0.8em;
-  background: var(--color-glass-transparancy-less);
+  background: var(--color-glass-transparency-less);
 }
 
 /*this has issues on mobile safari for some reason*/
@@ -466,7 +467,7 @@ a:visited {
 .drop_down_button_container {
   width: 3em;
   height: 3em;
-  background-color: var(--color-glass-transparancy);
+  background-color: var(--color-glass-transparency);
   border: none;
   text-align: center;
   cursor: pointer;
@@ -477,7 +478,7 @@ a:visited {
 }
 .drop_down_button_container:hover {
   color: var(--color-secondary);
-  /* background-color: var(--color-glass-transparancy-lighter); */
+  /* background-color: var(--color-glass-transparency-lighter); */
   transition: all 200ms;
 }
 
@@ -488,7 +489,7 @@ a:visited {
 
 .drop_down_button_container:active {
   transform: scale(0.8);
-  background-color: var(--color-glass-transparancy-lighter);
+  background-color: var(--color-glass-transparency-lighter);
   border: none;
   cursor: pointer;
   transition: 200ms;
@@ -529,7 +530,7 @@ a:visited {
   background: linear-gradient(
     280deg,
     var(--color-primary-lighter),
-    var(--color-glass-transparancy)
+    var(--color-glass-transparency)
   );
   border: none;
   padding: 2em;
@@ -552,7 +553,7 @@ a:visited {
 }
 
 #modal_close {
-  /* background: var(--color-glass-transparancy); */
+  /* background: var(--color-glass-transparency); */
   color: var(--color-secondary-darker);
   font-size: 2em;
   position: fixed;
@@ -690,7 +691,7 @@ a:visited {
   background: linear-gradient(
     to right,
     var(--color-secondary-lighter),
-    var(--color-glass-transparancy)
+    var(--color-glass-transparency)
   );
   transition: all 1s;
   margin-bottom: 4em;
@@ -709,7 +710,7 @@ a:visited {
   background: linear-gradient(
     to left,
     var(--color-secondary-lighter),
-    var(--color-glass-transparancy)
+    var(--color-glass-transparency)
   );
   transition: all 1s;
 }
@@ -732,7 +733,7 @@ a:visited {
   height: auto;
   width: auto;
   text-align: center;
-  background: var(--color-glass-transparancy-lighter);
+  background: var(--color-glass-transparency-lighter);
   /* border: none; */
   margin: 2em;
   margin-top: 4em;
@@ -750,7 +751,7 @@ a:visited {
 
 .gallery_btn:hover {
   /* transform: scale(0.9); */
-  /* background: var(--color-glass-transparancy); */
+  /* background: var(--color-glass-transparency); */
   /* border: 3px solid var(--color-primary-darker); */
   background: rgba(0, 0, 0, 0.1);
 }
@@ -871,7 +872,7 @@ a:visited {
   display: flex;
   width: 3em;
   height: 3em;
-  background-color: var(--color-glass-transparancy);
+  background-color: var(--color-glass-transparency);
   border: none;
   margin-left: 15%;
   margin-right: 15%;
@@ -897,14 +898,14 @@ a:visited {
 */
 
 .slider_btn_left:active {
-  background-color: var(--color-glass-transparancy-lighter);
+  background-color: var(--color-glass-transparency-lighter);
   transform: scale(0.8);
   transition: 200ms;
   cursor: pointer;
 }
 
 .slider_btn_right:active {
-  background-color: var(--color-glass-transparancy-lighter);
+  background-color: var(--color-glass-transparency-lighter);
   transform: scale(0.8);
   transition: 200ms;
   cursor: pointer;
@@ -917,6 +918,7 @@ a:visited {
 */
 
 .care_guide {
+  min-height: 80vh;
   height: auto;
   width: 100vw;
   display: flex;
@@ -940,7 +942,7 @@ a:visited {
   height: 7vh;
   padding: 5px;
   font-size: 1.2em;
-  background: var(--color-glass-transparancy);
+  background: var(--color-glass-transparency);
   color: white;
   border: none;
   border-radius: 10px;
@@ -969,7 +971,7 @@ a:visited {
   background: linear-gradient(
     140deg,
     var(--color-primary-lighter) 0%,
-    var(--color-glass-transparancy) 80%
+    var(--color-glass-transparency) 80%
   );
   justify-content: center;
   align-items: space-between;
@@ -1031,6 +1033,7 @@ SECTION 5 ????
 #section--5 {
   display: flex;
   height: auto;
+  min-height: 80vh;
   justify-content: center;
   align-items: center;
 }
@@ -1043,7 +1046,7 @@ SECTION 5 ????
   justify-content: flex-start;
   align-items: center;
   border: none;
-  background: var(--color-glass-transparancy);
+  background: var(--color-glass-transparency);
   box-shadow: rgba(30, 50, 70, 0.8) 0px 20px 20px -10px;
   border-radius: 10px;
 }
@@ -1115,7 +1118,7 @@ iframe {
 .footer {
   height: auto;
   width: 100vw;
-  background: var(--color-glass-transparancy);
+  background: var(--color-glass-transparency);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1315,7 +1318,7 @@ when we are happy with changes to branch 1 merge with master by going to master 
     background: linear-gradient(
       150deg,
       var(--color-secondary-lighter),
-      var(--color-glass-transparancy)
+      var(--color-glass-transparency)
     );
     margin-top: 10vw;
     margin-bottom: 10vh;
@@ -1327,7 +1330,7 @@ when we are happy with changes to branch 1 merge with master by going to master 
     background: linear-gradient(
       150deg,
       var(--color-secondary-lighter),
-      var(--color-glass-transparancy)
+      var(--color-glass-transparency)
     );
   }
 
@@ -1451,7 +1454,7 @@ when we are happy with changes to branch 1 merge with master by going to master 
   /* #old_site_btn {
     height: 2em;
     width: 10vh;
-    background: var(--color-glass-transparancy);
+    background: var(--color-glass-transparency);
     font-size: 5vh;
   } */
 

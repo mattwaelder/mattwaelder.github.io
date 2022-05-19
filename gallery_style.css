@@ -51,6 +51,7 @@ html body {
   height: auto;
   width: 33vw;
   color: black;
+  background: var(--color-glass-transparancy-lighter);
   font-size: 10vh;
   font-family: "Ms Madi", cursive;
   border: 5px solid;
