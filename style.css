@@ -54,6 +54,12 @@ a:visited {
   border-radius: 5px;
 }
 
+/*get rid of blue highlight on mobile when something is pressed*/
+select:focus {
+  box-shadow: none;
+  outline: none;
+}
+
 .section {
   border-bottom: 1px solid gray;
   padding-top: 3em;
