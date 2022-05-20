@@ -55,11 +55,11 @@ a:visited {
 }
 
 /*get rid of blue highlight on mobile when something is pressed*/
-select:focus {
+/* select:focus {
   box-shadow: none;
   outline: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
+} */
 
 input,
 div,
@@ -822,7 +822,6 @@ a {
   position: relative;
   display: flex;
   justify-content: center;
-
   /* IN THE END */
   overflow: hidden;
 }
@@ -908,10 +907,11 @@ a {
 /* 
 .slider_btn_left {
 }
+*/
 
 .slider_btn_right {
-} 
-*/
+  transform: translateX(-1vw);
+}
 
 .slider_btn_left:active {
   background-color: var(--color-glass-transparency-lighter);
@@ -922,7 +922,7 @@ a {
 
 .slider_btn_right:active {
   background-color: var(--color-glass-transparency-lighter);
-  transform: scale(0.8);
+  transform: scale(0.8) translateX(-1vw);
   transition: 200ms;
   cursor: pointer;
 }
