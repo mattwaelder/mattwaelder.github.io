@@ -25,6 +25,11 @@ window.addEventListener("unload", function (e) {
   this.scrollTo(0, 0);
 });
 
+//unload doesnt work on mobile in a lot of cases, i think pagehide does, though
+window.addEventListener("pagehide", function (e) {
+  e.preventDefault();
+  this.scrollTo(0, 0);
+});
 //////////////////////////////////////////////////////////////////////////////
 /* HAMBURGER MENU FUNCTIONALITY */
 //////////////////////////////////////////////////////////////////////////////

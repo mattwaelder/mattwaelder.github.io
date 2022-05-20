@@ -10,6 +10,11 @@ window.addEventListener("unload", function (e) {
   this.scrollTo(0, 0);
 });
 
+window.addEventListener("pagehide", function (e) {
+  e.preventDefault();
+  this.scrollTo(0, 0);
+});
+
 //////////////////////////////////////////////////////////////////////////////
 /* populating gallery with (lazy) images */
 //////////////////////////////////////////////////////////////////////////////
