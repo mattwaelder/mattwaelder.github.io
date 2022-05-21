@@ -34,7 +34,7 @@ const populateGal = function () {
   //create new images with data-src;
   for (let i = 1; i < countArr.length + 1; i++) {
     let curImg = document.createElement("img");
-    curImg.src = `../media/gallery_imgs/gal_img (${i}).jpg`;
+    curImg.src = `../media/gallery_imgs_webp/gal_img (${i}).webp`;
 
     //making an index to use for arrow navigation of images
     curImg.dataset.index = i;
@@ -50,7 +50,7 @@ const populateGal = function () {
     //event listener for modal functionality
     curImg.addEventListener("click", () => {
       selectedImgContainer.style.transform = `translateY(0)`;
-      selectedImg.src = `../media/gallery_imgs/gal_img (${i}).jpg`;
+      selectedImg.src = `../media/gallery_imgs_webp/gal_img (${i}).webp`;
       selectedImg.dataset.index = i;
       selectedIndex = i;
     });
