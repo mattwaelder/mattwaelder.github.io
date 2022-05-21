@@ -15,6 +15,10 @@ navButtons.addEventListener("click", function (e) {
   e.preventDefault();
   if (e.target.classList.contains("nav_link")) {
     const id = e.target.getAttribute("href");
+    if (id === "/html/gallery.html") {
+      window.location.href = id;
+      return;
+    }
     document.querySelector(id).scrollIntoView({ behavior: "smooth" });
   }
 });
@@ -69,6 +73,10 @@ mobileMenu.addEventListener("click", function (e) {
     menuVisible = false;
     menuRise();
     const id = clicked.getAttribute("href");
+    if (id === "/html/gallery.html") {
+      window.location.href = id;
+      return;
+    }
     // mobileMenuContainer.classList.toggle("hidden");
     document.querySelector(id).scrollIntoView({
       behavior: "smooth",
@@ -311,5 +319,5 @@ galleryBtn.addEventListener("click", function (e) {
   const clicked = e.target.closest(".gallery_btn");
   if (!clicked) return;
   //this is neat
-  window.open("./html/gallery.html", "_blank");
+  window.location.href = "/html/gallery.html";
 });

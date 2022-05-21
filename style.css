@@ -180,7 +180,7 @@ a {
 }
 
 #site_icon_img_container {
-  width: 50%;
+  width: 40%;
   display: flex;
   justify-content: left;
   padding-left: 1em;
@@ -202,7 +202,7 @@ a {
 }
 
 .nav_buttons {
-  width: 50%;
+  width: 60%;
   display: flex;
   justify-content: space-evenly;
 }
@@ -1008,7 +1008,6 @@ a {
     var(--color-secondary-lighter) 30%,
     var(--color-primary-lighter) 100%
   );
-  background: var();
   filter: blur(0.7em);
   z-index: -1;
   border-top: 3px;

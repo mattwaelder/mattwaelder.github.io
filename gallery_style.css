@@ -7,11 +7,12 @@
   --color-secondary-darker: rgb(167, 102, 102);
   --color-primary-lighter: rgb(188, 217, 247);
   --color-secondary-lighter: rgb(253, 223, 244);
-  --color-glass-transparancy: rgba(255, 255, 255, 0.5);
-  --color-glass-transparancy-lighter: rgba(255, 255, 255, 0.2);
-  --color-glass-transparancy-less: rgba(255, 255, 255, 0.75);
+  --color-glass-transparency: rgba(255, 255, 255, 0.5);
+  --color-glass-transparency-lighter: rgba(255, 255, 255, 0.2);
+  --color-glass-transparency-less: rgba(255, 255, 255, 0.75);
+  --color-glass-transparency-dark: rgba(0, 0, 0, 0.1);
   --gradient-primary: linear-gradient(white, var(--color-primary-darker));
-  --gradient-secondary: linear-gradient(
+  --gradient-body: linear-gradient(
     to top,
     var(--color-secondary) 0%,
     rgb(166, 193, 238) 100%
@@ -26,7 +27,7 @@
 
 html body {
   height: 100%;
-  background: var(--gradient-secondary);
+  background: var(--gradient-body);
   background-repeat: no-repeat;
   /*this fixes background gradient, the gradient kept having issues from not knowing how long the page was, causing resets of gradient*/
   background-attachment: fixed;
@@ -35,6 +36,78 @@ html body {
   margin: 0px;
   width: 100%;
   overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  border-radius: 10px;
+}
+a:visited {
+  text-decoration: none;
+  color: black;
+  border-radius: 10px;
+}
+
+input,
+div,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.main_site_btn {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  font-size: 1.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2em;
+  width: 4em;
+  /* background: var(--color-glass-transparancy); */
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.main_site_btn:visited:hover {
+  color: var(--color-primary-darker);
+}
+
+.main_site_btn::after {
+  content: "";
+  position: absolute;
+  left: -25%;
+  top: -25%;
+  height: 150%;
+  width: 150%;
+  background: linear-gradient(
+    140deg,
+    var(--color-secondary-lighter) 0%,
+    var(--color-primary-lighter) 100%
+  );
+  filter: blur(0.4em);
+  z-index: -1;
+  transition: all 200ms ease-in-out;
+  /* border-radius: 50%; */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.main_site_btn:hover::after {
+  background: linear-gradient(
+    140deg,
+    var(--color-secondary-lighter) 20%,
+    var(--color-primary-lighter) 80%
+  );
+  filter: blur(0.3em);
+  z-index: -1;
+  transition: all 200ms ease-in-out;
+  transform: scale(0.9);
+
+  /* border-radius: 50%; */
 }
 
 .gal_title_container {
@@ -153,7 +226,8 @@ html body {
 
 @media (max-width: 900px) {
   #gal_title {
-    width: 90vw;
+    margin-top: 1.5em;
+    width: 80vw;
   }
   .gallery {
     width: 95%;
