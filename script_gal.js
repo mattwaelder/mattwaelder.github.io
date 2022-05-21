@@ -34,7 +34,14 @@ const populateGal = function () {
   //create new images with data-src;
   for (let i = 1; i < countArr.length + 1; i++) {
     let curImg = document.createElement("img");
-    curImg.src = `../media/gallery_imgs_webp/gal_img (${i}).webp`;
+
+    curImg.src = `../media/gallery_imgs_webp/gal_img_full (${i}).webp`;
+
+    //srcset is a nifty feature that lets you selectively load images, mainly for bandwidth purposes.
+
+    curImg.srcset = `../media/gallery_imgs_webp/400/gal_img_400(${i}).webp 400w,
+    ../media/gallery_imgs_webp/800/gal_img_800(${i}).webp 800w,
+    ../media/gallery_imgs_webp/1200/gal_img_1200(${i}).webp 1200w`;
 
     //making an index to use for arrow navigation of images
     curImg.dataset.index = i;
@@ -50,7 +57,13 @@ const populateGal = function () {
     //event listener for modal functionality
     curImg.addEventListener("click", () => {
       selectedImgContainer.style.transform = `translateY(0)`;
-      selectedImg.src = `../media/gallery_imgs_webp/gal_img (${i}).webp`;
+
+      selectedImg.src = `../media/gallery_imgs_webp/gal_img_full (${i}).webp`;
+
+      selectedImg.srcset = `../media/gallery_imgs_webp/400/gal_img_400(${i}).webp 400w, 
+    ../media/gallery_imgs_webp/800/gal_img_800(${i}).webp 800w, 
+    ../media/gallery_imgs_webp/1200/gal_img_1200(${i}).webp 1200w`;
+
       selectedImg.dataset.index = i;
       selectedIndex = i;
     });
@@ -121,15 +134,29 @@ const prevImg = function () {
   setTimeout(function () {
     //if on first image
     if (selectedIndex === 1) {
-      selectedImg.src = `../media/gallery_imgs_webp/gal_img (${HARDCODEIMAGEVALUE}).webp`;
+      selectedImg.src = `../media/gallery_imgs_webp/gal_img_full (${HARDCODEIMAGEVALUE}).webp`;
+
+      selectedImg.srcset = `../media/gallery_imgs_webp/400/gal_img_400(${HARDCODEIMAGEVALUE}).webp 400w,
+      ../media/gallery_imgs_webp/800/gal_img_800(${HARDCODEIMAGEVALUE}).webp 800w,
+      ../media/gallery_imgs_webp/1200/gal_img_1200(${HARDCODEIMAGEVALUE}).webp 1200w`;
+
       slideInLeft();
       selectedIndex = HARDCODEIMAGEVALUE;
       return;
     }
 
-    selectedImg.src = `../media/gallery_imgs_webp/gal_img (${
+    selectedImg.src = `../media/gallery_imgs_webp/gal_img_full (${
       selectedIndex - 1
     }).webp`;
+
+    selectedImg.srcset = `../media/gallery_imgs_webp/400/gal_img_400(${
+      selectedIndex - 1
+    }).webp 400w,
+    ../media/gallery_imgs_webp/800/gal_img_800(${selectedIndex - 1}).webp 800w,
+    ../media/gallery_imgs_webp/1200/gal_img_1200(${
+      selectedIndex - 1
+    }).webp 1200w`;
+
     slideInLeft();
     selectedIndex--;
   }, 300);
@@ -141,15 +168,28 @@ const nextImg = function () {
   setTimeout(function () {
     //if on last image
     if (selectedIndex === HARDCODEIMAGEVALUE) {
-      selectedImg.src = `../media/gallery_imgs_webp/gal_img (${1}).webp`;
+      selectedImg.src = `../media/gallery_imgs_webp/gal_img_full (1).webp`;
+
+      selectedImg.srcset = `../media/gallery_imgs_webp/400/gal_img_400(1).webp 400w,
+      ../media/gallery_imgs_webp/800/gal_img_800(1).webp 800w,
+      ../media/gallery_imgs_webp/1200/gal_img_1200(1).webp 1200w`;
+
       slideInRight();
       selectedIndex = 1;
       return;
     }
 
-    selectedImg.src = `../media/gallery_imgs_webp/gal_img (${
+    selectedImg.src = `../media/gallery_imgs_webp/gal_img_full (${
       selectedIndex + 1
     }).webp`;
+
+    selectedImg.srcset = `../media/gallery_imgs_webp/400/gal_img_400(${
+      selectedIndex + 1
+    }).webp 400w,
+    ../media/gallery_imgs_webp/800/gal_img_800(${selectedIndex + 1}).webp 800w,
+    ../media/gallery_imgs_webp/1200/gal_img_1200(${
+      selectedIndex + 1
+    }).webp 1200w`;
 
     slideInRight();
     selectedIndex++;
@@ -162,8 +202,10 @@ document.addEventListener("keydown", function (e) {
   if (!key) return;
   if (key === "ArrowLeft") {
     prevImg();
+    console.log(selectedImg.src);
   } else if (key === "ArrowRight") {
     nextImg();
+    console.log(selectedImg.src);
   }
 });
 
