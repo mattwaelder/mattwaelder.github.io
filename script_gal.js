@@ -121,15 +121,15 @@ const prevImg = function () {
   setTimeout(function () {
     //if on first image
     if (selectedIndex === 1) {
-      selectedImg.src = `../media/gallery_imgs/gal_img (${HARDCODEIMAGEVALUE}).jpg`;
+      selectedImg.src = `../media/gallery_imgs_webp/gal_img (${HARDCODEIMAGEVALUE}).webp`;
       slideInLeft();
       selectedIndex = HARDCODEIMAGEVALUE;
       return;
     }
 
-    selectedImg.src = `../media/gallery_imgs/gal_img (${
+    selectedImg.src = `../media/gallery_imgs_webp/gal_img (${
       selectedIndex - 1
-    }).jpg`;
+    }).webp`;
     slideInLeft();
     selectedIndex--;
   }, 300);
@@ -141,15 +141,15 @@ const nextImg = function () {
   setTimeout(function () {
     //if on last image
     if (selectedIndex === HARDCODEIMAGEVALUE) {
-      selectedImg.src = `../media/gallery_imgs/gal_img (${1}).jpg`;
+      selectedImg.src = `../media/gallery_imgs_webp/gal_img (${1}).webp`;
       slideInRight();
       selectedIndex = 1;
       return;
     }
 
-    selectedImg.src = `../media/gallery_imgs/gal_img (${
+    selectedImg.src = `../media/gallery_imgs_webp/gal_img (${
       selectedIndex + 1
-    }).jpg`;
+    }).webp`;
 
     slideInRight();
     selectedIndex++;
