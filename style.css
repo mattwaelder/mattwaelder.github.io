@@ -1554,10 +1554,12 @@ when we are happy with changes to branch 1 merge with master by going to master 
   } */
 
   .mobile_menu {
+    border-image: none;
     border-left: 2px solid var(--color-secondary);
     border-right: 2px solid var(--color-secondary);
   }
   .mobile_nav_btn {
+    border-image: none;
     border-bottom: 2px solid var(--color-secondary);
   }
 
