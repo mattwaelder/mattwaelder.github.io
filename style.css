@@ -319,6 +319,12 @@ a {
     30; */
   transition: transform 1s;
 }
+.mobile_menu a {
+  color: var(--color-primary-darker);
+}
+.mobile_menu a:visited {
+  color: var(--color-primary-darker);
+}
 
 .mobile_nav_btn {
   display: flex;
