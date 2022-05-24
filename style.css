@@ -308,14 +308,15 @@ a {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  border-left: 2px solid;
-  border-right: 2px solid;
-  border-image: linear-gradient(
+
+  border-left: 2px solid var(--color-secondary);
+  border-right: 2px solid var(--color-secondary);
+  /* border-image: linear-gradient(
       120deg,
       var(--color-primary) 30%,
       var(--color-secondary) 70%
     )
-    30;
+    30; */
   transition: transform 1s;
 }
 
@@ -329,13 +330,14 @@ a {
   background: var(--color-glass-transparency);
   cursor: pointer;
   transition: ease-in-out 500ms;
-  border-bottom: 2px solid;
-  border-image: linear-gradient(
+
+  border-bottom: 2px solid var(--color-secondary);
+  /* border-image: linear-gradient(
       120deg,
       var(--color-primary) 30%,
       var(--color-secondary) 70%
     )
-    30;
+    30; */
 }
 
 .mobile_nav_btn:hover {
@@ -1527,20 +1529,6 @@ when we are happy with changes to branch 1 merge with master by going to master 
 
 @supports (-webkit-touch-callout: none) {
   body {
-    font-weight: 500;
+    font-weight: 700;
   }
 }
-
-/*      this is better than the above bc it ups the font weight on safari by 100 for every font weight under 700. it doesnt seem to work for vanilla css though, idk what im missing.
-$u-font-weights: (100, 300, 400, 500, 600, 700, 800);
-@each $num in $u-font-weights {
-  .fw-#{$num} {
-    font-weight: #{$num}!important;
-    @if $num < 700 {
-      @supports (-webkit-touch-callout: none) {
-        font-weight: #{$num + 100}!important;
-      }
-    }
-  }
-}
-*/
