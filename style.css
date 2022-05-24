@@ -298,6 +298,15 @@ a {
   z-index: 3;
   animation-timing-function: ease-out;
 
+  /*transparancy for the buttons, or this gradient???? 
+  it is nice that the border image color is opposite the background...
+  */
+  background: linear-gradient(
+    140deg,
+    var(--color-secondary-lighter) 30%,
+    var(--color-primary-lighter) 100%
+  );
+
   /*how on earth do you get this to work both ways -_- */
   /* animation-name: mobileMenuDrop; */
   transition: transform ease-out 1s;
@@ -310,14 +319,15 @@ a {
   height: 100%;
 
   /*remove color for border image to work*/
-  border-left: 2px solid var(--color-secondary);
-  border-right: 2px solid var(--color-secondary);
-  /* border-image: linear-gradient(
+  border-left: 2px solid;
+  border-right: 2px solid;
+
+  border-image: linear-gradient(
       120deg,
       var(--color-primary) 30%,
       var(--color-secondary) 70%
     )
-    30; */
+    30;
   transition: transform 1s;
 }
 
@@ -336,17 +346,17 @@ a {
   width: 100%;
   height: 100%;
   font-size: 1.3em;
-  background: var(--color-glass-transparency);
+  /* background: var(--color-glass-transparency); */
   cursor: pointer;
   transition: ease-in-out 500ms;
 
-  border-bottom: 2px solid var(--color-secondary);
-  /* border-image: linear-gradient(
+  border-bottom: 2px solid;
+  border-image: linear-gradient(
       120deg,
       var(--color-primary) 30%,
       var(--color-secondary) 70%
     )
-    30; */
+    30;
 }
 
 .mobile_nav_btn:hover {
@@ -1542,6 +1552,14 @@ when we are happy with changes to branch 1 merge with master by going to master 
   /* body {
     font-weight: 500;
   } */
+
+  .mobile_menu {
+    border-left: 2px solid var(--color-secondary);
+    border-right: 2px solid var(--color-secondary);
+  }
+  .mobile_nav_btn {
+    border-bottom: 2px solid var(--color-secondary);
+  }
 
   .section_title {
     font-weight: 500;
