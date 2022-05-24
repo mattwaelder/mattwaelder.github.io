@@ -1544,8 +1544,8 @@ when we are happy with changes to branch 1 merge with master by going to master 
     font-weight: 500;
   }
   .site_title {
-    font-family: "Poppins", sans-serif;
-    font-weight: 900;
+    font-family: "indie flower", sans-serif;
+    font-weight: 700;
     -webkit-text-shadow: 3px 3px 1px var(--color-secondary);
     text-shadow: 3px 3px 1px var(--color-secondary);
   }
