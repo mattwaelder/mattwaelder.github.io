@@ -309,6 +309,7 @@ a {
   width: 100%;
   height: 100%;
 
+  /*remove color for border image to work*/
   border-left: 2px solid var(--color-secondary);
   border-right: 2px solid var(--color-secondary);
   /* border-image: linear-gradient(
@@ -319,6 +320,8 @@ a {
     30; */
   transition: transform 1s;
 }
+
+/*with the border image gone, i feel like it needs more color... */
 .mobile_menu a {
   color: var(--color-primary-darker);
 }
@@ -1548,8 +1551,6 @@ when we are happy with changes to branch 1 merge with master by going to master 
     font-weight: 700;
     -webkit-text-shadow: 3px 3px 1px var(--color-secondary);
     text-shadow: 3px 3px 1px var(--color-secondary);
-    background-color: none;
-    z-index: 200;
   }
 
   .pig_name {
