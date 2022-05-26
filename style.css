@@ -1555,12 +1555,12 @@ when we are happy with changes to branch 1 merge with master by going to master 
 
   .mobile_menu {
     border-image: none;
-    border-left: 2px solid var(--color-glass-transparency-dark);
-    border-right: 2px solid var(--color-glass-transparency-dark);
+    border-left: 2px solid var(--color-primary-darker);
+    border-right: 2px solid var(--color-primary-darker);
   }
   .mobile_nav_btn {
     border-image: none;
-    border-bottom: 2px solid var(--color-glass-transparency-dark);
+    border-bottom: 2px solid var(--color-primary-darker);
   }
 
   .section_title {
