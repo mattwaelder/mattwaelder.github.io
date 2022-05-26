@@ -1546,7 +1546,7 @@ when we are happy with changes to branch 1 merge with master by going to master 
   }
 }
 
-/*fixes for apple ios, bc apparently safari is wacky*/
+/* changes specifically targetting safari on ios, this is bad practice but i kind of like using border images which arent working well on all iphones */
 
 @supports (-webkit-touch-callout: none) {
   /* body {
@@ -1555,12 +1555,12 @@ when we are happy with changes to branch 1 merge with master by going to master 
 
   .mobile_menu {
     border-image: none;
-    border-left: 2px solid var(--color-glass-transparency-lighter);
-    border-right: 2px solid var(--color-glass-transparency-lighter);
+    border-left: 2px solid var(--color-secondary);
+    border-right: 2px solid var(--color-secondary);
   }
   .mobile_nav_btn {
     border-image: none;
-    border-bottom: 2px solid var(--color-glass-transparency-lighter);
+    border-bottom: 2px solid var(--color-secondary);
   }
 
   .section_title {

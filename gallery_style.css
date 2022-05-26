@@ -179,16 +179,15 @@ a {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
-.gal_blow_up_img {
+/* .gal_blow_up_img {
   position: absolute;
   width: 90vw;
   height: auto;
-  /* top: -100vh;
-  left: 33vw; */
+
   transition: transform all 1s;
   top: 200px;
   left: 0px;
-}
+} */
 
 #selected_img_container {
   position: fixed;
@@ -207,8 +206,8 @@ a {
 }
 
 #selected_img {
-  max-height: 85%;
-  max-width: 100%;
+  max-height: 90%;
+  max-width: 95%;
   transition: ease-in-out 200ms;
 }
 
@@ -232,5 +231,10 @@ a {
   .gallery {
     width: 95%;
     /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+  }
+
+  #selected_img {
+    width: 95vw;
+    height: auto;
   }
 }
