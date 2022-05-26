@@ -29,9 +29,6 @@ html body {
   margin: 0px;
   width: 100%;
   overflow-x: hidden;
-
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 * {
@@ -1556,27 +1553,29 @@ when we are happy with changes to branch 1 merge with master by going to master 
     font-weight: 500;
   } */
 
-  /* .mobile_menu {
+  .mobile_menu {
     border-image: none;
-    border-left: 2px solid var(--color-secondary);
-    border-right: 2px solid var(--color-secondary);
+    border-left: 2px solid var(--color-glass-transparency-dark);
+    border-right: 2px solid var(--color-glass-transparency-dark);
   }
   .mobile_nav_btn {
     border-image: none;
-    border-bottom: 2px solid var(--color-secondary);
-  } */
+    border-bottom: 2px solid var(--color-glass-transparency-dark);
+  }
 
   .section_title {
     font-weight: 500;
   }
 
   .site_title {
-    font-weight: 900;
+    font-family: "Dancing Script", cursive;
+    font-weight: 700;
     -webkit-text-shadow: 3px 3px 1px var(--color-secondary);
     text-shadow: 3px 3px 1px var(--color-secondary);
   }
 
   .pig_name {
-    font-weight: 900;
+    font-weight: 700;
+    font-family: "Dancing Script", cursive;
   }
 }
