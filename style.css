@@ -207,6 +207,25 @@ a {
   transform: rotate(360deg);
 }
 
+#steady_pig {
+  cursor: pointer;
+}
+
+#slinky_pig {
+  position: absolute;
+  top: 15px;
+  left: 80px;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+/*this wouldnt be needed if i made it more obviously a button? */
+.nav_bar p {
+  position: absolute;
+  top: 55px;
+  left: 60px;
+}
+
 .nav_buttons {
   width: 60%;
   display: flex;

@@ -321,3 +321,32 @@ galleryBtn.addEventListener("click", function (e) {
   //this is neat
   window.location.href = "/html/gallery.html";
 });
+
+//////////////////////////////////////////////////////////////////////////////
+/* randomized slinky pig functionality */
+//////////////////////////////////////////////////////////////////////////////
+
+const slinkyPig = document.getElementById("slinky_pig");
+const steadyPig = document.getElementById("steady_pig");
+//the height of the body
+const docHeight = document.body.clientHeight;
+
+//random number between 1 and 100;
+const slinkVal = function () {
+  return Math.floor(Math.random() * 100);
+};
+
+//randomly roaming pig (slinky pig)
+slinkyPig.addEventListener("click", function (e) {
+  const clicked = e.target;
+  if (!clicked) return;
+  //new position within vw and document height
+  slinkyPig.style.top = `${Math.random() * docHeight}px`;
+  slinkyPig.style.left = `${slinkVal() - 1}vw`;
+});
+
+//return to home (steady pig)
+steadyPig.addEventListener("click", function () {
+  slinkyPig.style.top = "15px";
+  slinkyPig.style.left = "80px";
+});
