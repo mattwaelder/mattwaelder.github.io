@@ -2,6 +2,10 @@
 
 console.log("hello mattspigs gallery");
 
+document.addEventListener("click", (e) => {
+  console.log(e.target);
+});
+
 //////////////////////////////////////////////////////////////////////////////
 /* refresh = top of page (something better served in its own js file but oh well) */
 //////////////////////////////////////////////////////////////////////////////
@@ -227,7 +231,7 @@ selectedImg.addEventListener("touchstart", function (e) {
 
 //issuing callback functions at the end of the touch, its slow in devtools but works :o
 selectedImg.addEventListener("touchend", function (e) {
-  e.preventDefault();
+  // e.preventDefault();
   endX = e.changedTouches[0].screenX;
 
   let swipeLen = Math.abs(endX - startX);

@@ -101,14 +101,14 @@ mobileMenu.addEventListener("click", function (e) {
 ///////////////////////////MOBILE MENU MOTION///////////////////////////
 let menuVisible = false;
 const menuDrop = function () {
+  hamburger.classList.toggle("active");
   mobileMenuContainer.style.transform = `translateY(33vh)`;
   menuVisible = true;
-  console.log("drop");
 };
 const menuRise = function () {
+  hamburger.classList.toggle("active");
   mobileMenuContainer.style.transform = `translateY(-33vh)`;
   menuVisible = false;
-  console.log("rise");
 };
 
 hamburger.addEventListener("click", function (e) {
