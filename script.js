@@ -342,7 +342,7 @@ slinkyPig.addEventListener("click", function (e) {
   if (!clicked) return;
   //new position within vw and document height
   slinkyPig.style.top = `${Math.random() * docHeight}px`;
-  slinkyPig.style.left = `${slinkVal() - 1}vw`;
+  slinkyPig.style.left = `${slinkVal() - 5}vw`;
 });
 
 //return to home (steady pig)
