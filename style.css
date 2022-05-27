@@ -215,7 +215,7 @@ a {
   position: absolute;
   top: 15px;
   left: 80px;
-  z-index: 1000;
+  z-index: 150;
   cursor: pointer;
 }
 
@@ -320,7 +320,7 @@ a {
   height: 33vh;
   align-items: center;
   justify-content: center;
-  z-index: 3;
+  z-index: 151;g
   animation-timing-function: ease-out;
 
   /*transparancy for the buttons, or this gradient???? 
