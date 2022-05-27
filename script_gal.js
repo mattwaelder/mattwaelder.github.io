@@ -225,7 +225,7 @@ let endX;
 
 //start of swipe on image (mainly to get starting X value)
 selectedImg.addEventListener("touchstart", function (e) {
-  e.preventDefault();
+  // e.preventDefault();
   startX = e.touches[0].screenX;
 });
 
