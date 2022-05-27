@@ -11,7 +11,13 @@
   --color-glass-transparency-lighter: rgba(255, 255, 255, 0.2);
   --color-glass-transparency-less: rgba(255, 255, 255, 0.75);
   --color-glass-transparency-dark: rgba(0, 0, 0, 0.1);
-  --gradient-primary: linear-gradient(white, var(--color-primary-darker));
+
+  --gradient-primary: linear-gradient(
+    140deg,
+    var(--color-secondary-lighter) 30%,
+    var(--color-primary-lighter) 100%
+  );
+
   --gradient-body: linear-gradient(
     to top,
     var(--color-secondary) 0%,
@@ -301,15 +307,11 @@ a {
   /*transparancy for the buttons, or this gradient???? 
   it is nice that the border image color is opposite the background...
   */
-  background: linear-gradient(
-    140deg,
-    var(--color-secondary-lighter) 30%,
-    var(--color-primary-lighter) 100%
-  );
+  background: var(--gradient-primary);
 
   /*how on earth do you get this to work both ways -_- */
   /* animation-name: mobileMenuDrop; */
-  transition: transform ease-out 1s;
+  transition: transform ease-out 0.5s;
 }
 
 .mobile_menu {
@@ -782,15 +784,15 @@ a {
   font-size: 2.5em;
   font-weight: 300;
   font-family: "Poppins", sans-serif;
-  color: white;
   text-shadow: 3px 3px 1px var(--color-primary-darker);
+  box-shadow: rgba(30, 50, 70, 0.8) 0px 20px 20px -10px;
 }
 
 .gallery_btn:hover {
   /* transform: scale(0.9); */
   /* background: var(--color-glass-transparency); */
   /* border: 3px solid var(--color-primary-darker); */
-  background: rgba(0, 0, 0, 0.1);
+  background: var(--color-glass-transparency);
 }
 
 .gallery_btn a {
@@ -804,7 +806,7 @@ a {
 .gallery_btn::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -35%;
   left: 0;
   width: 100%;
   height: 3px;
@@ -996,11 +998,7 @@ a {
 }
 
 .tab.tab--active {
-  /* background: linear-gradient(
-    140deg,
-    var(--color-secondary-lighter) 30%,
-    var(--color-primary-lighter) 100%
-  ); */
+  /* background: var(--gradient-primary); */
   background: none;
   transform: translateY(0.5em);
   font-size: 1.5em;
@@ -1024,11 +1022,7 @@ a {
   top: -50%;
   height: 200%;
   width: 120%;
-  background: linear-gradient(
-    140deg,
-    var(--color-secondary-lighter) 30%,
-    var(--color-primary-lighter) 100%
-  );
+  background: var(--gradient-primary);
   filter: blur(0.7em);
   z-index: -1;
   border-top: 3px;
@@ -1047,11 +1041,7 @@ a {
     var(--color-glass-transparency) 80%
   ); */
 
-  background: linear-gradient(
-    140deg,
-    var(--color-secondary-lighter) 30%,
-    var(--color-primary-lighter) 100%
-  );
+  background: var(--gradient-primary);
   justify-content: center;
   align-items: space-between;
   text-align: center;
@@ -1085,6 +1075,7 @@ a {
   color: var(--color-primary-darker);
   text-align: left;
   padding-left: 1em;
+  /* white-space: break-spaces; */
   /* text-shadow: 5px 5px 2px white; */
   /* text-decoration: underline; */
 }
@@ -1492,9 +1483,10 @@ when we are happy with changes to branch 1 merge with master by going to master 
   }
 
   .tab_content h2 {
-    font-size: 5vh;
+    font-size: 3.5vh;
     text-align: center;
     padding: 0px;
+    margin: 0px;
   }
 
   .tab_content_container p::before {
@@ -1558,6 +1550,7 @@ when we are happy with changes to branch 1 merge with master by going to master 
     border-left: 2px solid var(--color-secondary);
     border-right: 2px solid var(--color-secondary);
   }
+
   .mobile_nav_btn {
     border-image: none;
     border-bottom: 2px solid var(--color-secondary);

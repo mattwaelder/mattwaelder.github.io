@@ -238,3 +238,9 @@ a {
     height: auto;
   }
 }
+
+@supports (-webkit-touch-callout: none) {
+  .gal_title {
+    font-family: "Dancing Script", cursive;
+  }
+}
