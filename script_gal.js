@@ -42,11 +42,14 @@ const populateGal = function () {
     //srcset is a nifty feature that lets you selectively load images, mainly for bandwidth purposes.
 
     curImg.srcset = `
-    ../media/gallery_imgs_webp/400/gal_img_400(${i}).webp 400w,
-    ../media/gallery_imgs_webp/800/gal_img_800(${i}).webp 800w,
-    ../media/gallery_imgs_webp/1200/gal_img_1200(${i}).webp 1200w,`;
+    ../media/gallery_imgs_webp/400/gal_img_400(${i}).webp?w=400 400w,
+    ../media/gallery_imgs_webp/800/gal_img_800(${i}).webp?w=800 800w,
+    ../media/gallery_imgs_webp/1200/gal_img_1200(${i}).webp?w=1200 1200w,`;
 
-    curImg.src = `../media/gallery_imgs_webp/gal_img_full (${i}).webp`;
+    curImg.src = `../media/gallery_imgs_webp/gal_img_full (${i}).webp?`;
+
+    // curImg.sizes =
+    //   "(max-width: 580px) 400px, (max-width: 1280px) 800px, (max-width: 2000) 1200px), 4000px";
     //making an index to use for arrow navigation of images
     curImg.dataset.index = i;
 
