@@ -48,8 +48,9 @@ const populateGal = function () {
 
     curImg.src = `../media/gallery_imgs_webp/gal_img_full (${i}).webp?`;
 
-    // curImg.sizes =
-    //   "(max-width: 580px) 400px, (max-width: 1280px) 800px, (max-width: 2000) 1200px), 4000px";
+    curImg.sizes =
+      "(max-width: 580px) 400px, (max-width: 1280px) 800px, (max-width: 2000) 1200px), 4000px";
+
     //making an index to use for arrow navigation of images
     curImg.dataset.index = i;
 
