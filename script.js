@@ -348,5 +348,5 @@ slinkyPig.addEventListener("click", function (e) {
 //return to home (steady pig)
 steadyPig.addEventListener("click", function () {
   slinkyPig.style.top = "2vh";
-  slinkyPig.style.left = "5.5em";
+  slinkyPig.style.left = "7em";
 });

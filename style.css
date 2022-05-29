@@ -190,7 +190,7 @@ a {
   display: flex;
   justify-content: left;
   margin-top: 0px;
-  padding-left: 1em;
+  padding-left: 1rem;
 
   /*return these values when hamburger done
   width 50%;
@@ -198,8 +198,8 @@ a {
 }
 
 .site_icon_img {
-  height: 6vh;
-  width: 10vh;
+  height: 5vh;
+  width: auto;
   justify-content: left;
   transition: 1s ease-in-out;
 }
@@ -214,7 +214,8 @@ a {
 
 #slinky_pig {
   position: absolute;
-  left: 5.5em;
+  top: 2.5vh;
+  left: 6.66em;
   z-index: 150;
   cursor: pointer;
 }
@@ -223,7 +224,7 @@ a {
 .nav_bar p {
   position: absolute;
   top: 3px;
-  left: 4.3em;
+  left: 6em;
 }
 
 .nav_buttons {
@@ -1348,19 +1349,18 @@ when we are happy with changes to branch 1 merge with master by going to master 
     justify-content: space-between;
   }
 
-  .site_icon_container {
-    padding-left: 5vw;
-  }
+  /* #site_icon_img_container {
+    padding-left: 0px;
+  } */
 
   .site_icon_img {
     height: 4vh;
     width: 7vh;
   }
 
-  /* #slinky_pig {
-    height: 4vh;
-    width: 7vh;
-  } */
+  #slinky_pig {
+    top: 2vh;
+  }
 
   .nav_buttons {
     display: none;
@@ -1608,9 +1608,9 @@ when we are happy with changes to branch 1 merge with master by going to master 
     /* padding-top: 1em; */
   }
 
-  .nav_bar p {
+  /* .nav_bar p {
     left: 4em;
-  }
+  } */
   /* 
   .site_icon_img {
     height: 6vh;
