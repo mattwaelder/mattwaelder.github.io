@@ -1667,7 +1667,7 @@ when we are happy with changes to branch 1 merge with master by going to master 
   }
 
   .tab.tab--active::after {
-    filter: blur(2em);
+    filter: blur(0.6em);
   }
   /* 
   .site_title {
