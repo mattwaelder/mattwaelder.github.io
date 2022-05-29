@@ -492,8 +492,8 @@ a {
   z-index: 2;
 
   /* instead of 3, 3, 1 ?? */
-  -webkit-text-shadow: 5px 5px 2px var(--color-secondary);
-  text-shadow: 5px 5px 2px var(--color-secondary);
+  -webkit-text-shadow: 3px 3px 2px var(--color-secondary);
+  text-shadow: 3px 3px 2px var(--color-secondary);
 }
 
 /* 
@@ -1665,16 +1665,12 @@ when we are happy with changes to branch 1 merge with master by going to master 
   .section_title {
     font-weight: 500;
   }
-
+  /* 
   .site_title {
-    /* font-family: "Caveat", cursive; */
     font-weight: 700;
-    -webkit-text-shadow: 3px 3px 2px var(--color-secondary);
-    text-shadow: 3px 3px 2px var(--color-secondary);
   }
 
   .pig_name {
-    /* font-family: "Caveat", cursive; */
     font-weight: 700;
-  }
+  } */
 }
