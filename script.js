@@ -330,6 +330,7 @@ const slinkyPig = document.getElementById("slinky_pig");
 const steadyPig = document.getElementById("steady_pig");
 //the height of the body
 const docHeight = document.body.clientHeight;
+const docWidth = document.body.clientWidth;
 
 //random number between 1 and 100;
 const slinkVal = function () {
@@ -347,6 +348,31 @@ slinkyPig.addEventListener("click", function (e) {
 
 //return to home (steady pig)
 steadyPig.addEventListener("click", function () {
-  slinkyPig.style.top = "2vh";
-  slinkyPig.style.left = "5.5em";
+  //needs to be moved based on screen size
+  //top 2.5vh for desktop left tbd
+  //top 2vh for mobile left tbd
+
+  //for mobile (general)
+  if (docWidth <= 600) {
+    slinkyPig.style.top = "2vh";
+    slinkyPig.style.left = "5em";
+  }
+
+  //for mobile tablets (600-900w)
+  if (docWidth > 600 && docWidth < 900) {
+    slinkyPig.style.top = "2vh";
+    slinkyPig.style.left = "6em";
+  }
+
+  //for normal screens
+  if (docWidth >= 900 && docWidth <= 2000) {
+    slinkyPig.style.top = "2.5vh";
+    slinkyPig.style.left = "6.66em";
+  }
+
+  //for large screens
+  if (docWidth > 2000) {
+    slinkyPig.style.top = "2.5vh";
+    slinkyPig.style.left = "7em";
+  }
 });

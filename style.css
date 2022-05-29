@@ -190,7 +190,7 @@ a {
   display: flex;
   justify-content: left;
   margin-top: 0px;
-  padding-left: 1em;
+  padding-left: 1rem;
 
   /*return these values when hamburger done
   width 50%;
@@ -198,8 +198,8 @@ a {
 }
 
 .site_icon_img {
-  height: 6vh;
-  width: 10vh;
+  height: 5vh;
+  width: auto;
   justify-content: left;
   transition: 1s ease-in-out;
 }
@@ -214,7 +214,8 @@ a {
 
 #slinky_pig {
   position: absolute;
-  left: 5.5em;
+  top: 2.5vh;
+  left: 6.66em;
   z-index: 150;
   cursor: pointer;
 }
@@ -222,8 +223,11 @@ a {
 /*this wouldnt be needed if i made it more obviously a button? */
 .nav_bar p {
   position: absolute;
-  top: 3px;
-  left: 4.3em;
+  font-size: 1em;
+  /* top: 3px;
+  left: 6em; */
+  top: 2px;
+  left: 2px;
 }
 
 .nav_buttons {
@@ -460,7 +464,7 @@ a {
   text-align: center;
   text-justify: center;
   position: absolute;
-  top: 73px;
+  top: 10vh;
   left: 0;
   z-index: 2;
 }
@@ -1348,8 +1352,12 @@ when we are happy with changes to branch 1 merge with master by going to master 
     justify-content: space-between;
   }
 
-  .site_icon_container {
-    padding-left: 5vw;
+  /* #site_icon_img_container {
+    padding-left: 0px;
+  } */
+
+  .nav_bar p {
+    font-size: 0.5em;
   }
 
   .site_icon_img {
@@ -1357,10 +1365,10 @@ when we are happy with changes to branch 1 merge with master by going to master 
     width: 7vh;
   }
 
-  /* #slinky_pig {
-    height: 4vh;
-    width: 7vh;
-  } */
+  #slinky_pig {
+    top: 2vh;
+    left: 5em;
+  }
 
   .nav_buttons {
     display: none;
@@ -1379,6 +1387,7 @@ when we are happy with changes to branch 1 merge with master by going to master 
   }
 
   .site_title_container {
+    top: 8vh;
     width: auto;
   }
 
@@ -1596,6 +1605,16 @@ when we are happy with changes to branch 1 merge with master by going to master 
   }
 }
 
+@media (min-width: 600px) and (max-width: 900px) {
+  /* html body {
+    background: red;
+  } */
+
+  #slinky_pig {
+    left: 6em;
+  }
+}
+
 @media (min-width: 2000px) {
   html body {
     font-size: 2em;
@@ -1609,18 +1628,18 @@ when we are happy with changes to branch 1 merge with master by going to master 
   }
 
   .nav_bar p {
-    left: 4em;
+    font-size: 0.7em;
   }
   /* 
   .site_icon_img {
     height: 6vh;
     width: 12vh;
   }
+  */
 
   #slinky_pig {
-    top: 2vh;
-    left: 5.5em;
-  } */
+    left: 7em;
+  }
 }
 
 /* changes specifically targetting safari on ios, this is bad practice but i kind of like using border images which arent working well on all iphones */
