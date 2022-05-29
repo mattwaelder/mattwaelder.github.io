@@ -1665,6 +1665,10 @@ when we are happy with changes to branch 1 merge with master by going to master 
   .section_title {
     font-weight: 500;
   }
+
+  .tab.tab--active::after {
+    filter: blur(1em);
+  }
   /* 
   .site_title {
     font-weight: 700;
