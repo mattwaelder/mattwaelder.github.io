@@ -172,7 +172,7 @@ a {
     var(--color-primary)
   );
   display: flex;
-  height: 70px;
+  height: 10vh;
   width: 100vw;
   margin-top: 0px;
   margin-left: 0px;
@@ -189,6 +189,7 @@ a {
   width: 40%;
   display: flex;
   justify-content: left;
+  margin-top: 0px;
   padding-left: 1em;
 
   /*return these values when hamburger done
@@ -197,8 +198,8 @@ a {
 }
 
 .site_icon_img {
-  height: 35px;
-  width: 60px;
+  height: 6vh;
+  width: 10vh;
   justify-content: left;
   transition: 1s ease-in-out;
 }
@@ -213,8 +214,7 @@ a {
 
 #slinky_pig {
   position: absolute;
-  top: 15px;
-  left: 80px;
+  left: 5.5em;
   z-index: 150;
   cursor: pointer;
 }
@@ -222,8 +222,8 @@ a {
 /*this wouldnt be needed if i made it more obviously a button? */
 .nav_bar p {
   position: absolute;
-  top: 55px;
-  left: 60px;
+  top: 3px;
+  left: 4.3em;
 }
 
 .nav_buttons {
@@ -1344,12 +1344,23 @@ when we are happy with changes to branch 1 merge with master by going to master 
   }
 
   .nav_bar {
+    height: 8vh;
     justify-content: space-between;
   }
 
   .site_icon_container {
     padding-left: 5vw;
   }
+
+  .site_icon_img {
+    height: 4vh;
+    width: 7vh;
+  }
+
+  /* #slinky_pig {
+    height: 4vh;
+    width: 7vh;
+  } */
 
   .nav_buttons {
     display: none;
@@ -1583,6 +1594,33 @@ when we are happy with changes to branch 1 merge with master by going to master 
     height: auto;
     padding-bottom: 15px;
   }
+}
+
+@media (min-width: 2000px) {
+  html body {
+    font-size: 2em;
+  }
+
+  #site_icon_img_container {
+    /* height: 8vh; */
+    width: 40%;
+    padding-left: 1em;
+    /* padding-top: 1em; */
+  }
+
+  .nav_bar p {
+    left: 4em;
+  }
+  /* 
+  .site_icon_img {
+    height: 6vh;
+    width: 12vh;
+  }
+
+  #slinky_pig {
+    top: 2vh;
+    left: 5.5em;
+  } */
 }
 
 /* changes specifically targetting safari on ios, this is bad practice but i kind of like using border images which arent working well on all iphones */
