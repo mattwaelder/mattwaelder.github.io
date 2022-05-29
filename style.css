@@ -1071,10 +1071,10 @@ a {
   height: 250%;
   width: 120%; */
 
-  left: -10%;
-  top: -50%;
-  height: 200%;
-  width: 120%;
+  left: 5%;
+  top: 0;
+  height: 100%;
+  width: 90%;
   background: var(--gradient-primary);
   filter: blur(0.7em);
   z-index: -1;
