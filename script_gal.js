@@ -39,26 +39,15 @@ const populateGal = function () {
   for (let i = 1; i < countArr.length + 1; i++) {
     let curImg = document.createElement("img");
 
-    //srcset is a nifty feature that lets you selectively load images, mainly for bandwidth purposes.
-
-    curImg.srcset = `
-    ../media/gallery_imgs_webp/400/gal_img_400(${i}).webp?w=400 400w,
-    ../media/gallery_imgs_webp/800/gal_img_800(${i}).webp?w=800 800w,
-    ../media/gallery_imgs_webp/1200/gal_img_1200(${i}).webp?w=1200 1200w,`;
-
-    curImg.src = `../media/gallery_imgs_webp/gal_img_full (${i}).webp?`;
-
-    curImg.sizes =
-      "(max-width: 580px) 400px, (max-width: 1280px) 800px, (max-width: 2000) 1200px), 4000px";
+    //since the class for gallery images is only 300 px, no point in loading anything bigger than the 400px image for these. use srcset on selected imgs
+    curImg.src = `../media/gallery_imgs_webp/400/gal_img_400(${i}).webp?`;
 
     //making an index to use for arrow navigation of images
     curImg.dataset.index = i;
 
-    //toggle for int. obs. lazy loading;
-    // curImg.dataset.src = `../media/gallery_imgs/gal_img (${i}).jpg`;
+    //markup lazy loading ftw
     curImg.loading = "lazy";
 
-    //toggle for int. obs. lazy loading;
     curImg.classList.add("gal_img");
     // curImg.classList.add("gal_img_lazy");
 
@@ -66,12 +55,19 @@ const populateGal = function () {
     curImg.addEventListener("click", () => {
       selectedImgContainer.style.transform = `translateY(0)`;
 
+      //the image urls with their respective intended width
       selectedImg.srcset = `
-      ../media/gallery_imgs_webp/400/gal_img_400(${i}).webp 400w, 
-      ../media/gallery_imgs_webp/800/gal_img_800(${i}).webp 800w, 
-      ../media/gallery_imgs_webp/1200/gal_img_1200(${i}).webp 1200w,`;
+      ../media/gallery_imgs_webp/gal_img_full(${i}).webp?w=4000 4000w,
+      ../media/gallery_imgs_webp/2000/gal_img_2000(${i}).webp?w=2000 2000w,
+      ../media/gallery_imgs_webp/1200/gal_img_1200(${i}).webp?w=1200 1200w,
+      ../media/gallery_imgs_webp/800/gal_img_800(${i}).webp?w=800 800w,
+      ../media/gallery_imgs_webp/400/gal_img_400(${i}).webp?w=400 400w,
+      `;
+      selectedImg.src = `../media/gallery_imgs_webp/gal_img_full(${i}).webp`;
 
-      selectedImg.src = `../media/gallery_imgs_webp/gal_img_full (${i}).webp`;
+      //sizesa ttribute: media queries for what image to use at what breakpoint
+      selectedImg.sizes =
+        "(max-width: 500px) 400px, (max-width: 900px) 800px, (max-width: 1600px) 1200px, (max-width: 2500px) 2000px, 4000px";
 
       selectedImg.dataset.index = i;
       selectedIndex = i;
@@ -144,11 +140,17 @@ const prevImg = function () {
     //if on first image
     if (selectedIndex === 1) {
       selectedImg.srcset = `
-      ../media/gallery_imgs_webp/400/gal_img_400(${HARDCODEIMAGEVALUE}).webp 400w,
-      ../media/gallery_imgs_webp/800/gal_img_800(${HARDCODEIMAGEVALUE}).webp 800w,
-      ../media/gallery_imgs_webp/1200/gal_img_1200(${HARDCODEIMAGEVALUE}).webp 1200w,`;
+      ../media/gallery_imgs_webp/gal_img_full(${HARDCODEIMAGEVALUE}).webp?w=4000 4000w,
+      ../media/gallery_imgs_webp/2000/gal_img_2000(${HARDCODEIMAGEVALUE}).webp?w=2000 2000w,
+      ../media/gallery_imgs_webp/1200/gal_img_1200(${HARDCODEIMAGEVALUE}).webp?w=1200 1200w,
+      ../media/gallery_imgs_webp/800/gal_img_800(${HARDCODEIMAGEVALUE}).webp?w=800 800w,
+      ../media/gallery_imgs_webp/400/gal_img_400(${HARDCODEIMAGEVALUE}).webp?w=400 400w,
+      `;
 
-      selectedImg.src = `../media/gallery_imgs_webp/gal_img_full (${HARDCODEIMAGEVALUE}).webp`;
+      selectedImg.sizes =
+        "(max-width: 500px) 400px, (max-width: 900px) 800px, (max-width: 1600px) 1200px, (max-width: 2500px) 2000px, 4000w";
+
+      selectedImg.src = `../media/gallery_imgs_webp/gal_img_full(${HARDCODEIMAGEVALUE}).webp`;
 
       slideInLeft();
       selectedIndex = HARDCODEIMAGEVALUE;
@@ -156,13 +158,27 @@ const prevImg = function () {
     }
 
     selectedImg.srcset = `
-    ../media/gallery_imgs_webp/400/gal_img_400(${selectedIndex - 1}).webp 400w,
-    ../media/gallery_imgs_webp/800/gal_img_800(${selectedIndex - 1}).webp 800w,
+    ../media/gallery_imgs_webp/gal_img_full(${
+      selectedIndex - 1
+    }).webp?w=4000 4000w,
+    ../media/gallery_imgs_webp/2000/gal_img_2000(${
+      selectedIndex - 1
+    }).webp?w=2000 2000w,
     ../media/gallery_imgs_webp/1200/gal_img_1200(${
       selectedIndex - 1
-    }).webp 1200w,`;
+    }).webp?w=1200 1200w,
+    ../media/gallery_imgs_webp/800/gal_img_800(${
+      selectedIndex - 1
+    }).webp?w=800 800w,
+    ../media/gallery_imgs_webp/400/gal_img_400(${
+      selectedIndex - 1
+    }).webp?w=400 400w,
+    `;
 
-    selectedImg.src = `../media/gallery_imgs_webp/gal_img_full (${
+    selectedImg.sizes =
+      "(max-width: 500px) 400px, (max-width: 900px) 800px, (max-width: 1600px) 1200px, (max-width: 2500px) 2000px, 4000w";
+
+    selectedImg.src = `../media/gallery_imgs_webp/gal_img_full(${
       selectedIndex - 1
     }).webp`;
 
@@ -178,12 +194,17 @@ const nextImg = function () {
     //if on last image
     if (selectedIndex === HARDCODEIMAGEVALUE) {
       selectedImg.srcset = `
-      ../media/gallery_imgs_webp/400/gal_img_400(1).webp 400w,
-      ../media/gallery_imgs_webp/800/gal_img_800(1).webp 800w,
-      ../media/gallery_imgs_webp/1200/gal_img_1200(1).webp 1200w,
+      ../media/gallery_imgs_webp/gal_img_full(1).webp?w=4000 4000w,
+      ../media/gallery_imgs_webp/2000/gal_img_2000(1).webp?w=2000 2000w,
+      ../media/gallery_imgs_webp/1200/gal_img_1200(1).webp?w=1200 1200w,
+      ../media/gallery_imgs_webp/800/gal_img_800(1).webp?w=800 800w,
+      ../media/gallery_imgs_webp/400/gal_img_400(1).webp?w=400 400w,
       `;
 
-      selectedImg.src = `../media/gallery_imgs_webp/gal_img_full (1).webp`;
+      selectedImg.sizes =
+        "(max-width: 500px) 400px, (max-width: 900px) 800px, (max-width: 1600px) 1200px, (max-width: 2500px) 2000px, 4000w";
+
+      selectedImg.src = `../media/gallery_imgs_webp/gal_img_full(1).webp`;
 
       slideInRight();
       selectedIndex = 1;
@@ -191,13 +212,27 @@ const nextImg = function () {
     }
 
     selectedImg.srcset = `
-    ../media/gallery_imgs_webp/400/gal_img_400(${selectedIndex + 1}).webp 400w,
-    ../media/gallery_imgs_webp/800/gal_img_800(${selectedIndex + 1}).webp 800w,
+    ../media/gallery_imgs_webp/gal_img_full(${
+      selectedIndex + 1
+    }).webp?w=4000 4000w,
+    ../media/gallery_imgs_webp/2000/gal_img_2000(${
+      selectedIndex + 1
+    }).webp?w=2000 2000w,
     ../media/gallery_imgs_webp/1200/gal_img_1200(${
       selectedIndex + 1
-    }).webp 1200w,`;
+    }).webp?w=1200 1200w,
+    ../media/gallery_imgs_webp/800/gal_img_800(${
+      selectedIndex + 1
+    }).webp?w=800 800w,
+    ../media/gallery_imgs_webp/400/gal_img_400(${
+      selectedIndex + 1
+    }).webp?w=400 400w,
+    `;
 
-    selectedImg.src = `../media/gallery_imgs_webp/gal_img_full (${
+    selectedImg.sizes =
+      "(max-width: 500px) 400px, (max-width: 900px) 800px, (max-width: 1600px) 1200px, (max-width: 2500px) 2000px, 4000w";
+
+    selectedImg.src = `../media/gallery_imgs_webp/gal_img_full(${
       selectedIndex + 1
     }).webp`;
 
