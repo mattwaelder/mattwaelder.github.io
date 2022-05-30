@@ -104,6 +104,7 @@ a {
   /* font-family: "Ms Madi", cursive; */
   color: rgba(240, 240, 240);
   text-shadow: 3px 3px 1px var(--color-primary-darker);
+  margin-bottom: 1em;
 }
 
 .overlay {
@@ -116,47 +117,6 @@ a {
   backdrop-filter: blur(4px);
   z-index: 100;
   transition: all 0.5s;
-}
-
-/* ////////////////////  CSS FOR LINKING TO V1.0 OF SITE    //////////////////// */
-
-.old_site_btn_container {
-  width: 70vw;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 1em;
-}
-
-.old_site_btn_container p {
-  width: 70%;
-  font-size: 0.8em;
-  padding-right: 2em;
-}
-
-#old_site_btn {
-  font-family: sans-serif;
-  font-size: 1.2em;
-  height: auto;
-  width: auto;
-  padding: 2px;
-  color: white;
-  background: rgb(120, 120, 255);
-  border: 2px solid black;
-  text-align: center;
-  margin-top: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 0px;
-}
-
-#old_site_btn:hover {
-  color: rgb(120, 120, 255);
-  background: white;
 }
 
 /* 
@@ -938,11 +898,6 @@ a {
   border-radius: 50%;
 }
 
-/* really need to set up so that the buttons become transparent carrots in mobile mode */
-.slider_btn {
-  font-size: 1.2em;
-}
-
 /*setting slider y value is F'd bc using vw, thanks to the scroll bar slider should go from 25 - 75 vw*/
 /* may be able to fix this with % of parent element somehow ??*/
 
@@ -1010,9 +965,9 @@ a {
 */
 
 .care_guide {
-  min-height: 80vh;
   height: auto;
   width: 100vw;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -1034,7 +989,7 @@ a {
   height: 7vh;
   padding-top: 5px;
   font-family: "League Spartan", sans-serif;
-  font-size: 1.3em;
+  font-size: 2em;
   /* font-weight: 400; */
   background: var(--color-glass-transparency-lighter);
   color: black;
@@ -1054,7 +1009,6 @@ a {
   /* background: var(--gradient-primary); */
   background: none;
   transform: translateY(0.5em);
-  font-size: 1.5em;
   width: 12vw;
   color: black;
   position: relative;
@@ -1135,11 +1089,11 @@ a {
 
 .tab_content p {
   width: 100%;
-  font-size: 1.3em;
   margin-top: 1em;
+  font-size: 1.3em;
   line-height: 1.5em;
   font-weight: 500;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 .tab_content.content--active {
@@ -1149,7 +1103,7 @@ a {
 
 /* 
 ////////////////////////////////////////////////////////////////////////////////////
-SECTION 5 ????
+SECTION 5 VIDEO / OLD SITE
 //////////////////////////////////////////////////////////////////////////////////// 
 */
 #section--5 {
@@ -1161,21 +1115,20 @@ SECTION 5 ????
 }
 
 .video_container {
-  width: 70vw;
+  width: 60vw;
   height: auto;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   border: none;
   background: var(--color-glass-transparency);
   box-shadow: rgba(30, 50, 70, 0.8) 0px 20px 20px -10px;
   border-radius: 10px;
+  margin: 20vh 0;
 }
 
 iframe {
-  width: 40%;
-  max-height: 100%;
   margin: 2em;
   border: 5px solid;
   border-image: linear-gradient(
@@ -1184,10 +1137,15 @@ iframe {
       var(--color-secondary) 70%
     )
     30;
+
+  aspect-ratio: 16 / 9;
+  -webkit-aspect-ratio: 16 / 9;
+  width: 70%;
+  height: 50%;
 }
 
 .video_description {
-  width: 60%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: baseline;
@@ -1198,8 +1156,8 @@ iframe {
 
 .video_description h2 {
   position: relative;
-  font-size: 10vh;
-  margin-bottom: 1rem;
+  font-size: 7vh;
+  margin: 1rem;
   line-height: 1em;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
@@ -1228,9 +1186,63 @@ iframe {
 }
 
 .video_description p {
-  font-size: 2em;
-  line-height: 1em;
+  font-size: 1.3em;
+  line-height: 1.5em;
+  font-weight: 500;
+  font-family: Arial, sans-serif;
 }
+
+.video_description p a {
+  color: var(--color-primary);
+}
+
+.video_description p a:visited {
+  color: var(--color-primary);
+}
+
+/* //////////////// CSS FOR LINKING OLD SITE //////////////////*/
+
+.old_site_btn_container {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.old_site_btn_container p {
+  width: 70%;
+  font-size: 1.3em;
+  line-height: 1.5em;
+  font-weight: 500;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+#old_site_btn {
+  font-family: sans-serif;
+  height: 5vh;
+  width: 10vh;
+  padding: 0.1em;
+  color: white;
+  font-size: 1.5em;
+  background: rgb(120, 120, 255);
+  border: 2px solid black;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0px;
+  margin-left: 2em;
+}
+
+#old_site_btn:hover {
+  color: rgb(120, 120, 255);
+  background: white;
+}
+
 /* 
 ////////////////////////////////////////////////////////////////////////////////////
                                    FOOTER / SOCIALS
@@ -1575,12 +1587,12 @@ when we are happy with changes to branch 1 merge with master by going to master 
   }
 
   .video_description {
-    width: 70vw;
+    width: 90vw;
   }
 
   .video_description h2 {
     width: 90%;
-    font-size: 4vh;
+    font-size: 5vh;
     margin-bottom: 10px;
     /*adding for potential fix on ios safari */
     border-top: none;
@@ -1590,8 +1602,22 @@ when we are happy with changes to branch 1 merge with master by going to master 
 
   .video_description p {
     width: 90%;
-    font-size: 3vh;
-    line-height: 1em;
+    font-size: 1.3em;
+    /* line-height: 1em; */
+  }
+
+  .old_site_btn_container {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .old_site_btn_container p {
+    width: 90%;
+    font-size: 1.3em;
+  }
+
+  #old_site_btn {
+    margin-left: 0;
   }
 
   /* #old_site_btn {
@@ -1619,7 +1645,11 @@ when we are happy with changes to branch 1 merge with master by going to master 
 
 @media (min-width: 2000px) {
   html body {
-    font-size: 2em;
+    font-size: 1.8em;
+  }
+
+  .section {
+    min-height: 50vh;
   }
 
   #site_icon_img_container {
@@ -1641,6 +1671,85 @@ when we are happy with changes to branch 1 merge with master by going to master 
 
   #slinky_pig {
     left: 7em;
+  }
+
+  #what_are_pigs_para {
+    font-size: 2vh;
+  }
+
+  .intro_image {
+    width: 15vw;
+  }
+
+  .intro_card {
+    width: 60vw;
+    height: 45vh;
+    border-radius: 30px;
+  }
+
+  .pig_intro_para {
+    font-size: 3vh;
+  }
+
+  .slider {
+    width: 60%;
+    margin-top: 10vh;
+  }
+
+  .slide {
+    font-size: 3vh;
+  }
+
+  .care_guide {
+    height: 90vh;
+  }
+
+  .tab {
+    font-size: 1em;
+  }
+
+  .tab.tab--active {
+    font-size: 1.1em;
+  }
+
+  .tab_content_container {
+    width: 60vw;
+    font-size: 2vh;
+    border-radius: 30px;
+  }
+
+  .tab_content_container p::before {
+    background-size: contain;
+  }
+
+  .video_container {
+    height: auto;
+    width: 60vw;
+  }
+
+  .video_container h2 {
+    font-size: 4em;
+    margin-bottom: 1em;
+  }
+
+  .video_container p {
+    font-size: 3vh;
+  }
+
+  .old_site_btn_container {
+    margin-top: 0.5em;
+  }
+
+  .old_site_btn_container p {
+    font-size: 3vh;
+  }
+
+  #old_site_btn {
+    font-size: 1em;
+  }
+
+  .fa-brands {
+    font-size: 2em;
   }
 }
 
