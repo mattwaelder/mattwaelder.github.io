@@ -40,7 +40,7 @@ const populateGal = function () {
     let curImg = document.createElement("img");
 
     //since the class for gallery images is only 300 px, no point in loading anything bigger than the 400px image for these. use srcset on selected imgs
-    curImg.src = `../media/gallery_imgs_webp/400/gal_img_400(${i}).webp?`;
+    curImg.src = `../media/gallery_imgs_webp/800/gal_img_800(${i}).webp?`;
 
     //making an index to use for arrow navigation of images
     curImg.dataset.index = i;
