@@ -344,8 +344,6 @@ slinkyPig.addEventListener("click", function (e) {
 //return to home (steady pig)
 steadyPig.addEventListener("click", function () {
   //needs to be moved based on screen size
-  //top 2.5vh for desktop left tbd
-  //top 2vh for mobile left tbd
 
   //for mobile (general)
   if (docWidth <= 600) {
@@ -357,8 +355,6 @@ steadyPig.addEventListener("click", function () {
   if (docWidth > 600 && docWidth < 900) {
     slinkyPig.style.top = "1.5vh";
     slinkyPig.style.left = "13vw";
-
-    console.log("oi");
   }
 
   //for normal screens
@@ -378,5 +374,3 @@ steadyPig.addEventListener("click", function () {
     slinkyPig.style.left = "5vw";
   }
 });
-
-ScreenOrientation.lock("natural");
