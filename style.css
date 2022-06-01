@@ -176,7 +176,7 @@ a {
 #slinky_pig {
   position: absolute;
   top: 2.5vh;
-  left: 6.66em;
+  left: 6vw;
   z-index: 150;
   cursor: pointer;
 }
@@ -959,6 +959,34 @@ a {
   cursor: pointer;
 }
 
+.testimonial_long_container {
+  padding: 0 2em;
+  margin-top: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.testimonial_long {
+  width: 45%;
+  font-size: 2vh;
+  line-height: 1.2;
+}
+
+@media (max-width: 1200px) {
+  .testimonial_long_container {
+    height: 70%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+  }
+  .testimonial_long {
+    width: 100%;
+    padding-bottom: 1em;
+  }
+}
+
 /* 
 ////////////////////////////////////////////////////////////////////////////////////
                                   SECTION 4 TABBED CARE GUIDE
@@ -1337,12 +1365,6 @@ when we are happy with changes to branch 1 merge with master by going to master 
 
 /* 
 ////////////////////////////////////////////////////////////////////////////////////
-                                   GALLERY
-//////////////////////////////////////////////////////////////////////////////////// 
-*/
-
-/* 
-////////////////////////////////////////////////////////////////////////////////////
                                    MEDIA QUERY
 //////////////////////////////////////////////////////////////////////////////////// 
 */
@@ -1376,13 +1398,13 @@ when we are happy with changes to branch 1 merge with master by going to master 
   }
 
   .site_icon_img {
-    height: 4vh;
+    height: 5vh;
     width: 7vh;
   }
 
   #slinky_pig {
-    top: 2vh;
-    left: 5em;
+    top: 1.5vh;
+    left: 20vw;
   }
 
   .nav_buttons {
@@ -1634,17 +1656,18 @@ when we are happy with changes to branch 1 merge with master by going to master 
   }
 }
 
+/*special mention for tablets to get pig placement okay on them*/
 @media (min-width: 600px) and (max-width: 900px) {
   /* html body {
     background: red;
   } */
 
   #slinky_pig {
-    left: 6em;
+    left: 13vw;
   }
 }
 
-@media (min-width: 2000px) {
+@media (min-width: 2000px) and (max-width: 3000px) {
   html body {
     font-size: 1.8em;
   }
@@ -1671,7 +1694,7 @@ when we are happy with changes to branch 1 merge with master by going to master 
   */
 
   #slinky_pig {
-    left: 7em;
+    left: 6vw;
   }
 
   #what_are_pigs_para {
@@ -1751,6 +1774,12 @@ when we are happy with changes to branch 1 merge with master by going to master 
 
   .fa-brands {
     font-size: 2em;
+  }
+}
+
+@media (min-width: 3000px) {
+  #slinky_pig {
+    left: 5vw;
   }
 }
 

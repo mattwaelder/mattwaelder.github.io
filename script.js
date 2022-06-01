@@ -349,25 +349,30 @@ steadyPig.addEventListener("click", function () {
 
   //for mobile (general)
   if (docWidth <= 600) {
-    slinkyPig.style.top = "2vh";
-    slinkyPig.style.left = "5em";
+    slinkyPig.style.top = "1.5vh";
+    slinkyPig.style.left = "20vw";
   }
 
   //for mobile tablets (600-900w)
   if (docWidth > 600 && docWidth < 900) {
-    slinkyPig.style.top = "2vh";
-    slinkyPig.style.left = "6em";
+    slinkyPig.style.top = "1.5vh";
+    slinkyPig.style.left = "13vw";
   }
 
   //for normal screens
   if (docWidth >= 900 && docWidth <= 2000) {
     slinkyPig.style.top = "2.5vh";
-    slinkyPig.style.left = "6.66em";
+    slinkyPig.style.left = "6vw";
   }
 
-  //for large screens
-  if (docWidth > 2000) {
+  //for 2k screens
+  if (docWidth > 2000 && docWidth <= 3000) {
     slinkyPig.style.top = "2.5vh";
-    slinkyPig.style.left = "7em";
+    slinkyPig.style.left = "6vw";
+  }
+
+  if (docWidth > 3000) {
+    slinkyPig.style.top = "2.5vh";
+    slinkyPig.style.left = "5vw";
   }
 });
