@@ -976,16 +976,17 @@ a {
 /*this is all a mess, but i could not get overflow-y: scroll; to work bc the position of the slider buttons is absolute and seems to be the only thing i can press, so no scrolling...*/
 @media (max-width: 1200px) {
   .testimonial_long_container {
-    margin-top: 2em;
+    padding: 0;
     height: 100%;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
   }
   .testimonial_long {
-    font-size: 0.6em;
+    margin-top: 0;
+    height: auto;
+    font-size: 0.7em;
     width: 100%;
-    padding-bottom: 1.5em;
   }
 }
 
@@ -1254,9 +1255,9 @@ iframe {
 
 #old_site_btn {
   font-family: sans-serif;
-  height: 5vh;
-  width: 10vh;
-  padding: 0.1em;
+  height: 2em;
+  width: auto;
+  padding: 0 0.5em;
   color: white;
   font-size: 1.5em;
   background: rgb(120, 120, 255);
@@ -1267,6 +1268,7 @@ iframe {
   align-items: center;
   border-radius: 0px;
   margin-left: 2em;
+  margin-top: 0.5em;
 }
 
 #old_site_btn:hover {
@@ -1781,6 +1783,9 @@ when we are happy with changes to branch 1 merge with master by going to master 
 }
 
 @media (min-width: 3000px) {
+  html body {
+    font-size: 2em;
+  }
   #slinky_pig {
     left: 5vw;
   }
