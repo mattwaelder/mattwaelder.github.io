@@ -973,17 +973,19 @@ a {
   line-height: 1.2;
 }
 
+/*this is all a mess, but i could not get overflow-y: scroll; to work bc the position of the slider buttons is absolute and seems to be the only thing i can press, so no scrolling...*/
 @media (max-width: 1200px) {
   .testimonial_long_container {
-    height: 70%;
+    margin-top: 2em;
+    height: 100%;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    overflow-y: scroll;
+    justify-content: center;
   }
   .testimonial_long {
+    font-size: 0.6em;
     width: 100%;
-    padding-bottom: 1em;
+    padding-bottom: 1.5em;
   }
 }
 
@@ -1557,6 +1559,7 @@ when we are happy with changes to branch 1 merge with master by going to master 
     color: rgba(0, 0, 0, 0.2);
     background-color: transparent;
     font-size: 8vh;
+    z-index: -1;
   }
 
   .slider_btn_container:hover {
