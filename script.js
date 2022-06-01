@@ -42,20 +42,7 @@ const hamburger = document.querySelector(".hamburger");
 const mobileMenu = document.querySelector(".mobile_menu");
 const mobileMenuContainer = document.querySelector(".mobile_menu_container");
 const mobileMenuBtns = document.querySelectorAll(".mobile_nav_btn");
-
-// //callback fn to open mobile menu
-// const mobileMenuOpen = function (e) {
-//   const clicked = e.target.closest(".fa-bars");
-//   if (!clicked) return;
-//   mobileMenuContainer.style["animation-name:"] = "mobileMenuDrop";
-//   mobileMenuContainer.classList.toggle("hidden");
-// };
-
-// //listen for hamburger click
-// hamburger.addEventListener("click", mobileMenuOpen);
-
-//tried for hours to get a reverse animation, its 1:30am and i have work tomorrow so im good on this.
-// hamburger.addEventListener("click", mobileMenuClose);
+const galleryLink = document.querySelector(".mobile_nav_link_gallery");
 
 //clicking menu items
 //listening to the entire mobile window
@@ -96,6 +83,14 @@ mobileMenu.addEventListener("click", function (e) {
     return;
   }
   //no, im not proud of it, but it works OK?
+});
+
+//making it so that clicking anywhere on the mobile button for gallery, brings you to gallery
+galleryLink.closest(".mobile_nav_btn").addEventListener("click", () => {
+  //this prob isnt necessary, but hey, why not.
+  menuVisible = false;
+  menuRise();
+  window.location.href = "/html/gallery.html";
 });
 
 ///////////////////////////MOBILE MENU MOTION///////////////////////////
