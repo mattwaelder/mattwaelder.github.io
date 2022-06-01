@@ -357,6 +357,8 @@ steadyPig.addEventListener("click", function () {
   if (docWidth > 600 && docWidth < 900) {
     slinkyPig.style.top = "1.5vh";
     slinkyPig.style.left = "13vw";
+
+    console.log("oi");
   }
 
   //for normal screens
@@ -376,3 +378,5 @@ steadyPig.addEventListener("click", function () {
     slinkyPig.style.left = "5vw";
   }
 });
+
+ScreenOrientation.lock("natural");

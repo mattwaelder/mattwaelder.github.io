@@ -1791,6 +1791,21 @@ when we are happy with changes to branch 1 merge with master by going to master 
   }
 }
 
+/* if i care to, i could make the site work in landscape, but i dont think i care to */
+@media (orientation: landscape) {
+  html body {
+    font-size: 1em;
+  }
+  .nav_bar {
+    height: 10vh;
+  }
+
+  #slinky_pig {
+    top: 2.5vh;
+    left: 7vw;
+  }
+}
+
 /* changes specifically targetting safari on ios, this is bad practice but i kind of like using border images which arent working well on all iphones */
 
 @supports (-webkit-touch-callout: none) {
