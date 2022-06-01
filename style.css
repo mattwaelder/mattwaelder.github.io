@@ -26,9 +26,6 @@
 }
 
 html body {
-  /* background-color: rgb(180, 180, 180); */
-  /* background: linear-gradient(white, rgba(100, 150, 200, 1)); */
-  /* background: linear-gradient(#ffffff, #6dc6fa, #1d5b85); */
   background: var(--gradient-body);
   font-size: 16px;
   font-family: "League Spartan", sans-serif;
@@ -59,13 +56,6 @@ a:visited {
   color: white;
   border-radius: 5px;
 }
-
-/*get rid of blue highlight on mobile when something is pressed*/
-/* select:focus {
-  box-shadow: none;
-  outline: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-} */
 
 input,
 div,
@@ -228,12 +218,6 @@ a {
   width: 100%;
 }
 
-/* .nav_btn:hover {
-  background: var(--color-glass-transparency-lighter);
-  border-radius: 20px;
-  transition: all 200ms;
-} */
-
 .nav_buttons:last-child {
   padding-right: 3em;
 }
@@ -320,9 +304,6 @@ a {
   it is nice that the border image color is opposite the background...
   */
   background: var(--gradient-primary);
-
-  /*how on earth do you get this to work both ways -_- */
-  /* animation-name: mobileMenuDrop; */
   transition: transform ease-out 0.5s;
 }
 
@@ -332,7 +313,6 @@ a {
   width: 100%;
   height: 100%;
 
-  /*remove color for border image to work*/
   border-left: 2px solid;
   border-right: 2px solid;
 
@@ -360,7 +340,6 @@ a {
   width: 100%;
   height: 100%;
   font-size: 1.3em;
-  /* background: var(--color-glass-transparency); */
   cursor: pointer;
   transition: ease-in-out 500ms;
 
@@ -407,13 +386,11 @@ a {
   background: url("./media/look at those bw.jpg");
   background-repeat: no-repeat;
   background-position: center;
-  /* background-size: 100vw 45vw; */
   filter: blur(10px);
   background-size: cover;
   overflow-x: hidden;
 
   z-index: 1;
-  /* transform: translateX(-10px); */
 }
 
 #site_title_container {
@@ -437,10 +414,8 @@ a {
   font-family: "Ms Madi", cursive;
   width: 50%;
   height: 2em;
-  /* color:rgb(251, 194, 235) */
   color: var(--color-primary);
   background-color: rgba(0, 0, 0, 0.5);
-  /* border: 3px solid white; */
   border: 5px solid;
   border-image: linear-gradient(
       120deg,
@@ -448,11 +423,9 @@ a {
       var(--color-secondary) 70%
     )
     30;
-  /* margin: 100px 25vw 100px auto; */
   font-size: 10vw;
   z-index: 2;
 
-  /* instead of 3, 3, 1 ?? */
   -webkit-text-shadow: 3px 3px 2px var(--color-secondary);
   text-shadow: 3px 3px 2px var(--color-secondary);
 }
@@ -480,7 +453,6 @@ a {
   opacity: 1;
   transition: all ease-out 0.5s;
 }
-/* event listener for (probably) scroll where pig para fades into existance on the side either pushing the h2 to the side or replacing it */
 
 .what_are_pigs_item {
   display: flex;
@@ -531,7 +503,6 @@ a {
 }
 .drop_down_button_container:hover {
   color: var(--color-secondary);
-  /* background-color: var(--color-glass-transparency-lighter); */
   transition: all 200ms;
 }
 
@@ -1046,16 +1017,11 @@ a {
   position: relative;
   transition: all 200ms ease-in-out;
   box-shadow: none;
-  /* text-shadow: 3px 3px 1px var(--color-primary-darker); */
 }
 
 .tab.tab--active::after {
   content: "";
   position: absolute;
-  /* left: -10%;
-  top: -20%;
-  height: 250%;
-  width: 120%; */
 
   left: 5%;
   top: 0;
@@ -1114,9 +1080,6 @@ a {
   color: var(--color-primary-darker);
   text-align: left;
   padding-left: 1em;
-  /* white-space: break-spaces; */
-  /* text-shadow: 5px 5px 2px white; */
-  /* text-decoration: underline; */
 }
 
 .tab_content p {
@@ -1362,12 +1325,6 @@ iframe {
 }
 
 /* 
-branch name for media is "1"
-git checkout 1
-when we are happy with changes to branch 1 merge with master by going to master and saying git merge 1, i think;
-*/
-
-/* 
 ////////////////////////////////////////////////////////////////////////////////////
                                    MEDIA QUERY
 //////////////////////////////////////////////////////////////////////////////////// 
@@ -1392,10 +1349,6 @@ when we are happy with changes to branch 1 merge with master by going to master 
     height: 8vh;
     justify-content: space-between;
   }
-
-  /* #site_icon_img_container {
-    padding-left: 0px;
-  } */
 
   .nav_bar p {
     font-size: 0.5em;
@@ -1531,9 +1484,6 @@ when we are happy with changes to branch 1 merge with master by going to master 
     margin-top: 20vh;
     font-size: 3vh;
     line-height: 4vh;
-    /* display: grid;
-    grid-template-columns: 3 / 6;
-    grid-template-rows: 3 / 6; */
   }
 
   .gallery_btn {
@@ -1807,7 +1757,6 @@ when we are happy with changes to branch 1 merge with master by going to master 
 } */
 
 /* changes specifically targetting safari on ios, this is bad practice but i kind of like using border images which arent working well on all iphones */
-
 @supports (-webkit-touch-callout: none) {
   /* body {
     font-weight: 500;

@@ -284,6 +284,7 @@ selectedImg.addEventListener("touchend", function (e) {
 
 //////////////////////////////////////////////////////////////////////////////
 /* Int Obs API lazy loading seems to suck with grid*/
+//let me be more clear, it sucks because it seems to want to load the first column of images before the first row of images
 //////////////////////////////////////////////////////////////////////////////
 
 // const lazyImgs = document.querySelectorAll("[data-src]");
