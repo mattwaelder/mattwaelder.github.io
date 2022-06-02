@@ -15,7 +15,7 @@ navButtons.addEventListener("click", function (e) {
   e.preventDefault();
   if (e.target.classList.contains("nav_link")) {
     const id = e.target.getAttribute("href");
-    if (id === "/html/gallery.html") {
+    if (id === "/site_gallery/gallery.html") {
       window.location.href = id;
       return;
     }
@@ -60,7 +60,7 @@ mobileMenu.addEventListener("click", function (e) {
     menuVisible = false;
     menuRise();
     const id = clicked.getAttribute("href");
-    if (id === "/html/gallery.html") {
+    if (id === "/site_gallery/gallery.html") {
       window.location.href = id;
       return;
     }
@@ -90,7 +90,7 @@ galleryLink.closest(".mobile_nav_btn").addEventListener("click", () => {
   //this prob isnt necessary, but hey, why not.
   menuVisible = false;
   menuRise();
-  window.location.href = "/html/gallery.html";
+  window.location.href = "/site_gallery/gallery.html";
 });
 
 ///////////////////////////MOBILE MENU MOTION///////////////////////////
@@ -314,7 +314,7 @@ galleryBtn.addEventListener("click", function (e) {
   const clicked = e.target.closest(".gallery_btn");
   if (!clicked) return;
   //this is neat
-  window.location.href = "/html/gallery.html";
+  window.location.href = "/site_gallery/gallery.html";
 });
 
 //////////////////////////////////////////////////////////////////////////////
